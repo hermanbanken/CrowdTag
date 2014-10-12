@@ -1,0 +1,116 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area4#page4" name="Campaigns">
+  <ContentUnits>
+    <DataUnit gr:x="360" gr:y="0" id="sv1#area4#page4#dau2" name="CurrentCampaign" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6">
+      <Selector id="sv1#area4#page4#dau2#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area4#page4#dau2#su2#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <PowerIndexUnit gr:x="45" gr:y="5" id="sv1#area4#page4#pwu1" name="CampaingList" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att4 ent3#att6" linkOrder="sv1#area4#page4#pwu1#ln3 sv1#area4#page4#pwu1#ln11">
+      <Link id="sv1#area4#page4#pwu1#ln3" name="Flow3" to="sv1#area4#page4#dau2" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv1#area4#page4#pwu1#ln11" name="Flow11" to="sv1#area4#page4#seu4" type="normal" validate="true">
+        <LinkParameter id="sv1#area4#page4#pwu1#ln11#par9" name="oid_PASSING" source="data[].ent3#att3" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+    <PowerIndexUnit gr:x="360" gr:y="110" id="sv1#area4#page4#pwu4" name="ItemsInCampaign" sortable="true" checkable="false" useCountQuery="false" entity="ent5" linkOrder="sv1#area4#page4#pwu4#ln13">
+      <Link id="sv1#area4#page4#pwu4#ln13" name="Flow13" to="sv1#area4#page4#dau5" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <SelectorUnit gr:x="0" gr:y="115" id="sv1#area4#page4#seu3" name="Campaigns" entity="ent3">
+      <Link id="sv1#area4#page4#seu3#ln9" name="Flow9" to="sv1#area4#page4#pwu1" automaticCoupling="true" type="transport" validate="true"/>
+      <Selector id="sv1#area4#page4#seu3#su11" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area4#page4#seu3#su11#rcond3" name="RequestorInCampaign" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+    </SelectorUnit>
+    <SelectorUnit gr:x="205" gr:y="115" id="sv1#area4#page4#seu4" name="Items" entity="ent5">
+      <Link id="sv1#area4#page4#seu4#ln12" name="Flow12" to="sv1#area4#page4#pwu4" automaticCoupling="true" type="transport" validate="true"/>
+      <Selector id="sv1#area4#page4#seu4#su12" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area4#page4#seu4#su12#rcond4" name="ItemInAnnotation" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+    </SelectorUnit>
+    <DataUnit gr:x="530" gr:y="105" id="sv1#area4#page4#dau5" name="ItemDetails" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9">
+      <Selector id="sv1#area4#page4#dau5#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area4#page4#dau5#su5#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page4#dau2">
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att5"/>
+          <layout:Attribute attribute="ent3#att6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page4#pwu1">
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att6"/>
+          <layout:Link link="sv1#area4#page4#pwu1#ln3"/>
+          <layout:Link link="sv1#area4#page4#pwu1#ln11"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page4#pwu4">
+          <layout:Link link="sv1#area4#page4#pwu4#ln13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page4#dau5">
+          <layout:Attribute attribute="ent5#att23"/>
+          <layout:Attribute attribute="ent5#att24"/>
+          <layout:Attribute attribute="ent5#att9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

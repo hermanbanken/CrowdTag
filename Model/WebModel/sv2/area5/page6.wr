@@ -1,0 +1,44 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area5#page6" name="Personal information" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <DataUnit id="sv2#area5#page6#dau3" name="PersInfo" gr:x="180" gr:y="0" entity="User">
+      <Selector id="sv2#area5#page6#dau3#su3" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area5#page6#dau3#su3#kcond3" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <GetUnit id="sv2#area5#page6#gtu2" name="getSessionOID" gr:x="0" gr:y="10" contextParameters="UserCtxParam">
+      <Link id="sv2#area5#page6#gtu2#ln4" name="Flow1" to="sv2#area5#page6#dau3" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area5#page6#dau3"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

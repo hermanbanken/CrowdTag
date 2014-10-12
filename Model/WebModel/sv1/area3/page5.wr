@@ -1,0 +1,120 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area3#page5" name="New Campaign">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area3#page5#enu2" name="CreateCampaign" entity="ent3">
+      <Field id="sv1#area3#page5#enu2#fld3" name="name" type="string" modifiable="true" attribute="ent3#att4"/>
+      <Field id="sv1#area3#page5#enu2#fld4" name="budget" type="integer" modifiable="true" attribute="ent3#att5"/>
+      <Field id="sv1#area3#page5#enu2#fld5" name="isOpen" type="boolean" modifiable="true" attribute="ent3#att6"/>
+    </EntryUnit>
+    <EntryUnit gr:x="115" gr:y="0" id="sv1#area3#page5#enu3" name="CreateItem" entity="ent5">
+      <Field id="sv1#area3#page5#enu3#fld6" name="title" type="string" modifiable="true" attribute="ent5#att23"/>
+      <Field id="sv1#area3#page5#enu3#fld7" name="caption" type="string" modifiable="true" attribute="ent5#att24"/>
+      <Field id="sv1#area3#page5#enu3#fld8" name="url" type="url" modifiable="true" attribute="ent5#att9"/>
+    </EntryUnit>
+    <EntryUnit gr:x="205" gr:y="0" id="sv1#area3#page5#enu4" name="CreateTask" entity="ent4">
+      <Field id="sv1#area3#page5#enu4#fld9" name="Title" type="string" modifiable="true" attribute="ent4#att13"/>
+      <Field id="sv1#area3#page5#enu4#fld10" name="description" type="string" modifiable="true" attribute="ent4#att17"/>
+      <Field id="sv1#area3#page5#enu4#fld11" name="reward" type="float" modifiable="true" attribute="ent4#att19"/>
+      <Field id="sv1#area3#page5#enu4#fld12" name="maxExecTime" type="time" modifiable="true" attribute="ent4#att20"/>
+      <Field id="sv1#area3#page5#enu4#fld13" name="expTime" type="timestamp" modifiable="true" attribute="ent4#att21"/>
+    </EntryUnit>
+    <EntryUnit gr:x="0" gr:y="90" id="sv1#area3#page5#enu6" name="AddItemToCampaign" entity="ent3">
+      <SelectionField id="sv1#area3#page5#enu6#sfld1" name="Annotation CampaignToItem" type="string" role="rel5#role10"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#enu2">
+          <layout:Field field="sv1#area3#page5#enu2#fld3"/>
+          <layout:Field field="sv1#area3#page5#enu2#fld4"/>
+          <layout:Field field="sv1#area3#page5#enu2#fld5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#enu3">
+          <layout:Field field="sv1#area3#page5#enu3#fld6"/>
+          <layout:Field field="sv1#area3#page5#enu3#fld7"/>
+          <layout:Field field="sv1#area3#page5#enu3#fld8"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#enu4">
+          <layout:Field field="sv1#area3#page5#enu4#fld9"/>
+          <layout:Field field="sv1#area3#page5#enu4#fld10"/>
+          <layout:Field field="sv1#area3#page5#enu4#fld11"/>
+          <layout:Field field="sv1#area3#page5#enu4#fld12"/>
+          <layout:Field field="sv1#area3#page5#enu4#fld13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#enu6">
+          <layout:Field field="sv1#area3#page5#enu6#sfld1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

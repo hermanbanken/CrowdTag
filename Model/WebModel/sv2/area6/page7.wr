@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area6#page7" name="Current Tasks">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="15" gr:y="130" id="sv2#area6#page7#pwu2" name="TaskList" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att19" linkOrder="sv2#area6#page7#pwu2#ln5" gr:showAllParts="false">
+      <Link id="sv2#area6#page7#pwu2#ln5" name="Flow5" to="sv2#area6#page7#dau4" automaticCoupling="true" type="automatic" validate="true"/>
+    </PowerIndexUnit>
+    <DataUnit gr:x="135" gr:y="125" id="sv2#area6#page7#dau4" name="TaskDetails" entity="ent4">
+      <Selector id="sv2#area6#page7#dau4#su4" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area6#page7#dau4#su4#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area6#page7#seu1" name="Tasks" entity="ent4" customDescriptor="false">
+      <Link id="sv2#area6#page7#seu1#ln6" name="Flow6" to="sv2#area6#page7#pwu2" type="transport" validate="true" automaticCoupling="true"/>
+      <Selector id="sv2#area6#page7#seu1#su9" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area6#page7#seu1#su9#rcond1" name="WorkerInTask" predicate="in" implied="false" role="rel7#role14"/>
+      </Selector>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area6#page7#pwu2">
+          <layout:Attribute attribute="ent4#att13"/>
+          <layout:Attribute attribute="ent4#att19"/>
+          <layout:Link link="sv2#area6#page7#pwu2#ln5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area6#page7#dau4"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

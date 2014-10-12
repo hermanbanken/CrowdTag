@@ -1,3 +1,3 @@
-<SiteView id="sv1" name="Requester" protected="true" customURLName="requester">
+<SiteView id="sv1" name="Requester" protected="true" customURLName="requester" landmarks="sv1#area2 sv1#area3 sv1#area4" homePage="sv1#area2#page3">
   <OperationUnits/>
 </SiteView>
