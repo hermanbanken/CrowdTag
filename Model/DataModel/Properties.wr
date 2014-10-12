@@ -1,114 +1,171 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="20" gr:y="305" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att25 User#att26">
-    <Attribute name="oid" id="userOID" type="integer" key="true"/>
-    <Attribute name="userName" id="userName" type="string"/>
-    <Attribute name="password" id="password" type="password"/>
-    <Attribute name="email" id="email" type="string"/>
-    <Attribute id="User#att25" name="name" type="string"/>
-    <Attribute id="User#att26" name="birthDate" type="timestamp"/>
+  <Entity id="User" name="User" duration="persistent" gr:x="20" gr:y="305" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att25 User#att26" db:database="db1" db:table="user">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="userName" id="userName" type="string" db:column="username"/>
+    <Attribute name="password" id="password" type="password" db:column="password"/>
+    <Attribute name="email" id="email" type="string" db:column="email"/>
+    <Attribute id="User#att25" name="name" type="string" db:column="name"/>
+    <Attribute id="User#att26" name="birthDate" type="timestamp" db:column="birthdate"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="245" gr:y="345" gr:hideAttributes="false" attributeOrder="groupOID groupName">
-    <Attribute name="oid" id="groupOID" type="integer" key="true"/>
-    <Attribute name="groupName" id="groupName" type="string"/>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="245" gr:y="345" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="465" gr:y="335" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
-    <Attribute name="oid" id="moduleOID" type="integer" key="true"/>
-    <Attribute name="moduleID" id="moduleID" type="string"/>
-    <Attribute name="moduleName" id="moduleName" type="string"/>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="465" gr:y="335" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
   </Entity>
-  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group">
-    <RelationshipRole1 id="User2Group" name="groups" maxCard="N"/>
-    <RelationshipRole2 id="Group2User" name="users" maxCard="N"/>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db1" db:table="user_group">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44">
-    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1"/>
-    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N"/>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44" db:database="db1" db:table="user">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module">
-    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1"/>
-    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N"/>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db1" db:table="group">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
+      <db:JoinColumn attribute="groupOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41">
-    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
-    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41" db:database="db1" db:table="group_module">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="default" type="MySQL" url="jdbc:mysql://localhost:3306/crowdtag" username="root" password="test" cryptedPassword="false" connectionCount="5"/>
-  <Entity gr:x="-5" gr:y="545" id="ent1" name="Worker" duration="persistent" attributeOrder="ent1#att1 ent1#att14 ent1#att15 ent1#att16 ent1#att18">
-    <Attribute id="ent1#att1" key="true" name="oid" type="integer"/>
-    <Generalization superEntity="User"/>
-    <Attribute id="ent1#att14" name="piggy-bank" type="integer"/>
-    <Attribute id="ent1#att15" name="accuracy_count_good" type="integer"/>
-    <Attribute id="ent1#att16" name="accuracy_count_all" type="integer"/>
+  <db:Database id="db1" name="default" type="MySQL" url="jdbc:mysql://localhost:3306/crowdtag" username="root" password="test" cryptedPassword="false" connectionCount="5">
+  </db:Database>
+  <Entity gr:x="-5" gr:y="545" id="ent1" name="Worker" duration="persistent" attributeOrder="ent1#att1 ent1#att14 ent1#att15 ent1#att16 ent1#att18" db:database="db1" db:table="worker">
+    <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
+    <Generalization superEntity="User">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </Generalization>
+    <Attribute id="ent1#att14" name="piggy-bank" type="integer" db:column="piggy_bank"/>
+    <Attribute id="ent1#att15" name="accuracy_count_good" type="integer" db:column="accuracy_count_good"/>
+    <Attribute id="ent1#att16" name="accuracy_count_all" type="integer" db:column="accuracy_count_all"/>
     <Attribute id="ent1#att18" name="accuracy" type="float" derivationQuery="simpleCalculated::Self.ent1#att15 / Self.ent1#att16"/>
   </Entity>
-  <Entity gr:x="45" gr:y="105" id="ent2" name="Requester" duration="persistent">
-    <Attribute id="ent2#att2" key="true" name="oid" type="integer"/>
-    <Generalization superEntity="User"/>
+  <Entity gr:x="45" gr:y="105" id="ent2" name="Requester" duration="persistent" db:database="db1" db:table="requester">
+    <Attribute id="ent2#att2" key="true" name="oid" type="integer" db:column="oid"/>
+    <Generalization superEntity="User">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </Generalization>
   </Entity>
-  <Entity gr:x="350" gr:y="80" id="ent3" name="Campaign" duration="persistent" attributeOrder="ent3#att3 ent3#att4 ent3#att5 ent3#att6">
-    <Attribute id="ent3#att3" key="true" name="oid" type="integer"/>
-    <Attribute id="ent3#att4" name="name" type="string"/>
-    <Attribute id="ent3#att5" name="budget" type="integer"/>
-    <Attribute id="ent3#att6" name="isOpen" type="boolean"/>
+  <Entity gr:x="350" gr:y="80" id="ent3" name="Campaign" duration="persistent" attributeOrder="ent3#att3 ent3#att4 ent3#att5 ent3#att6" db:database="db1" db:table="campaign">
+    <Attribute id="ent3#att3" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent3#att4" name="name" type="string" db:column="name"/>
+    <Attribute id="ent3#att5" name="budget" type="integer" db:column="budget"/>
+    <Attribute id="ent3#att6" name="isOpen" type="boolean" db:column="isopen"/>
   </Entity>
-  <Relationship id="rel1" name="Requester_Annotation Campaign" sourceEntity="ent2" targetEntity="ent3">
-    <RelationshipRole1 id="rel1#role1" name="RequesterToAnnotation Campaign" maxCard="1"/>
-    <RelationshipRole2 id="rel1#role2" name="Annotation CampaignToRequester" maxCard="N"/>
+  <Relationship id="rel1" name="Requester_Annotation Campaign" sourceEntity="ent2" targetEntity="ent3" db:database="db1" db:table="requester">
+    <RelationshipRole1 id="rel1#role1" name="RequesterToAnnotation Campaign" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel1#role2" name="Annotation CampaignToRequester" maxCard="N">
+      <db:JoinColumn attribute="ent3#att3" name="campaign_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="680" gr:y="-70" id="ent4" name="Task" duration="persistent" attributeOrder="ent4#att7 ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21">
-    <Attribute id="ent4#att7" key="true" name="oid" type="integer"/>
-    <Attribute id="ent4#att13" name="Title" type="string"/>
-    <Attribute id="ent4#att17" name="description" type="string"/>
-    <Attribute id="ent4#att19" name="reward" type="float"/>
-    <Attribute id="ent4#att20" name="maxExecTime" type="time"/>
-    <Attribute id="ent4#att21" name="expTime" type="timestamp"/>
+  <Entity gr:x="680" gr:y="-70" id="ent4" name="Task" duration="persistent" attributeOrder="ent4#att7 ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21" db:database="db1" db:table="task">
+    <Attribute id="ent4#att7" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent4#att13" name="Title" type="string" db:column="title"/>
+    <Attribute id="ent4#att17" name="description" type="string" db:column="description"/>
+    <Attribute id="ent4#att19" name="reward" type="float" db:column="reward"/>
+    <Attribute id="ent4#att20" name="maxExecTime" type="time" db:column="maxexectime"/>
+    <Attribute id="ent4#att21" name="expTime" type="timestamp" db:column="exptime"/>
   </Entity>
-  <Entity gr:x="695" gr:y="190" id="ent5" name="Item" duration="persistent" attributeOrder="ent5#att8 ent5#att23 ent5#att24 ent5#att9">
-    <Attribute id="ent5#att8" key="true" name="oid" type="integer"/>
-    <Attribute id="ent5#att9" name="url" type="url"/>
-    <Attribute id="ent5#att23" name="title" type="string"/>
-    <Attribute id="ent5#att24" name="caption" type="string"/>
+  <Entity gr:x="695" gr:y="190" id="ent5" name="Item" duration="persistent" attributeOrder="ent5#att8 ent5#att23 ent5#att24 ent5#att9" db:database="db1" db:table="item">
+    <Attribute id="ent5#att8" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent5#att9" name="url" type="url" db:column="url"/>
+    <Attribute id="ent5#att23" name="title" type="string" db:column="title"/>
+    <Attribute id="ent5#att24" name="caption" type="string" db:column="caption"/>
   </Entity>
-  <Entity gr:x="870" gr:y="200" id="ent6" name="Annotation" duration="persistent" attributeOrder="ent6#att10 ent6#att11 ent6#att12">
-    <Attribute id="ent6#att10" key="true" name="oid" type="integer"/>
-    <Attribute id="ent6#att11" name="label" type="string"/>
-    <Attribute id="ent6#att12" name="confidence" type="integer"/>
+  <Entity gr:x="870" gr:y="200" id="ent6" name="Annotation" duration="persistent" attributeOrder="ent6#att10 ent6#att11 ent6#att12" db:database="db1" db:table="annotation">
+    <Attribute id="ent6#att10" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent6#att11" name="label" type="string" db:column="label"/>
+    <Attribute id="ent6#att12" name="confidence" type="integer" db:column="confidence"/>
   </Entity>
-  <Relationship id="rel2" name="Annotation_Item" sourceEntity="ent6" targetEntity="ent5">
-    <RelationshipRole1 id="rel2#role3" name="AnnotationToItem" maxCard="N"/>
-    <RelationshipRole2 id="rel2#role4" name="ItemToAnnotation" maxCard="1"/>
+  <Relationship id="rel2" name="Annotation_Item" sourceEntity="ent6" targetEntity="ent5" db:database="db1" db:table="item">
+    <RelationshipRole1 id="rel2#role3" name="AnnotationToItem" maxCard="N">
+      <db:JoinColumn attribute="ent6#att10" name="annotation_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role4" name="ItemToAnnotation" maxCard="1">
+      <db:JoinColumn attribute="ent5#att8" name="oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel3" name="Annotation_Worker" sourceEntity="ent6" targetEntity="ent1" gr:bendpoints="1,244,846,-121;-749,194,56,-91">
-    <RelationshipRole1 id="rel3#role5" name="AnnotationToWorker" maxCard="1"/>
-    <RelationshipRole2 id="rel3#role6" name="WorkerToAnnotation" maxCard="N"/>
+  <Relationship id="rel3" name="Annotation_Worker" sourceEntity="ent6" targetEntity="ent1" gr:bendpoints="1,244,846,-121;-749,194,56,-91" db:database="db1" db:table="annotation">
+    <RelationshipRole1 id="rel3#role5" name="AnnotationToWorker" maxCard="1">
+      <db:JoinColumn attribute="ent6#att10" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel3#role6" name="WorkerToAnnotation" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="worker_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel4" name="Item_Task" sourceEntity="ent5" targetEntity="ent4">
-    <RelationshipRole1 id="rel4#role7" name="ItemToTask" maxCard="N"/>
-    <RelationshipRole2 id="rel4#role8" name="TaskToItem" maxCard="N"/>
+  <Relationship id="rel4" name="Item_Task" sourceEntity="ent5" targetEntity="ent4" db:database="db1" db:table="item_task">
+    <RelationshipRole1 id="rel4#role7" name="ItemToTask" maxCard="N">
+      <db:JoinColumn attribute="ent5#att8" name="item_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel4#role8" name="TaskToItem" maxCard="N">
+      <db:JoinColumn attribute="ent4#att7" name="task_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel5" name="Item_Annotation Campaign" sourceEntity="ent5" targetEntity="ent3">
-    <RelationshipRole1 id="rel5#role9" name="ItemToAnnotation Campaign" maxCard="N"/>
-    <RelationshipRole2 id="rel5#role10" name="Annotation CampaignToItem" maxCard="1"/>
+  <Relationship id="rel5" name="Item_Annotation Campaign" sourceEntity="ent5" targetEntity="ent3" db:database="db1" db:table="campaign">
+    <RelationshipRole1 id="rel5#role9" name="ItemToAnnotation Campaign" maxCard="N">
+      <db:JoinColumn attribute="ent5#att8" name="item_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel5#role10" name="Annotation CampaignToItem" maxCard="1">
+      <db:JoinColumn attribute="ent3#att3" name="oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel6" name="Task_Annotation Campaign" sourceEntity="ent4" targetEntity="ent3">
-    <RelationshipRole1 id="rel6#role11" name="TaskToAnnotation Campaign" maxCard="N"/>
-    <RelationshipRole2 id="rel6#role12" name="Annotation CampaignToTask" maxCard="1"/>
+  <Relationship id="rel6" name="Task_Annotation Campaign" sourceEntity="ent4" targetEntity="ent3" db:database="db1" db:table="campaign">
+    <RelationshipRole1 id="rel6#role11" name="TaskToAnnotation Campaign" maxCard="N">
+      <db:JoinColumn attribute="ent4#att7" name="task_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel6#role12" name="Annotation CampaignToTask" maxCard="1">
+      <db:JoinColumn attribute="ent3#att3" name="oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel7" name="Task_Worker" sourceEntity="ent4" targetEntity="ent1" gr:bendpoints="79,68,739,-537;298,65,958,-530;298,591,958,-4">
-    <RelationshipRole1 id="rel7#role13" name="TaskToWorker" maxCard="N"/>
-    <RelationshipRole2 id="rel7#role14" name="WorkerToTask" maxCard="N"/>
+  <Relationship id="rel7" name="Task_Worker" sourceEntity="ent4" targetEntity="ent1" gr:bendpoints="79,68,739,-537;298,65,958,-530;298,591,958,-4" db:database="db1" db:table="task_worker">
+    <RelationshipRole1 id="rel7#role13" name="TaskToWorker" maxCard="N">
+      <db:JoinColumn attribute="ent4#att7" name="task_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel7#role14" name="WorkerToTask" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="worker_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="1145" gr:y="225" id="ent7" name="Skill" duration="persistent" attributeOrder="ent7#att27 ent7#att28 ent7#att29">
-    <Attribute id="ent7#att27" key="true" name="oid" type="integer"/>
-    <Attribute id="ent7#att28" name="name" type="string"/>
-    <Attribute id="ent7#att29" name="description" type="string"/>
+  <Entity gr:x="1145" gr:y="225" id="ent7" name="Skill" duration="persistent" attributeOrder="ent7#att27 ent7#att28 ent7#att29" db:database="db1" db:table="skill">
+    <Attribute id="ent7#att27" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent7#att28" name="name" type="string" db:column="name"/>
+    <Attribute id="ent7#att29" name="description" type="string" db:column="description"/>
   </Entity>
-  <Relationship id="rel8" name="Worker_Skill" sourceEntity="ent1" targetEntity="ent7" gr:bendpoints="105,50,-1015,390;1120,50,0,390">
-    <RelationshipRole1 id="rel8#role15" name="WorkerToSkill" maxCard="N"/>
-    <RelationshipRole2 id="rel8#role16" name="SkillToWorker" maxCard="N"/>
+  <Relationship id="rel8" name="Worker_Skill" sourceEntity="ent1" targetEntity="ent7" gr:bendpoints="105,50,-1015,390;1120,50,0,390" db:database="db1" db:table="worker_skill">
+    <RelationshipRole1 id="rel8#role15" name="WorkerToSkill" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="worker_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel8#role16" name="SkillToWorker" maxCard="N">
+      <db:JoinColumn attribute="ent7#att27" name="skill_oid"/>
+    </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel10" name="Task_Skill" sourceEntity="ent4" targetEntity="ent7" gr:bendpoints="460,0,0,-255">
-    <RelationshipRole1 id="rel10#role19" name="TaskToSkill" maxCard="N"/>
-    <RelationshipRole2 id="rel10#role20" name="SkillToTask" maxCard="N"/>
+  <Relationship id="rel10" name="Task_Skill" sourceEntity="ent4" targetEntity="ent7" gr:bendpoints="460,0,0,-255" db:database="db1" db:table="task_skill">
+    <RelationshipRole1 id="rel10#role19" name="TaskToSkill" maxCard="N">
+      <db:JoinColumn attribute="ent4#att7" name="task_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel10#role20" name="SkillToTask" maxCard="N">
+      <db:JoinColumn attribute="ent7#att27" name="skill_oid"/>
+    </RelationshipRole2>
   </Relationship>
 </DataModel>
