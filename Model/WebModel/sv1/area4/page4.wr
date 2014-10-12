@@ -7,12 +7,15 @@
     </DataUnit>
     <PowerIndexUnit gr:x="45" gr:y="5" id="sv1#area4#page4#pwu1" name="CampaingList" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att4 ent3#att6" linkOrder="sv1#area4#page4#pwu1#ln3 sv1#area4#page4#pwu1#ln11">
       <Link id="sv1#area4#page4#pwu1#ln3" name="Flow3" to="sv1#area4#page4#dau2" automaticCoupling="true" type="normal" validate="true"/>
-      <Link id="sv1#area4#page4#pwu1#ln11" name="Flow11" to="sv1#area4#page4#seu4" type="normal" validate="true">
+      <Link id="sv1#area4#page4#pwu1#ln11" name="Flow11" to="sv1#area4#page4#seu4" type="normal" validate="true" gr:bendpoints="164,24,4,-91">
         <LinkParameter id="sv1#area4#page4#pwu1#ln11#par9" name="oid_PASSING" source="data[].ent3#att3" passing="true"/>
+        <LinkParameter id="sv1#area4#page4#pwu1#ln11#par6" name="oid_ItemInAnnotation [oid]" source="data[].ent3#att3" target="sv1#area4#page4#seu4#su12#rcond4.ent6#att10"/>
       </Link>
+      <SortAttribute attribute="ent3#att3" order="ascending"/>
     </PowerIndexUnit>
-    <PowerIndexUnit gr:x="360" gr:y="110" id="sv1#area4#page4#pwu4" name="ItemsInCampaign" sortable="true" checkable="false" useCountQuery="false" entity="ent5" linkOrder="sv1#area4#page4#pwu4#ln13">
+    <PowerIndexUnit gr:x="360" gr:y="110" id="sv1#area4#page4#pwu4" name="ItemsInCampaign" sortable="true" checkable="false" useCountQuery="false" entity="ent5" linkOrder="sv1#area4#page4#pwu4#ln13" displayAttributes="ent5#att8 ent5#att23 ent5#att24 ent5#att9">
       <Link id="sv1#area4#page4#pwu4#ln13" name="Flow13" to="sv1#area4#page4#dau5" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="ent5#att8" order="ascending"/>
     </PowerIndexUnit>
     <SelectorUnit gr:x="0" gr:y="115" id="sv1#area4#page4#seu3" name="Campaigns" entity="ent3">
       <Link id="sv1#area4#page4#seu3#ln9" name="Flow9" to="sv1#area4#page4#pwu1" automaticCoupling="true" type="transport" validate="true"/>
@@ -25,6 +28,8 @@
       <Selector id="sv1#area4#page4#seu4#su12" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#area4#page4#seu4#su12#rcond4" name="ItemInAnnotation" predicate="in" implied="false" role="rel2#role3"/>
       </Selector>
+      <Link id="sv1#area4#page4#seu4#ln14" name="Add Item" to="sv1#area3#page5#enu6" type="normal" validate="true" automaticCoupling="true"/>
+      <Link id="sv1#area4#page4#seu4#ln15" name="Create Item" to="sv1#area3#page5#enu3" automaticCoupling="true" type="normal" validate="true"/>
     </SelectorUnit>
     <DataUnit gr:x="530" gr:y="105" id="sv1#area4#page4#dau5" name="ItemDetails" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9">
       <Selector id="sv1#area4#page4#dau5#su5" defaultPolicy="fill" booleanOperator="and">
@@ -77,7 +82,12 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv1#area4#page4#pwu4">
+          <layout:Attribute attribute="ent5#att8"/>
+          <layout:Attribute attribute="ent5#att23"/>
+          <layout:Attribute attribute="ent5#att24"/>
+          <layout:Attribute attribute="ent5#att9"/>
           <layout:Link link="sv1#area4#page4#pwu4#ln13"/>
+          <layout:Link link="sv1#area4#page4#pwu4ent5#att8"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
