@@ -1,9 +1,0 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-35" gr:y="215" id="sv1#area4" name="Current campaigns" landmark="true" defaultPage="sv1#area4#page4" protected="true">
-  <OperationUnits>
-    <GetUnit gr:x="40" gr:y="270" id="sv1#area4#gtu3" name="CurrentUser" contextParameters="UserCtxParam" linkOrder="sv1#area4#gtu3#ln10">
-      <Link id="sv1#area4#gtu3#ln10" name="CurrentUserFlow" to="sv1#area4#page4#seu3" type="transport" validate="true">
-        <LinkParameter id="sv1#area4#gtu3#ln10#par1" name="UserCtxParam.oid_RequestorInCampaign [oid]" source="sv1#area4#gtu3.UserCtxParam" target="sv1#area4#page4#seu3#su11#rcond3.userOID"/>
-      </Link>
-    </GetUnit>
-  </OperationUnits>
-</Area>

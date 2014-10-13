@@ -1,0 +1,13 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3#area9" name="Login Area" defaultPage="sv3#area9#page9" landmark="false" protected="false" gr:x="35" gr:y="-5">
+  <OperationUnits>
+    <LoginUnit id="sv3#area9#lgu2" name="Login" gr:x="85" gr:y="0"/>
+    <CreateUnit id="sv3#area9#cru1" name="Add New User" gr:x="80" gr:y="375" entity="User">
+      <OKLink id="sv3#area9#cru1#oln4" name="OKLink2" to="sv3#area9#page9#mssu3">
+        <LinkParameter id="sv3#area9#cru1#oln4#par14" name="Registration complete! Use your data to login._Shown Messages" target="sv3#area9#page9#mssu3.shownMessages" sourceValue="Registration complete! Use your data to login."/>
+      </OKLink>
+      <KOLink id="sv3#area9#cru1#kln3" name="KOLink2" to="sv3#area9#page9#mssu3" gr:bendpoints="-89,6,76,21">
+        <LinkParameter id="sv3#area9#cru1#kln3#par15" name="Registration error. Please register once again._Shown Messages" target="sv3#area9#page9#mssu3.shownMessages" sourceValue="Registration error. Please register once again."/>
+      </KOLink>
+    </CreateUnit>
+  </OperationUnits>
+</Area>

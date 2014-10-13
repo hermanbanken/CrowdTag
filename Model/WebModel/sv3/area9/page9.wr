@@ -1,0 +1,101 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area9#page9" name="Login Page" gr:x="0" gr:y="90">
+  <ContentUnits>
+    <EntryUnit id="sv3#area9#page9#enu7" name="Login Form" linkOrder="sv3#area9#page9#enu7#ln16" gr:x="0" gr:y="0" entity="User">
+      <Field id="sv3#area9#page9#enu7#fld22" name="userName" type="string" modifiable="true" attribute="userName"/>
+      <Field id="sv3#area9#page9#enu7#fld23" name="password" type="password" modifiable="true" attribute="password"/>
+      <Link id="sv3#area9#page9#enu7#ln16" name="Login" to="sv3#area9#lgu2" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page9#enu7#ln16#par16" name="userName_Username" source="sv3#area9#page9#enu7#fld22" target="sv3#area9#lgu2.username"/>
+        <LinkParameter id="sv3#area9#page9#enu7#ln16#par17" name="password_Password" source="sv3#area9#page9#enu7#fld23" target="sv3#area9#lgu2.password"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit id="sv3#area9#page9#enu8" name="Register User" linkOrder="sv3#area9#page9#enu8#ln17" gr:x="100" gr:y="105" entity="User">
+      <Field id="sv3#area9#page9#enu8#fld24" name="userName" type="string" modifiable="true" attribute="userName">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area9#page9#enu8#fld24#mnd1" name="Mandatory Field" errorMessage="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <Field id="sv3#area9#page9#enu8#fld25" name="password" type="password" modifiable="true" attribute="password">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area9#page9#enu8#fld25#mnd2" name="Mandatory Field" errorMessage="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <Field id="sv3#area9#page9#enu8#fld26" name="email" type="string" modifiable="true" attribute="email">
+        <VRules>
+          <MandatoryValidationRule id="sv3#area9#page9#enu8#fld26#mnd3" name="Mandatory Field" errorMessage="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <Link id="sv3#area9#page9#enu8#ln17" name="Register" to="sv3#area9#cru1" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page9#enu8#ln17#par18" name="email_email" source="sv3#area9#page9#enu8#fld26" target="sv3#area9#cru1.email"/>
+        <LinkParameter id="sv3#area9#page9#enu8#ln17#par19" name="password_password" source="sv3#area9#page9#enu8#fld25" target="sv3#area9#cru1.password"/>
+        <LinkParameter id="sv3#area9#page9#enu8#ln17#par20" name="userName_userName" source="sv3#area9#page9#enu8#fld24" target="sv3#area9#cru1.userName"/>
+        <LinkParameter id="sv3#area9#page9#enu8#ln17#par21" name="1_Group.oid(defaultGroup)" target="sv3#area9#cru1.User2DefaultGroup.groupOID" sourceValue="1"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="sv3#area9#page9#mssu3" name="Status" gr:x="10" gr:y="120"/>
+    <PowerIndexUnit id="sv3#area9#page9#pwu5" name="Log In As" linkOrder="sv3#area9#page9#pwu5#ln18" gr:x="110" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName User2DefaultGroup.groupName">
+      <Link id="sv3#area9#page9#pwu5#ln18" name="Log In As" to="sv3#area9#lgu2" type="normal" validate="true">
+        <LinkParameter id="sv3#area9#page9#pwu5#ln18#par22" name="userName_Username" source="data[].userName" target="sv3#area9#lgu2.username"/>
+        <LinkParameter id="sv3#area9#page9#pwu5#ln18#par23" name="password_Password" source="data[].password" target="sv3#area9#lgu2.password"/>
+      </Link>
+      <SortAttribute attribute="userName" order="ascending"/>
+      <SortAttribute attribute="User2DefaultGroup.groupName" order="ascending"/>
+      <DefaultSortAttribute attribute="userName" order="ascending"/>
+      <DefaultSortAttribute attribute="User2DefaultGroup.groupName" order="ascending"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#area9#page9#enu7">
+          <layout:Field label="User Name" field="sv3#area9#page9#enu7#fld22"/>
+          <layout:Field label="Password" field="sv3#area9#page9#enu7#fld23"/>
+          <layout:Link link="sv3#area9#page9#enu7#ln16"/>
+          <layout:LayoutParameter name="redisplay-password" value="true" type="field"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#area9#page9#pwu5">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="User2DefaultGroup.groupName"/>
+          <layout:Link link="sv3#area9#page9#pwu5#ln18"/>
+          <layout:Link link="sv3#area9#page9#pwu5userName"/>
+          <layout:Link link="sv3#area9#page9#pwu5User2DefaultGroup$groupName"/>
+          <layout:LayoutParameter name="link-position" value="on_row" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#area9#page9#enu8">
+          <layout:Link link="sv3#area9#page9#enu8#ln17"/>
+          <layout:Field label="User Name" field="sv3#area9#page9#enu8#fld24"/>
+          <layout:Field label="Password" field="sv3#area9#page9#enu8#fld25"/>
+          <layout:Field label="Email" field="sv3#area9#page9#enu8#fld26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#area9#page9#mssu3"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

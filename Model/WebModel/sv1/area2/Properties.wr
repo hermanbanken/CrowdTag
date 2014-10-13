@@ -1,3 +1,17 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="10" gr:y="15" id="sv1#area2" name="Personal information" landmark="true" defaultPage="sv1#area2#page3" protected="true">
-  <OperationUnits/>
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-55" gr:y="-15" id="sv1#area2" name="Requester" landmark="true" defaultPage="sv1#area2#page11" protected="false" landmarks="sv1#area2#page11 sv1#area2#page3 sv1#area2#page14">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="80" gr:y="675" id="sv1#area2#miu7" action="true" moduleId="mov1#opm4"/>
+    <ParameterCollectorUnit gr:x="305" gr:y="130" id="sv1#area2#pcu1" name="Parameter Collector1">
+      <Link id="sv1#area2#pcu1#ln55" name="Flow55" to="sv1#area2#page11#pwu7" type="transport" validate="true">
+        <LinkParameter id="sv1#area2#pcu1#ln55#par84" name="Collector Parameter1_RoleCondition11 [cid]" source="sv1#area2#pcu1#pcp1" target="sv1#area2#page11#pwu7#su21#rcond11.ent3#att3"/>
+      </Link>
+      <Link id="sv1#area2#pcu1#ln56" name="Flow56" to="sv1#area2#page11#pwu13" type="transport" validate="true" gr:bendpoints="42,222,-93,-133">
+        <LinkParameter id="sv1#area2#pcu1#ln56#par85" name="Collector Parameter1_CampaignItems [cid]" source="sv1#area2#pcu1#pcp1" target="sv1#area2#page11#pwu13#su31#rcond17.ent3#att3"/>
+      </Link>
+      <CollectorParameter id="sv1#area2#pcu1#pcp1" name="cid"/>
+      <Link id="sv1#area2#pcu1#ln60" name="Flow60" to="sv1#area2#page11#seu12" type="transport" validate="true">
+        <LinkParameter id="sv1#area2#pcu1#ln60#par86" name="Collector Parameter1_Campaign [cid]" source="sv1#area2#pcu1#pcp1" target="sv1#area2#page11#seu12#su29#rcond15.ent3#att3"/>
+      </Link>
+    </ParameterCollectorUnit>
+  </OperationUnits>
 </Area>

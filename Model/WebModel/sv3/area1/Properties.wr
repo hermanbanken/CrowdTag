@@ -1,8 +1,0 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="205" gr:y="170" id="sv3#area1" name="Login" landmark="true" defaultPage="sv3#area1#page2" landmarks="sv3#area1#miu3">
-  <OperationUnits>
-    <ModuleInstanceUnit gr:x="190" gr:y="30" id="sv3#area1#miu2" action="true" moduleId="mov1#opm1">
-      <KOLink id="sv3#area1#miu2#kln3" name="UnsuccesfulLogin" to="sv3#area1#page2#mssu1" automaticCoupling="true"/>
-    </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="190" gr:y="125" id="sv3#area1#miu3" action="true" landmark="true" moduleId="mov1#opm2"/>
-  </OperationUnits>
-</Area>

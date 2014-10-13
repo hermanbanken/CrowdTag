@@ -1,0 +1,34 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="540" gr:y="0" id="sv1#area2#page14" name="Inbox" landmark="true">
+  <ContentUnits>
+    <HierarchicalIndexUnit gr:x="0" gr:y="0" id="sv1#area2#page14#hinu2" name="AnnotationsForItemForTask" sortable="false" entity="ent4" displayAttributes="ent4#att13">
+      <HierarchicalIndexLevel id="sv1#area2#page14#hinu2#hiulvl1" name="Item" entity="ent5" role="rel4#role8" displayAttributes="ent5#att23 ent5#att24 ent5#att9">
+        <HierarchicalIndexLevel id="sv1#area2#page14#hinu2#hiulvl1#hiulvl3" name="Annotation" entity="ent6" role="rel2#role4" displayAttributes="ent6#att11 ent6#att12"/>
+      </HierarchicalIndexLevel>
+    </HierarchicalIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area2#page14#hinu2">
+          <layout:Attribute attribute="ent4#att13"/>
+          <layout:Attribute attribute="ent5#att23"/>
+          <layout:Attribute attribute="ent5#att24"/>
+          <layout:Attribute attribute="ent5#att9"/>
+          <layout:Attribute attribute="ent6#att11"/>
+          <layout:Attribute attribute="ent6#att12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="440" gr:y="0" id="sv2#area5#page13" name="Skills">
+  <ContentUnits>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area5#page13#seu8" name="Skills" entity="ent7">
+      <Link id="sv2#area5#page13#seu8#ln31" name="Flow7" to="sv2#area5#page13#mciu2" automaticCoupling="true" type="transport" validate="true"/>
+      <Selector id="sv2#area5#page13#seu8#su16" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area5#page13#seu8#su16#rcond7" name="WorkerInSkill" predicate="in" implied="false" role="rel8#role15"/>
+      </Selector>
+    </SelectorUnit>
+    <MultiChoiceIndexUnit id="sv2#area5#page13#mciu2" entity="ent7" displayAttributes="ent7#att28 ent7#att29" gr:x="20" gr:y="135" name="Skills"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area5#page13#mciu2">
+          <layout:Attribute attribute="ent7#att28"/>
+          <layout:Attribute attribute="ent7#att29"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

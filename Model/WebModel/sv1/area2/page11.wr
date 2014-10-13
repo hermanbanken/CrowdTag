@@ -1,0 +1,281 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="125" id="sv1#area2#page11" name="Campaigns" landmark="true">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="175" gr:y="70" id="sv1#area2#page11#pwu6" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#area2#page11#pwu6#ln30 sv1#area2#page11#pwu6#ln41" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6">
+      <Link id="sv1#area2#page11#pwu6#ln30" name="Edit" to="sv1#area2#page11#enu11" type="automatic" validate="true">
+        <LinkParameter id="sv1#area2#page11#pwu6#ln30#par51" name="budget_budget" source="data[].ent3#att5" target="sv1#area2#page11#enu11#fld48_slot"/>
+        <LinkParameter id="sv1#area2#page11#pwu6#ln30#par52" name="isOpen_isOpen" source="data[].ent3#att6" target="sv1#area2#page11#enu11#fld49_slot"/>
+        <LinkParameter id="sv1#area2#page11#pwu6#ln30#par53" name="cid_Key Condition [cid]" source="data[].ent3#att3" target="sv1#area2#page11#enu11.ent3#att3"/>
+        <LinkParameter id="sv1#area2#page11#pwu6#ln30#par54" name="name_name" source="data[].ent3#att4" target="sv1#area2#page11#enu11#fld47_slot"/>
+      </Link>
+      <Selector id="sv1#area2#page11#pwu6#su20" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area2#page11#pwu6#su20#rcond10" name="RequesterOfCampaigns" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+      <Link id="sv1#area2#page11#pwu6#ln41" name="View" to="sv1#area2#pcu1" type="automatic" validate="true">
+        <LinkParameter id="sv1#area2#page11#pwu6#ln41#par83" name="cid_Collector Parameter1" source="data[].ent3#att3" target="sv1#area2#pcu1#pcp1"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit gr:x="195" gr:y="250" id="sv1#area2#page11#enu11" name="CampaignForm" entity="ent3" linkOrder="sv1#area2#page11#enu11#ln53">
+      <Field id="sv1#area2#page11#enu11#fld47" name="name" type="string" modifiable="true" preloaded="true" attribute="ent3#att4"/>
+      <Field id="sv1#area2#page11#enu11#fld48" name="budget" type="integer" modifiable="true" preloaded="true" attribute="ent3#att5"/>
+      <Field id="sv1#area2#page11#enu11#fld49" name="isOpen" type="boolean" modifiable="true" preloaded="true" attribute="ent3#att6"/>
+      <Link id="sv1#area2#page11#enu11#ln53" name="Save Campaign" to="sv1#area2#miu7" type="normal" validate="true" gr:bendpoints="-90,76,0,-184">
+        <LinkParameter id="sv1#area2#page11#enu11#ln53#par79" name="Key [cid]_campaign key" source="key.ent3#att3" target="sv1#area2#miu7.mov1#opm4#icu4#icp5"/>
+        <LinkParameter id="sv1#area2#page11#enu11#ln53#par80" name="Campaign Object_campaign object" source="entityBean" target="sv1#area2#miu7.mov1#opm4#icu4#icp6"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="385" gr:y="70" id="sv1#area2#page11#pwu7" name="TasksInCampaign" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21" linkOrder="sv1#area2#page11#pwu7#ln47 sv1#area2#page11#pwu7#ln58">
+      <Selector id="sv1#area2#page11#pwu7#su21" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area2#page11#pwu7#su21#rcond11" name="RoleCondition11" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+      <Link id="sv1#area2#page11#pwu7#ln47" name="Edit" to="sv1#area2#page11#enu12" type="automatic" validate="true">
+        <LinkParameter id="sv1#area2#page11#pwu7#ln47#par59" name="description_description" source="data[].ent4#att17" target="sv1#area2#page11#enu12#fld43_slot"/>
+        <LinkParameter id="sv1#area2#page11#pwu7#ln47#par60" name="expTime_expTime" source="data[].ent4#att21" target="sv1#area2#page11#enu12#fld46_slot"/>
+        <LinkParameter id="sv1#area2#page11#pwu7#ln47#par61" name="tid_Key Condition [tid]" source="data[].ent4#att7" target="sv1#area2#page11#enu12.ent4#att7"/>
+        <LinkParameter id="sv1#area2#page11#pwu7#ln47#par62" name="maxExecTime_maxExecTime" source="data[].ent4#att20" target="sv1#area2#page11#enu12#fld45_slot"/>
+        <LinkParameter id="sv1#area2#page11#pwu7#ln47#par63" name="reward_reward" source="data[].ent4#att19" target="sv1#area2#page11#enu12#fld44_slot"/>
+        <LinkParameter id="sv1#area2#page11#pwu7#ln47#par64" name="Title_Title" source="data[].ent4#att13" target="sv1#area2#page11#enu12#fld42_slot"/>
+      </Link>
+      <Link id="sv1#area2#page11#pwu7#ln58" name="Show Items" to="sv1#area2#page11#pwu13" automaticCoupling="true" type="automatic" validate="true" gr:bendpoints="-27,123,-7,-142"/>
+      <Link id="sv1#area2#page11#pwu7#ln62" name="Flow62" to="sv1#area2#page11#seu13" automaticCoupling="true" type="transport" validate="true"/>
+    </PowerIndexUnit>
+    <EntryUnit gr:x="640" gr:y="115" id="sv1#area2#page11#enu12" name="TaskForm" entity="ent4">
+      <Field id="sv1#area2#page11#enu12#fld42" name="Title" type="string" modifiable="true" preloaded="true" attribute="ent4#att13"/>
+      <Field id="sv1#area2#page11#enu12#fld43" name="description" type="string" modifiable="true" preloaded="true" attribute="ent4#att17"/>
+      <Field id="sv1#area2#page11#enu12#fld44" name="reward" type="float" modifiable="true" preloaded="true" attribute="ent4#att19"/>
+      <Field id="sv1#area2#page11#enu12#fld45" name="maxExecTime" type="time" modifiable="true" preloaded="true" attribute="ent4#att20"/>
+      <Field id="sv1#area2#page11#enu12#fld46" name="expTime" type="timestamp" modifiable="true" preloaded="true" attribute="ent4#att21"/>
+      <MultiSelectionField id="sv1#area2#page11#enu12#msfld3" name="TaskToSkill" type="string" role="rel10#role19"/>
+      <MultiSelectionField id="sv1#area2#page11#enu12#msfld6" name="Items" type="string" role="rel4#role8"/>
+    </EntryUnit>
+    <EntryUnit gr:x="625" gr:y="330" id="sv1#area2#page11#enu13" name="ItemForm" entity="ent5">
+      <Field id="sv1#area2#page11#enu13#fld54" name="title" type="string" modifiable="true" preloaded="true" attribute="ent5#att23"/>
+      <Field id="sv1#area2#page11#enu13#fld55" name="caption" type="string" modifiable="true" preloaded="true" attribute="ent5#att24"/>
+      <Field id="sv1#area2#page11#enu13#fld56" name="url" type="url" modifiable="true" preloaded="true" attribute="ent5#att9"/>
+    </EntryUnit>
+    <MultiChoiceIndexUnit gr:x="190" gr:y="375" id="sv1#area2#page11#mciu3" name="WorkersForTask" entity="ent1" displayAttributes="userName password email User#att25 User#att26 ent1#att14 ent1#att15 ent1#att16 ent1#att18 ent1#att30">
+      <SortAttribute attribute="userOID" order="ascending"/>
+    </MultiChoiceIndexUnit>
+    <GetUnit gr:x="5" gr:y="280" id="sv1#area2#page11#gtu6" name="User" contextParameters="UserCtxParam">
+      <Link id="sv1#area2#page11#gtu6#ln35" name="Flow35" to="sv1#area2#page11#seu9" type="transport" validate="true">
+        <LinkParameter id="sv1#area2#page11#gtu6#ln35#par42" name="UserCtxParam.oid_userid" source="sv1#area2#page11#gtu6.UserCtxParam" target="sv1#area2#page11#seu9#su17#acond3"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="0" gr:y="70" id="sv1#area2#page11#seu9" name="UserToRequester" entity="ent2" distinctAttributes="ent2#att22">
+      <Selector id="sv1#area2#page11#seu9#su17" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#area2#page11#seu9#su17#acond3" name="userid" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
+      </Selector>
+      <Link id="sv1#area2#page11#seu9#ln38" name="Flow38" to="sv1#area2#page11#pwu6" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv1#area2#page11#seu9#ln40" name="RequesterPrefill" to="sv1#area2#miu7" type="transport" validate="true">
+        <LinkParameter id="sv1#area2#page11#seu9#ln40#par81" name="rid_requester key" source="ent2#att22Array" target="sv1#area2#miu7.mov1#opm4#icu4#icp7"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="795" gr:y="80" id="sv1#area2#page11#seu10" name="Skills" entity="ent7">
+      <Link id="sv1#area2#page11#seu10#ln48" name="Flow48" to="sv1#area2#page11#enu12" type="transport" validate="true">
+        <LinkParameter id="sv1#area2#page11#seu10#ln48#par65" name="sid_TaskToSkill - Preselection" source="ent7#att27Array" target="sv1#area2#page11#enu12#msfld3_presel"/>
+        <LinkParameter id="sv1#area2#page11#seu10#ln48#par66" name="name_TaskToSkill [label]" source="ent7#att28Array" target="sv1#area2#page11#enu12#msfld3_label"/>
+        <LinkParameter id="sv1#area2#page11#seu10#ln48#par67" name="sid_TaskToSkill [output]" source="ent7#att27Array" target="sv1#area2#page11#enu12#msfld3_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="575" gr:y="0" id="sv1#area2#page11#seu12" name="ItemsOfCampaign" entity="ent5">
+      <Selector id="sv1#area2#page11#seu12#su29" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area2#page11#seu12#su29#rcond15" name="Campaign" predicate="in" implied="false" role="rel5#role10"/>
+      </Selector>
+      <Link id="sv1#area2#page11#seu12#ln61" name="preselection" to="sv1#area2#page11#enu12" type="transport" validate="true">
+        <LinkParameter id="sv1#area2#page11#seu12#ln61#par90" name="title_Items [label]" source="ent5#att23Array" target="sv1#area2#page11#enu12#msfld6_label"/>
+        <LinkParameter id="sv1#area2#page11#seu12#ln61#par91" name="iid_Items [output]" source="ent5#att8Array" target="sv1#area2#page11#enu12#msfld6_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="625" gr:y="225" id="sv1#area2#page11#seu13" name="ItemsOfTask" entity="ent5">
+      <Selector id="sv1#area2#page11#seu13#su30" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area2#page11#seu13#su30#rcond16" name="RoleCondition16" predicate="in" implied="false" role="rel4#role8"/>
+      </Selector>
+      <Link id="sv1#area2#page11#seu13#ln63" name="Flow63" to="sv1#area2#page11#enu12" type="transport" validate="true">
+        <LinkParameter id="sv1#area2#page11#seu13#ln63#par92" name="iid_Items - Preselection" source="ent5#att8Array" target="sv1#area2#page11#enu12#msfld6_presel"/>
+      </Link>
+    </SelectorUnit>
+    <PowerIndexUnit id="sv1#area2#page11#pwu13" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9" sortable="true" checkable="false" useCountQuery="false" gr:x="365" gr:y="330" name="ItemsInCampaign" linkOrder="sv1#area2#page11#pwu13#ln65">
+      <Selector id="sv1#area2#page11#pwu13#su31" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area2#page11#pwu13#su31#rcond17" role="rel5#role10" predicate="in" implied="false" name="CampaignItems"/>
+      </Selector>
+      <PreSelector id="sv1#area2#page11#pwu13#su32" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#area2#page11#pwu13#su32#rcond18" role="rel4#role8" predicate="in" implied="false" name="Preloaded Selected Items"/>
+      </PreSelector>
+      <Link id="sv1#area2#page11#pwu13#ln65" name="Edit" to="sv1#area2#page11#enu13" type="automatic" automaticCoupling="true" validate="true"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area2#page11#pwu6">
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att5"/>
+          <layout:Attribute attribute="ent3#att6"/>
+          <layout:Link link="sv1#area2#page11#pwu6#ln30"/>
+          <layout:Link link="sv1#area2#page11#pwu6#ln41"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area2#page11#enu11">
+          <layout:Field field="sv1#area2#page11#enu11#fld47"/>
+          <layout:Field field="sv1#area2#page11#enu11#fld48"/>
+          <layout:Field field="sv1#area2#page11#enu11#fld49"/>
+          <layout:Link link="sv1#area2#page11#enu11#ln53"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area2#page11#pwu7">
+          <layout:Attribute attribute="ent4#att13"/>
+          <layout:Attribute attribute="ent4#att17"/>
+          <layout:Attribute attribute="ent4#att19"/>
+          <layout:Attribute attribute="ent4#att20"/>
+          <layout:Attribute attribute="ent4#att21"/>
+          <layout:Link link="sv1#area2#page11#pwu7#ln47"/>
+          <layout:Link link="sv1#area2#page11#pwu7#ln58"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area2#page11#enu12">
+          <layout:Field field="sv1#area2#page11#enu12#fld42"/>
+          <layout:Field field="sv1#area2#page11#enu12#fld43"/>
+          <layout:Field field="sv1#area2#page11#enu12#fld44"/>
+          <layout:Field field="sv1#area2#page11#enu12#fld45"/>
+          <layout:Field field="sv1#area2#page11#enu12#fld46"/>
+          <layout:Field field="sv1#area2#page11#enu12#msfld3"/>
+          <layout:Field field="sv1#area2#page11#enu12#msfld6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area2#page11#pwu13">
+          <layout:Attribute attribute="ent5#att23"/>
+          <layout:Attribute attribute="ent5#att24"/>
+          <layout:Attribute attribute="ent5#att9"/>
+          <layout:Link link="sv1#area2#page11#pwu13#ln65"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv1#area2#page11#enu13">
+          <layout:Field field="sv1#area2#page11#enu13#fld54"/>
+          <layout:Field field="sv1#area2#page11#enu13#fld55"/>
+          <layout:Field field="sv1#area2#page11#enu13#fld56"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area2#page11#mciu3">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att25"/>
+          <layout:Attribute attribute="User#att26"/>
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Attribute attribute="ent1#att15"/>
+          <layout:Attribute attribute="ent1#att16"/>
+          <layout:Attribute attribute="ent1#att18"/>
+          <layout:Attribute attribute="ent1#att30"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
