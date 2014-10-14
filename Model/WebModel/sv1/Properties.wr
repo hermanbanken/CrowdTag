@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="Requester" protected="true" customURLName="requester" homePage="sv1#page16" layout:style="BootstrapStyle" landmarks="sv1#page15 sv1#page16 sv1#page17" localized="false">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="Requester" protected="true" customURLName="requester" homePage="sv1#page16" layout:style="BootstrapStyle" landmarks="sv1#page15 sv1#page16 sv1#page17 sv1#miu1" localized="true">
   <OperationUnits>
     <ModuleInstanceUnit gr:x="965" gr:y="640" id="sv1#miu3" action="true" moduleId="mov2#opm12">
       <OKLink id="sv1#miu3#oln20" name="OKFlow20" to="sv1#page24#enu33" gr:bendpoints="-292,-49,73,301">
@@ -21,5 +21,14 @@
     <ModuleInstanceUnit gr:x="760" gr:y="5" id="sv1#miu8" action="true" moduleId="mov2#opm11">
       <OKLink id="sv1#miu8#oln27" name="OKFlow27" to="sv1#page17#hinu3" automaticCoupling="true" gr:bendpoints="-142,4,128,24"/>
     </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="385" gr:y="125" id="sv1#miu1" action="true" moduleId="mov1#opm2" landmark="true"/>
+    <SetUnit gr:x="1330" gr:y="-80" id="sv1#stu1" name="language" contextParameters="LanguageISOCtxParam">
+      <Property id="sv1#stu1#prop1" name="Property 1"/>
+    </SetUnit>
+    <GetUnit gr:x="1175" gr:y="-80" id="sv1#gtu3" name="language" linkOrder="sv1#gtu3#ln5">
+      <Link id="sv1#gtu3#ln5" name="Flow5" to="sv1#stu1" type="transport" validate="true">
+        <LinkParameter id="sv1#gtu3#ln5#par13" name="en_LanguageISOCtxParam" sourceValue="en" target="sv1#stu1.LanguageISOCtxParam"/>
+      </Link>
+    </GetUnit>
   </OperationUnits>
 </SiteView>

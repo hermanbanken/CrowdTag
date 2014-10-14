@@ -12,4 +12,13 @@
   <ContextParameter id="GroupCtxParam" name="GroupCtxParam" entity="Group" type="entity"/>
   <ContextParameter id="LanguageISOCtxParam" name="LanguageISOCtxParam" type="string"/>
   <ContextParameter id="CountryISOCtxParam" name="CountryISOCtxParam" type="string"/>
+  <Locale id="lcl2" language="nl">
+    <PatternConfiguration type="timestamp" pattern="d-M-yy H:mm:ss"/>
+    <PatternConfiguration type="time" pattern="H:mm:ss"/>
+    <PatternConfiguration type="integer" minInteger="1" useThousandSeparator="true"/>
+    <PatternConfiguration type="boolean" pattern="yes|no"/>
+    <PatternConfiguration type="date" pattern="d-M-yy"/>
+    <PatternConfiguration type="float" maxDecimal="3" minDecimal="0" minInteger="1" useThousandSeparator="true"/>
+    <PatternConfiguration type="decimal" maxDecimal="3" minDecimal="0" minInteger="1" useThousandSeparator="true"/>
+  </Locale>
 </WebModel>
