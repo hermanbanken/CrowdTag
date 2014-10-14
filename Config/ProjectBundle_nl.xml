@@ -2,6 +2,7 @@
 
 <Bundle>
   <Entry key="Accept">Accepteer</Entry>
+  <Entry key="Add as new">Sla op als nieuw</Entry>
   <Entry key="Add New">Voeg nieuwe toe</Entry>
   <Entry key="AddAnnotation">Voeg annotatie toe</Entry>
   <Entry key="Annotation">Annotatie</Entry>

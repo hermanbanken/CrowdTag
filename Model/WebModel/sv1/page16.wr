@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-45" gr:y="90" id="sv1#page16" name="Campaigns" landmark="true" linkOrder="sv1#page16#ln21" customURLName="campaigns" layout:layoutManager="grid">
   <ContentUnits>
-    <PowerIndexUnit gr:x="175" gr:y="145" id="sv1#page16#pwu14" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#page16#pwu14#ln68" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6">
+    <PowerIndexUnit gr:x="175" gr:y="145" id="sv1#page16#pwu14" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#page16#pwu14#ln68" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6" blockFactor="10">
       <Link id="sv1#page16#pwu14#ln68" name="View" to="sv1#page24#enu33" type="normal" validate="true">
         <LinkParameter id="sv1#page16#pwu14#ln68#par142" name="cid_PASSING" source="data[].ent3#att3" passing="true"/>
         <LinkParameter id="sv1#page16#pwu14#ln68#par143" name="cid (block)_PASSING" source="ent3#att3Array" passing="true"/>
@@ -37,6 +37,11 @@
           <layout:Attribute attribute="ent3#att5"/>
           <layout:Attribute attribute="ent3#att6"/>
           <layout:Link link="sv1#page16#pwu14#ln68"/>
+          <layout:Link link="sv1#page16#pwu14First"/>
+          <layout:Link link="sv1#page16#pwu14Previous"/>
+          <layout:Link link="sv1#page16#pwu14Block"/>
+          <layout:Link link="sv1#page16#pwu14Next"/>
+          <layout:Link link="sv1#page16#pwu14Last"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
