@@ -1,58 +1,16 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-45" gr:y="90" id="sv1#page16" name="Campaigns" landmark="true">
   <ContentUnits>
-    <PowerIndexUnit gr:x="175" gr:y="135" id="sv1#page16#pwu14" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#page16#pwu14#ln68 sv1#page16#pwu14#ln69" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6">
-      <Link id="sv1#page16#pwu14#ln68" name="Edit" to="sv1#page16#enu17" type="automatic" validate="true">
-        <LinkParameter id="sv1#page16#pwu14#ln68#par101" name="budget_budget" source="data[].ent3#att5" target="sv1#page16#enu17#fld63_slot"/>
-        <LinkParameter id="sv1#page16#pwu14#ln68#par102" name="isOpen_isOpen" source="data[].ent3#att6" target="sv1#page16#enu17#fld64_slot"/>
-        <LinkParameter id="sv1#page16#pwu14#ln68#par103" name="cid_Key Condition [cid]" source="data[].ent3#att3" target="sv1#page16#enu17.ent3#att3"/>
-        <LinkParameter id="sv1#page16#pwu14#ln68#par104" name="name_name" source="data[].ent3#att4" target="sv1#page16#enu17#fld62_slot"/>
+    <PowerIndexUnit gr:x="175" gr:y="145" id="sv1#page16#pwu14" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#page16#pwu14#ln68" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6">
+      <Link id="sv1#page16#pwu14#ln68" name="View" to="sv1#page24#enu33" type="normal" validate="true">
+        <LinkParameter id="sv1#page16#pwu14#ln68#par142" name="cid_PASSING" source="data[].ent3#att3" passing="true"/>
+        <LinkParameter id="sv1#page16#pwu14#ln68#par143" name="cid (block)_PASSING" source="ent3#att3Array" passing="true"/>
+        <LinkParameter id="sv1#page16#pwu14#ln68#par185" name="cid_Key Condition [cid]" source="ent3#att3Array" target="sv1#page24#enu33.ent3#att3"/>
       </Link>
       <Selector id="sv1#page16#pwu14#su34" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page16#pwu14#su34#rcond19" name="RequesterOfCampaigns" predicate="in" implied="false" role="rel1#role1"/>
       </Selector>
-      <Link id="sv1#page16#pwu14#ln69" name="View" to="sv1#pcu2" type="automatic" validate="true">
-        <LinkParameter id="sv1#page16#pwu14#ln69#par105" name="cid_Collector Parameter1" source="data[].ent3#att3" target="sv1#pcu2#pcp2"/>
-      </Link>
     </PowerIndexUnit>
-    <EntryUnit gr:x="195" gr:y="315" id="sv1#page16#enu17" name="CampaignForm" entity="ent3" linkOrder="sv1#page16#enu17#ln70">
-      <Field id="sv1#page16#enu17#fld62" name="name" type="string" modifiable="true" preloaded="true" attribute="ent3#att4"/>
-      <Field id="sv1#page16#enu17#fld63" name="budget" type="integer" modifiable="true" preloaded="true" attribute="ent3#att5"/>
-      <Field id="sv1#page16#enu17#fld64" name="isOpen" type="boolean" modifiable="true" preloaded="true" attribute="ent3#att6"/>
-      <Link id="sv1#page16#enu17#ln70" name="Save Campaign" to="sv1#miu8" type="normal" validate="true" gr:bendpoints="-90,76,0,-184">
-        <LinkParameter id="sv1#page16#enu17#ln70#par106" name="Key [cid]_campaign key" source="key.ent3#att3" target="sv1#miu8.mov1#opm4#icu4#icp5"/>
-        <LinkParameter id="sv1#page16#enu17#ln70#par107" name="Campaign Object_campaign object" source="entityBean" target="sv1#miu8.mov1#opm4#icu4#icp6"/>
-      </Link>
-    </EntryUnit>
-    <PowerIndexUnit gr:x="410" gr:y="175" id="sv1#page16#pwu15" name="TasksInCampaign" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21" linkOrder="sv1#page16#pwu15#ln71 sv1#page16#pwu15#ln72">
-      <Selector id="sv1#page16#pwu15#su35" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv1#page16#pwu15#su35#rcond20" name="RoleCondition11" predicate="in" implied="false" role="rel6#role12"/>
-      </Selector>
-      <Link id="sv1#page16#pwu15#ln71" name="Edit" to="sv1#page16#enu18" type="automatic" validate="true">
-        <LinkParameter id="sv1#page16#pwu15#ln71#par108" name="description_description" source="data[].ent4#att17" target="sv1#page16#enu18#fld66_slot"/>
-        <LinkParameter id="sv1#page16#pwu15#ln71#par109" name="expTime_expTime" source="data[].ent4#att21" target="sv1#page16#enu18#fld69_slot"/>
-        <LinkParameter id="sv1#page16#pwu15#ln71#par110" name="tid_Key Condition [tid]" source="data[].ent4#att7" target="sv1#page16#enu18.ent4#att7"/>
-        <LinkParameter id="sv1#page16#pwu15#ln71#par111" name="maxExecTime_maxExecTime" source="data[].ent4#att20" target="sv1#page16#enu18#fld68_slot"/>
-        <LinkParameter id="sv1#page16#pwu15#ln71#par112" name="reward_reward" source="data[].ent4#att19" target="sv1#page16#enu18#fld67_slot"/>
-        <LinkParameter id="sv1#page16#pwu15#ln71#par113" name="Title_Title" source="data[].ent4#att13" target="sv1#page16#enu18#fld65_slot"/>
-      </Link>
-      <Link id="sv1#page16#pwu15#ln72" name="Show Items" to="sv1#page16#pwu16" automaticCoupling="true" type="automatic" validate="true" gr:bendpoints="-27,123,-7,-142"/>
-      <Link id="sv1#page16#pwu15#ln73" name="Flow62" to="sv1#page16#seu18" automaticCoupling="true" type="transport" validate="true"/>
-    </PowerIndexUnit>
-    <EntryUnit gr:x="640" gr:y="180" id="sv1#page16#enu18" name="TaskForm" entity="ent4">
-      <Field id="sv1#page16#enu18#fld65" name="Title" type="string" modifiable="true" preloaded="true" attribute="ent4#att13"/>
-      <Field id="sv1#page16#enu18#fld66" name="description" type="string" modifiable="true" preloaded="true" attribute="ent4#att17"/>
-      <Field id="sv1#page16#enu18#fld67" name="reward" type="float" modifiable="true" preloaded="true" attribute="ent4#att19"/>
-      <Field id="sv1#page16#enu18#fld68" name="maxExecTime" type="time" modifiable="true" preloaded="true" attribute="ent4#att20"/>
-      <Field id="sv1#page16#enu18#fld69" name="expTime" type="timestamp" modifiable="true" preloaded="true" attribute="ent4#att21"/>
-      <MultiSelectionField id="sv1#page16#enu18#msfld7" name="TaskToSkill" type="string" role="rel10#role19"/>
-      <MultiSelectionField id="sv1#page16#enu18#msfld8" name="Items" type="string" role="rel4#role8"/>
-    </EntryUnit>
-    <EntryUnit gr:x="625" gr:y="395" id="sv1#page16#enu19" name="ItemForm" entity="ent5">
-      <Field id="sv1#page16#enu19#fld70" name="title" type="string" modifiable="true" preloaded="true" attribute="ent5#att23"/>
-      <Field id="sv1#page16#enu19#fld71" name="caption" type="string" modifiable="true" preloaded="true" attribute="ent5#att24"/>
-      <Field id="sv1#page16#enu19#fld72" name="url" type="url" modifiable="true" preloaded="true" attribute="ent5#att9"/>
-    </EntryUnit>
-    <MultiChoiceIndexUnit gr:x="190" gr:y="440" id="sv1#page16#mciu5" name="WorkersForTask" entity="ent1" displayAttributes="userName password email User#att25 User#att26 ent1#att14 ent1#att15 ent1#att16 ent1#att18 ent1#att30">
+    <MultiChoiceIndexUnit gr:x="60" gr:y="425" id="sv1#page16#mciu5" name="WorkersForTask" entity="ent1" displayAttributes="userName password email User#att25 User#att26 ent1#att14 ent1#att15 ent1#att16 ent1#att18 ent1#att30">
       <SortAttribute attribute="userOID" order="ascending"/>
     </MultiChoiceIndexUnit>
     <GetUnit gr:x="10" gr:y="0" id="sv1#page16#gtu8" name="User" contextParameters="UserCtxParam">
@@ -65,53 +23,19 @@
         <AttributesCondition id="sv1#page16#seu15#su36#acond6" name="userid" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
       </Selector>
       <Link id="sv1#page16#seu15#ln75" name="Flow38" to="sv1#page16#pwu14" automaticCoupling="true" type="transport" validate="true"/>
-      <Link id="sv1#page16#seu15#ln76" name="RequesterPrefill" to="sv1#miu8" type="transport" validate="true">
+      <Link id="sv1#page16#seu15#ln76" name="RequesterPrefill" to="sv1#miu8" type="transport" validate="true" gr:bendpoints="200,190,-370,-46">
         <LinkParameter id="sv1#page16#seu15#ln76#par115" name="rid_requester key" source="ent2#att22Array" target="sv1#miu8.mov1#opm4#icu4#icp7"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="795" gr:y="145" id="sv1#page16#seu16" name="Skills" entity="ent7">
-      <Link id="sv1#page16#seu16#ln77" name="Flow48" to="sv1#page16#enu18" type="transport" validate="true">
-        <LinkParameter id="sv1#page16#seu16#ln77#par116" name="sid_TaskToSkill - Preselection" source="ent7#att27Array" target="sv1#page16#enu18#msfld7_presel"/>
-        <LinkParameter id="sv1#page16#seu16#ln77#par117" name="name_TaskToSkill [label]" source="ent7#att28Array" target="sv1#page16#enu18#msfld7_label"/>
-        <LinkParameter id="sv1#page16#seu16#ln77#par118" name="sid_TaskToSkill [output]" source="ent7#att27Array" target="sv1#page16#enu18#msfld7_output"/>
-      </Link>
-    </SelectorUnit>
-    <SelectorUnit gr:x="575" gr:y="65" id="sv1#page16#seu17" name="ItemsOfCampaign" entity="ent5">
-      <Selector id="sv1#page16#seu17#su37" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv1#page16#seu17#su37#rcond21" name="Campaign" predicate="in" implied="false" role="rel5#role10"/>
-      </Selector>
-      <Link id="sv1#page16#seu17#ln78" name="preselection" to="sv1#page16#enu18" type="transport" validate="true">
-        <LinkParameter id="sv1#page16#seu17#ln78#par119" name="title_Items [label]" source="ent5#att23Array" target="sv1#page16#enu18#msfld8_label"/>
-        <LinkParameter id="sv1#page16#seu17#ln78#par120" name="iid_Items [output]" source="ent5#att8Array" target="sv1#page16#enu18#msfld8_output"/>
-      </Link>
-    </SelectorUnit>
-    <SelectorUnit gr:x="625" gr:y="290" id="sv1#page16#seu18" name="ItemsOfTask" entity="ent5">
-      <Selector id="sv1#page16#seu18#su38" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv1#page16#seu18#su38#rcond22" name="RoleCondition16" predicate="in" implied="false" role="rel4#role8"/>
-      </Selector>
-      <Link id="sv1#page16#seu18#ln79" name="Flow63" to="sv1#page16#enu18" type="transport" validate="true">
-        <LinkParameter id="sv1#page16#seu18#ln79#par121" name="iid_Items - Preselection" source="ent5#att8Array" target="sv1#page16#enu18#msfld8_presel"/>
-      </Link>
-    </SelectorUnit>
-    <PowerIndexUnit id="sv1#page16#pwu16" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9" sortable="true" checkable="false" useCountQuery="false" gr:x="365" gr:y="395" name="ItemsInCampaign" linkOrder="sv1#page16#pwu16#ln80">
-      <Selector id="sv1#page16#pwu16#su39" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv1#page16#pwu16#su39#rcond23" role="rel5#role10" predicate="in" implied="false" name="CampaignItems"/>
-      </Selector>
-      <PreSelector id="sv1#page16#pwu16#su40" booleanOperator="and">
-        <RelationshipRoleCondition id="sv1#page16#pwu16#su40#rcond24" role="rel4#role8" predicate="in" implied="false" name="Preloaded Selected Items"/>
-      </PreSelector>
-      <Link id="sv1#page16#pwu16#ln80" name="Edit" to="sv1#page16#enu19" type="automatic" automaticCoupling="true" validate="true"/>
-    </PowerIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="6">
+      <layout:Cell colspan="12">
         <layout:Unit unitId="sv1#page16#pwu14">
           <layout:Attribute attribute="ent3#att4"/>
           <layout:Attribute attribute="ent3#att5"/>
           <layout:Attribute attribute="ent3#att6"/>
           <layout:Link link="sv1#page16#pwu14#ln68"/>
-          <layout:Link link="sv1#page16#pwu14#ln69"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -119,14 +43,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6">
-        <layout:Unit unitId="sv1#page16#enu17">
-          <layout:Field field="sv1#page16#enu17#fld62"/>
-          <layout:Field field="sv1#page16#enu17#fld63"/>
-          <layout:Field field="sv1#page16#enu17#fld64"/>
-          <layout:Link link="sv1#page16#enu17#ln70"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -134,60 +51,13 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="6">
-        <layout:Unit unitId="sv1#page16#pwu15">
-          <layout:Attribute attribute="ent4#att13"/>
-          <layout:Attribute attribute="ent4#att17"/>
-          <layout:Attribute attribute="ent4#att19"/>
-          <layout:Attribute attribute="ent4#att20"/>
-          <layout:Attribute attribute="ent4#att21"/>
-          <layout:Link link="sv1#page16#pwu15#ln71"/>
-          <layout:Link link="sv1#page16#pwu15#ln72"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6">
-        <layout:Unit unitId="sv1#page16#enu18">
-          <layout:Field field="sv1#page16#enu18#fld65"/>
-          <layout:Field field="sv1#page16#enu18#fld66"/>
-          <layout:Field field="sv1#page16#enu18#fld67"/>
-          <layout:Field field="sv1#page16#enu18#fld68"/>
-          <layout:Field field="sv1#page16#enu18#fld69"/>
-          <layout:Field field="sv1#page16#enu18#msfld7"/>
-          <layout:Field field="sv1#page16#enu18#msfld8"/>
-        </layout:Unit>
-      </layout:Cell>
       <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell colspan="6">
-        <layout:Unit unitId="sv1#page16#pwu16">
-          <layout:Attribute attribute="ent5#att23"/>
-          <layout:Attribute attribute="ent5#att24"/>
-          <layout:Attribute attribute="ent5#att9"/>
-          <layout:Link link="sv1#page16#pwu16#ln80"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell colspan="6">
-        <layout:Unit unitId="sv1#page16#enu19">
-          <layout:Field field="sv1#page16#enu19#fld70"/>
-          <layout:Field field="sv1#page16#enu19#fld71"/>
-          <layout:Field field="sv1#page16#enu19#fld72"/>
-        </layout:Unit>
-      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -209,6 +79,20 @@
           <layout:Attribute attribute="ent1#att30"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
