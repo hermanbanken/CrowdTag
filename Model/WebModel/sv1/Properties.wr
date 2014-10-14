@@ -1,3 +1,17 @@
-<SiteView id="sv1" name="Requester" protected="true" customURLName="requester" landmarks="sv1#area2" homePage="sv1#area2#page11">
-  <OperationUnits/>
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="Requester" protected="true" customURLName="requester" homePage="sv1#page16" layout:style="BootstrapStyle" landmarks="sv1#page15 sv1#page16 sv1#page17">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="-75" gr:y="505" id="sv1#miu8" action="true" moduleId="mov1#opm4"/>
+    <ParameterCollectorUnit gr:x="270" gr:y="115" id="sv1#pcu2" name="Parameter Collector1">
+      <Link id="sv1#pcu2#ln81" name="Flow55" to="sv1#page16#pwu15" type="transport" validate="true">
+        <LinkParameter id="sv1#pcu2#ln81#par122" name="Collector Parameter1_RoleCondition11 [cid]" source="sv1#pcu2#pcp2" target="sv1#page16#pwu15#su35#rcond20.ent3#att3"/>
+      </Link>
+      <Link id="sv1#pcu2#ln82" name="Flow56" to="sv1#page16#pwu16" type="transport" validate="true" gr:bendpoints="42,222,-93,-133">
+        <LinkParameter id="sv1#pcu2#ln82#par123" name="Collector Parameter1_CampaignItems [cid]" source="sv1#pcu2#pcp2" target="sv1#page16#pwu16#su39#rcond23.ent3#att3"/>
+      </Link>
+      <CollectorParameter id="sv1#pcu2#pcp2" name="cid"/>
+      <Link id="sv1#pcu2#ln83" name="Flow60" to="sv1#page16#seu17" type="transport" validate="true">
+        <LinkParameter id="sv1#pcu2#ln83#par124" name="Collector Parameter1_Campaign [cid]" source="sv1#pcu2#pcp2" target="sv1#page16#seu17#su37#rcond21.ent3#att3"/>
+      </Link>
+    </ParameterCollectorUnit>
+  </OperationUnits>
 </SiteView>
