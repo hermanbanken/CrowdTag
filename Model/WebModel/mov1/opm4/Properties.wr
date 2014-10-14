@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4" name="Save Campaign">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4" name="Save Campaign" gr:x="400" gr:y="45">
   <OperationUnits>
     <InputCollectorUnit id="mov1#opm4#icu4" gr:x="30" gr:y="85" linkOrder="mov1#opm4#icu4#ln51 mov1#opm4#icu4#ln52">
       <InputCollectorParameter id="mov1#opm4#icu4#icp5" name="campaign key"/>
@@ -17,7 +17,7 @@
         <LinkParameter id="mov1#opm4#icu4#ln52#par73" name="requester key_Requester.oid(Annotation CampaignToRequester)" source="mov1#opm4#icu4#icp7" target="mov1#opm4#cru2.rel1#role2.userOID"/>
       </Link>
     </InputCollectorUnit>
-    <CreateUnit gr:x="550" gr:y="205" id="mov1#opm4#cru2" name="Create Campaign" entity="ent3">
+    <CreateUnit gr:x="550" gr:y="205" id="mov1#opm4#cru2" name="Create Campaign" entity="ent3" skipBlankRecords="true">
       <OKLink id="mov1#opm4#cru2#oln9" name="OKFlow9" to="mov1#opm4#okcu3">
         <LinkParameter id="mov1#opm4#cru2#oln9#par78" name="cid_campaign key" source="ent3#att3Array" target="mov1#opm4#okcu3#ocp1"/>
       </OKLink>

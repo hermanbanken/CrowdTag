@@ -1,0 +1,52 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm7#opg1" name="User Can Edit?" transaction="true" gr:x="270" gr:y="-35">
+  <OperationUnits>
+    <SelectorUnit id="mov1#opm7#opg1#seu2" name="User Role On Document" gr:x="0" gr:y="0" entity="ent6">
+      <Selector id="mov1#opm7#opg1#seu2#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm7#opg1#seu2#su2#kcond2" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#opm7#opg1#seu2#ln3" name="OKLink20" to="mov1#opm7#opg1#switch1" type="transport">
+        <LinkParameter id="mov1#opm7#opg1#seu2#ln3#par6" name="Can Edit_Switch" source="ent6#att1cArray" target="mov1#opm7#opg1#switch1.switch"/>
+      </Link>
+      <OKLink id="mov1#opm7#opg1#seu2#oln15" name="Link41" to="mov1#opm7#opg1#seu3">
+        <LinkParameter id="mov1#opm7#opg1#seu2#oln15#par8" name="documentoid_KeyCondition14 [oid]" source="rel9#role18_ent1#att1Array" target="mov1#opm7#opg1#seu3#su5#kcond5.ent1#att1"/>
+      </OKLink>
+      <Link id="mov1#opm7#opg1#seu2#ln7" name="Link11" to="mov1#opm7#opg1#scu1" type="transport" validate="true">
+        <LinkParameter id="mov1#opm7#opg1#seu2#ln7#par11" name="Document ViewToDocument.oid_documentOid" source="rel9#role18_ent1#att1Array" target="mov1#opm7#opg1#scu1.documentOid"/>
+      </Link>
+      <Link id="mov1#opm7#opg1#seu2#ln9" name="Link40" to="mov1#opm7#okcu5" type="transport" validate="true">
+        <LinkParameter id="mov1#opm7#opg1#seu2#ln9#par12" name="documentoid_KeyCondition2 [oid]" source="ent6#att21Array" target="mov1#opm7#okcu5#ocp5"/>
+      </Link>
+    </SelectorUnit>
+    <SwitchUnit id="mov1#opm7#opg1#switch1" name="Can Edit?" gr:x="440" gr:y="145">
+      <OKLink id="mov1#opm7#opg1#switch1#oln16" name="OKLink21" to="mov1#opm7#okcu5" code="true">
+        <LinkParameter id="mov1#opm7#opg1#switch1#oln16#par13" name="true_CanEdit" target="mov1#opm7#okcu5#ocp4" sourceValue="true"/>
+      </OKLink>
+      <OKLink id="mov1#opm7#opg1#switch1#oln17" name="OKLink22" to="mov1#opm7#okcu5" gr:bendpoints="57,-57,-53,98">
+        <LinkParameter id="mov1#opm7#opg1#switch1#oln17#par24" name="false_CanEdit" target="mov1#opm7#okcu5#ocp4" sourceValue="false"/>
+      </OKLink>
+      <Case value="true"/>
+    </SwitchUnit>
+    <GetUnit id="mov1#opm7#opg1#gtu1" name="Get Logged User" gr:x="215" gr:y="5" contextParameters="UserCtxParam">
+      <Link id="mov1#opm7#opg1#gtu1#ln13" name="Link39" to="mov1#opm7#opg1#seu2" type="transport" validate="true">
+        <LinkParameter id="mov1#opm7#opg1#gtu1#ln13#par25" name="UserCtxParam.oid_KeyCondition1 [useroid]" source="mov1#opm7#opg1#gtu1.UserCtxParam" target="mov1#opm7#opg1#seu2#su2#kcond2.ent6#att18"/>
+      </Link>
+      <Link id="mov1#opm7#opg1#gtu1#ln14" name="Link44" to="mov1#opm7#opg1#scu1" type="transport" validate="true">
+        <LinkParameter id="mov1#opm7#opg1#gtu1#ln14#par26" name="UserCtxParam.oid_userOid" source="mov1#opm7#opg1#gtu1.UserCtxParam" target="mov1#opm7#opg1#scu1.userOid"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit id="mov1#opm7#opg1#seu3" name="Document Owner" gr:x="20" gr:y="150" entity="ent1">
+      <Selector id="mov1#opm7#opg1#seu3#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm7#opg1#seu3#su5#kcond5" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm7#opg1#seu3#oln18" name="OKLink23" to="mov1#opm7#opg1#scu1">
+        <LinkParameter id="mov1#opm7#opg1#seu3#oln18#par27" name="DocumentToOwnerUser.oid_documentOwner" source="rel4#role8_userOIDArray" target="mov1#opm7#opg1#scu1.documentOwner"/>
+      </OKLink>
+    </SelectorUnit>
+    <ScriptUnit id="mov1#opm7#opg1#scu1" name="Check Owner" gr:x="225" gr:y="165" script="WEB-INF/descr/CheckIsOwner.groovy">
+      <OKLink id="mov1#opm7#opg1#scu1#oln19" name="OKLink24" to="mov1#opm7#opg1#switch1"/>
+      <Link id="mov1#opm7#opg1#scu1#ln22" name="Link42" to="mov1#opm7#okcu5" type="transport" validate="true" gr:bendpoints="0,-20">
+        <LinkParameter id="mov1#opm7#opg1#scu1#ln22#par28" name="isOwner_isOwner" source="result(isOwner)" target="mov1#opm7#okcu5#ocp3"/>
+      </Link>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationGroup>
