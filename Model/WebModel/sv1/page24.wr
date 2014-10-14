@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="590" gr:y="100" id="sv1#page24" name="Campaign" customURLName="campaign">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="605" gr:y="100" id="sv1#page24" name="Campaign" customURLName="campaign">
   <ContentUnits>
-    <SelectorUnit gr:x="445" gr:y="0" id="sv1#page24#seu31" name="ItemsOfCampaign" entity="ent5">
+    <SelectorUnit gr:x="430" gr:y="0" id="sv1#page24#seu31" name="ItemsOfCampaign" entity="ent5">
       <Selector id="sv1#page24#seu31#su61" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page24#seu31#su61#rcond45" name="Campaign" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
@@ -9,14 +9,13 @@
         <LinkParameter id="sv1#page24#seu31#ln132#par206" name="iid_Items [output]" source="ent5#att8Array" target="sv1#page24#enu34#msfld20_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="700" gr:y="70" id="sv1#page24#seu32" name="Skills" entity="ent7">
+    <SelectorUnit gr:x="690" gr:y="100" id="sv1#page24#seu32" name="Skills" entity="ent7">
       <Link id="sv1#page24#seu32#ln133" name="Flow48" to="sv1#page24#enu34" type="transport" validate="true">
-        <LinkParameter id="sv1#page24#seu32#ln133#par207" name="sid_TaskToSkill - Preselection" source="ent7#att27Array" target="sv1#page24#enu34#msfld19_presel"/>
         <LinkParameter id="sv1#page24#seu32#ln133#par208" name="name_TaskToSkill [label]" source="ent7#att28Array" target="sv1#page24#enu34#msfld19_label"/>
         <LinkParameter id="sv1#page24#seu32#ln133#par209" name="sid_TaskToSkill [output]" source="ent7#att27Array" target="sv1#page24#enu34#msfld19_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="475" gr:y="260" id="sv1#page24#seu33" name="ItemsOfTask" entity="ent5">
+    <SelectorUnit gr:x="460" gr:y="260" id="sv1#page24#seu33" name="ItemsOfTask" entity="ent5">
       <Selector id="sv1#page24#seu33#su62" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page24#seu33#su62#rcond46" name="RoleCondition16" predicate="in" implied="false" role="rel4#role8"/>
       </Selector>
@@ -24,7 +23,7 @@
         <LinkParameter id="sv1#page24#seu33#ln134#par210" name="iid_Items - Preselection" source="ent5#att8Array" target="sv1#page24#enu34#msfld20_presel"/>
       </Link>
     </SelectorUnit>
-    <PowerIndexUnit gr:x="260" gr:y="145" id="sv1#page24#pwu25" name="Tasks" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21" linkOrder="sv1#page24#pwu25#ln135">
+    <PowerIndexUnit gr:x="245" gr:y="145" id="sv1#page24#pwu25" name="Tasks" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21" linkOrder="sv1#page24#pwu25#ln135">
       <Selector id="sv1#page24#pwu25#su63" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page24#pwu25#su63#rcond47" name="RoleCondition11" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
@@ -37,8 +36,9 @@
         <LinkParameter id="sv1#page24#pwu25#ln135#par216" name="Title_Title" source="data[].ent4#att13" target="sv1#page24#enu34#fld128_slot"/>
       </Link>
       <Link id="sv1#page24#pwu25#ln136" name="Flow62" to="sv1#page24#seu33" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv1#page24#pwu25#ln4" name="Flow4" to="sv1#page24#seu3" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="272,-79,-103,66"/>
     </PowerIndexUnit>
-    <EntryUnit gr:x="475" gr:y="375" id="sv1#page24#enu32" name="Edit Item" entity="ent5" linkOrder="sv1#page24#enu32#ln23">
+    <EntryUnit gr:x="460" gr:y="375" id="sv1#page24#enu32" name="Edit Item" entity="ent5" linkOrder="sv1#page24#enu32#ln23">
       <Field id="sv1#page24#enu32#fld121" name="title" type="string" modifiable="true" preloaded="true" attribute="ent5#att23"/>
       <Field id="sv1#page24#enu32#fld122" name="caption" type="string" modifiable="true" preloaded="true" attribute="ent5#att24"/>
       <Field id="sv1#page24#enu32#fld123" name="url" type="url" modifiable="true" preloaded="true" attribute="ent5#att9"/>
@@ -52,7 +52,7 @@
         <LinkParameter id="sv1#page24#enu32#ln23#par46" name="cid_PASSING" sourceLinkParameter="sv1#page24#enu33#ln11#par42" passing="true"/>
       </Link>
     </EntryUnit>
-    <PowerIndexUnit id="sv1#page24#pwu26" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9" sortable="true" checkable="false" useCountQuery="false" gr:x="255" gr:y="360" name="Items" linkOrder="sv1#page24#pwu26#ln138">
+    <PowerIndexUnit id="sv1#page24#pwu26" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9" sortable="true" checkable="false" useCountQuery="false" gr:x="240" gr:y="360" name="Items" linkOrder="sv1#page24#pwu26#ln138">
       <Selector id="sv1#page24#pwu26#su64" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page24#pwu26#su64#rcond48" role="rel5#role10" predicate="in" implied="false" name="CampaignItems"/>
       </Selector>
@@ -61,7 +61,7 @@
       </PreSelector>
       <Link id="sv1#page24#pwu26#ln138" name="Edit" to="sv1#page24#enu32" type="automatic" automaticCoupling="true" validate="true" ajaxEnabled="true"/>
     </PowerIndexUnit>
-    <EntryUnit gr:x="15" gr:y="150" id="sv1#page24#enu33" name="Edit Campaign" entity="ent3" linkOrder="sv1#page24#enu33#ln15" customDescriptor="false">
+    <EntryUnit gr:x="0" gr:y="150" id="sv1#page24#enu33" name="Edit Campaign" entity="ent3" linkOrder="sv1#page24#enu33#ln15" customDescriptor="false">
       <Field id="sv1#page24#enu33#fld124" name="name" type="string" modifiable="true" preloaded="true" attribute="ent3#att4"/>
       <Field id="sv1#page24#enu33#fld125" name="budget" type="integer" modifiable="true" preloaded="true" attribute="ent3#att5"/>
       <Field id="sv1#page24#enu33#fld126" name="isOpen" type="boolean" modifiable="true" preloaded="true" attribute="ent3#att6"/>
@@ -90,7 +90,7 @@
         <FormNotEmptyValidationRule id="sv1#page24#enu33#fnevr3" name="Form Not Empty3"/>
       </VRules>
     </EntryUnit>
-    <EntryUnit gr:x="490" gr:y="150" id="sv1#page24#enu34" name="Edit Task" entity="ent4" linkOrder="sv1#page24#enu34#ln8" customDescriptor="false">
+    <EntryUnit gr:x="475" gr:y="150" id="sv1#page24#enu34" name="Edit Task" entity="ent4" linkOrder="sv1#page24#enu34#ln8" customDescriptor="false">
       <Field id="sv1#page24#enu34#fld128" name="Title" type="string" modifiable="true" preloaded="true" attribute="ent4#att13"/>
       <Field id="sv1#page24#enu34#fld129" name="description" type="string" modifiable="true" preloaded="true" attribute="ent4#att17"/>
       <Field id="sv1#page24#enu34#fld130" name="reward" type="float" modifiable="true" preloaded="true" attribute="ent4#att19"/>
@@ -108,6 +108,14 @@
         <FormNotEmptyValidationRule id="sv1#page24#enu34#fnevr2" name="Form Not Empty2"/>
       </VRules>
     </EntryUnit>
+    <SelectorUnit id="sv1#page24#seu3" name="SkillsOfTask" gr:x="640" gr:y="0" entity="ent7">
+      <Link id="sv1#page24#seu3#ln3" name="Flow48" to="sv1#page24#enu34" type="transport" validate="true">
+        <LinkParameter id="sv1#page24#seu3#ln3#par12" name="sid_TaskToSkill - Preselection" source="ent7#att27Array" target="sv1#page24#enu34#msfld19_presel"/>
+      </Link>
+      <Selector id="sv1#page24#seu3#su2" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page24#seu3#su2#rcond2" name="Task" predicate="in" implied="false" role="rel10#role19"/>
+      </Selector>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
