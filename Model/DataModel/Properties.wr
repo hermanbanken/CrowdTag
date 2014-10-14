@@ -48,7 +48,7 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="default" type="MySQL" url="jdbc:mysql://localhost:3306/crowdtag" username="root" password="test" cryptedPassword="false" connectionCount="5">
+  <db:Database id="db1" name="default" type="MySQL" url="jdbc:mysql://localhost:3306/crowdtag" username="root" connectionCount="5">
   </db:Database>
   <Entity gr:x="-5" gr:y="545" id="ent1" name="Worker" duration="persistent" attributeOrder="ent1#att14 ent1#att15 ent1#att16 ent1#att18 ent1#att30" db:database="db1" db:table="worker">
     <Generalization superEntity="User">

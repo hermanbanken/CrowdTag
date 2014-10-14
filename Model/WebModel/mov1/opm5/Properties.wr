@@ -1,0 +1,56 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="40" gr:y="255" id="mov1#opm5" name="SaveSkills">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm5#icu5" gr:x="25" gr:y="250">
+      <InputCollectorParameter id="mov1#opm5#icu5#icp9" name="oid"/>
+      <InputCollectorParameter id="mov1#opm5#icu5#icp8" name="sids"/>
+      <InputCollectorParameter id="mov1#opm5#icu5#icp10" name="selectedIDs"/>
+      <Link id="mov1#opm5#icu5#ln34" name="oidProvision" to="mov1#opm5#cnu3" type="transport" validate="true" gr:bendpoints="108,253,-317,88;429,256,4,91">
+        <LinkParameter id="mov1#opm5#icu5#ln34#par62" name="oid_KeyCondition14 [oid] [Worker] [Source]" source="mov1#opm5#icu5#icp9" target="mov1#opm5#cnu3#su18#kcond14.userOID"/>
+      </Link>
+      <OKLink id="mov1#opm5#icu5#oln20" name="Flow32" to="mov1#opm5#lpu4">
+        <LinkParameter id="mov1#opm5#icu5#oln20#par84" name="sids_Input Array" source="mov1#opm5#icu5#icp8" target="mov1#opm5#lpu4.array"/>
+      </OKLink>
+      <Link id="mov1#opm5#icu5#ln36" name="oidProvision" to="mov1#opm5#dcnu2" type="transport" validate="true">
+        <LinkParameter id="mov1#opm5#icu5#ln36#par69" name="oid_KeyCondition18 [oid] [Worker] [Source]" source="mov1#opm5#icu5#icp9" target="mov1#opm5#dcnu2#su23#kcond18.userOID"/>
+      </Link>
+      <Link id="mov1#opm5#icu5#ln38" name="SelectedIDs" to="mov1#opm5#lpu3" type="transport" validate="true" gr:bendpoints="243,-62,-177,-67">
+        <LinkParameter id="mov1#opm5#icu5#ln38#par80" name="selectedIDs_Input Array" source="mov1#opm5#icu5#icp10" target="mov1#opm5#lpu3.array"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="720" gr:y="270" id="mov1#opm5#okcu4" name="Succes">
+      <OutputCollectorParameter id="mov1#opm5#okcu4#ocp2" name="Success message"/>
+    </OKCollectorUnit>
+    <LoopUnit gr:x="490" gr:y="280" id="mov1#opm5#lpu3" name="ForEachSelectedSkill">
+      <OKLink id="mov1#opm5#lpu3#oln17" name="Flow33" to="mov1#opm5#cnu3" code="next" gr:bendpoints="36,68,31,-92">
+        <LinkParameter id="mov1#opm5#lpu3#oln17#par65" name="Next Element_KeyCondition15 [sid] [Skill] [Target]" source="next" target="mov1#opm5#cnu3#su19#kcond15.ent7#att27"/>
+      </OKLink>
+      <OKLink id="mov1#opm5#lpu3#oln19" name="OKFlow19" to="mov1#opm5#okcu4" code="end">
+        <LinkParameter id="mov1#opm5#lpu3#oln19#par66" name="Success_Success message" sourceValue="Success" target="mov1#opm5#okcu4#ocp2"/>
+      </OKLink>
+    </LoopUnit>
+    <ConnectUnit gr:x="485" gr:y="415" id="mov1#opm5#cnu3" name="ConnectWorkerAndSkill" relationship="rel8#role15">
+      <SourceSelector id="mov1#opm5#cnu3#su18" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm5#cnu3#su18#kcond14" name="KeyCondition14" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#opm5#cnu3#su19" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm5#cnu3#su19#kcond15" name="KeyCondition15" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov1#opm5#cnu3#oln22" name="OKFlow22" to="mov1#opm5#lpu3" automaticCoupling="true" gr:bendpoints="-33,-92,-28,68"/>
+    </ConnectUnit>
+    <LoopUnit gr:x="320" gr:y="280" id="mov1#opm5#lpu4" name="ForEachSkill">
+      <OKLink id="mov1#opm5#lpu4#oln23" name="OKFlow23" to="mov1#opm5#dcnu2" code="next" gr:bendpoints="39,70,9,-90">
+        <LinkParameter id="mov1#opm5#lpu4#oln23#par70" name="Next Element_KeyCondition19 [sid] [Skill] [Target]" source="next" target="mov1#opm5#dcnu2#su27#kcond19.ent7#att27"/>
+      </OKLink>
+      <OKLink id="mov1#opm5#lpu4#oln24" name="OKFlow24" to="mov1#opm5#lpu3" automaticCoupling="true" code="end"/>
+    </LoopUnit>
+    <DisconnectUnit gr:x="290" gr:y="415" id="mov1#opm5#dcnu2" name="DisconnectWorkerAndSkill" relationship="rel8#role15">
+      <SourceSelector id="mov1#opm5#dcnu2#su23" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm5#dcnu2#su23#kcond18" name="KeyCondition18" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#opm5#dcnu2#su27" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm5#dcnu2#su27#kcond19" name="KeyCondition19" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov1#opm5#dcnu2#oln25" name="OKFlow25" to="mov1#opm5#lpu4" automaticCoupling="true" gr:bendpoints="-32,-95,-27,65"/>
+    </DisconnectUnit>
+  </OperationUnits>
+</OperationModule>

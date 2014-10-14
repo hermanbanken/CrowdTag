@@ -1,0 +1,117 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="40" gr:y="315" id="mov1#opm6" name="SaveAnnotation">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm6#icu6" gr:x="30" gr:y="155">
+      <InputCollectorParameter id="mov1#opm6#icu6#icp14" name="oid"/>
+      <InputCollectorParameter id="mov1#opm6#icu6#icp13" name="iid"/>
+      <InputCollectorParameter id="mov1#opm6#icu6#icp12" name="confidence"/>
+      <InputCollectorParameter id="mov1#opm6#icu6#icp11" name="label"/>
+      <OKLink id="mov1#opm6#icu6#oln27" name="OKFlow27" to="mov1#opm6#inn9">
+        <LinkParameter id="mov1#opm6#icu6#oln27#par110" name="confidence_PASSING" source="mov1#opm6#icu6#icp12" passing="true"/>
+        <LinkParameter id="mov1#opm6#icu6#oln27#par127" name="item_PASSING" source="mov1#opm6#icu6#icp17" passing="true"/>
+        <LinkParameter id="mov1#opm6#icu6#oln27#par128" name="label_PASSING" source="mov1#opm6#icu6#icp11" passing="true"/>
+        <LinkParameter id="mov1#opm6#icu6#oln27#par141" name="task_Input" source="mov1#opm6#icu6#icp16" target="mov1#opm6#inn9.isnotnull"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm6#icu6#icp15" name="tid"/>
+      <Link id="mov1#opm6#icu6#ln59" name="Flow59" to="mov1#opm6#cru3" type="transport" validate="true" gr:bendpoints="209,-65,-206,-55;343,-66,-72,-56">
+        <LinkParameter id="mov1#opm6#icu6#ln59#par112" name="confidence_confidence" source="mov1#opm6#icu6#icp12" target="mov1#opm6#cru3.ent6#att12"/>
+        <LinkParameter id="mov1#opm6#icu6#ln59#par113" name="label_label" source="mov1#opm6#icu6#icp11" target="mov1#opm6#cru3.ent6#att11"/>
+        <LinkParameter id="mov1#opm6#icu6#ln59#par116" name="iid_PASSING" source="mov1#opm6#icu6#icp13" passing="true"/>
+      </Link>
+      <Link id="mov1#opm6#icu6#ln60" name="Flow60" to="mov1#opm6#cnu6" type="transport" validate="true" gr:bendpoints="143,-84,-597,-69;578,-84,-162,-69">
+        <LinkParameter id="mov1#opm6#icu6#ln60#par119" name="oid_KeyCondition25 [oid] [Worker] [Target]" source="mov1#opm6#icu6#icp14" target="mov1#opm6#cnu6#su37#kcond25.userOID"/>
+      </Link>
+      <InputCollectorParameter id="mov1#opm6#icu6#icp17" name="item"/>
+      <InputCollectorParameter id="mov1#opm6#icu6#icp16" name="task"/>
+    </InputCollectorUnit>
+    <IsNotNullUnit gr:x="290" gr:y="370" id="mov1#opm6#inn6" name="IsLabelOK?" emptyStringAsNull="true">
+      <OKLink id="mov1#opm6#inn6#oln28" name="OKFlow28" to="mov1#opm6#inn8">
+        <LinkParameter id="mov1#opm6#inn6#oln28#par134" name="confidence_PASSING_Input" sourceLinkParameter="mov1#opm6#inn10#oln36#par133" target="mov1#opm6#inn8.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov1#opm6#inn6#kln12" name="KOFlow12" to="mov1#opm6#kocu5" gr:bendpoints="-84,1,-1024,-184;-83,210,-1023,25">
+        <LinkParameter id="mov1#opm6#inn6#kln12#par88" name="Label can not be empty._outMessage" sourceValue="Label can not be empty." target="mov1#opm6#kocu5#ocp3"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit gr:x="280" gr:y="455" id="mov1#opm6#inn8" name="IsConfidenceOK?">
+      <KOLink id="mov1#opm6#inn8#kln13" name="KOFlow13" to="mov1#opm6#kocu5" gr:bendpoints="0,113,-935,13">
+        <LinkParameter id="mov1#opm6#inn8#kln13#par89" name="Confidence can not be empty._outMessage" sourceValue="Confidence can not be empty." target="mov1#opm6#kocu5#ocp3"/>
+      </KOLink>
+      <OKLink id="mov1#opm6#inn8#oln29" name="OKFlow29" to="mov1#opm6#cru3" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="1160" gr:y="170" id="mov1#opm6#okcu5" name="Success"/>
+    <KOCollectorUnit gr:x="1160" gr:y="545" id="mov1#opm6#kocu5" name="Failure">
+      <OutputCollectorParameter id="mov1#opm6#kocu5#ocp3" name="outMessage"/>
+    </KOCollectorUnit>
+    <ConnectUnit gr:x="690" gr:y="155" id="mov1#opm6#cnu5" name="ConnectAnnotationToItem" relationship="rel2#role3" linkOrder="mov1#opm6#cnu5#ln61">
+      <SourceSelector id="mov1#opm6#cnu5#su28" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#cnu5#su28#kcond20" name="KeyCondition20" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#opm6#cnu5#su29" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#cnu5#su29#kcond21" name="KeyCondition21" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov1#opm6#cnu5#oln30" name="OKFlow30" to="mov1#opm6#cnu6" automaticCoupling="true"/>
+      <KOLink id="mov1#opm6#cnu5#kln14" name="KOFlow14" to="mov1#opm6#dlu1" automaticCoupling="true"/>
+      <Link id="mov1#opm6#cnu5#ln61" name="Flow61" to="mov1#opm6#dcnu3" automaticCoupling="true" type="transport" validate="true"/>
+    </ConnectUnit>
+    <ConnectUnit gr:x="955" gr:y="155" id="mov1#opm6#cnu6" name="ConnectAnnotationToWorker" relationship="rel3#role5">
+      <SourceSelector id="mov1#opm6#cnu6#su35" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#cnu6#su35#kcond24" name="KeyCondition24" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#opm6#cnu6#su37" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#cnu6#su37#kcond25" name="KeyCondition25" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov1#opm6#cnu6#oln32" name="OKFlow32" to="mov1#opm6#okcu5" automaticCoupling="true"/>
+      <KOLink id="mov1#opm6#cnu6#kln17" name="KOFlow17" to="mov1#opm6#dcnu3" automaticCoupling="true"/>
+    </ConnectUnit>
+    <CreateUnit gr:x="495" gr:y="175" id="mov1#opm6#cru3" name="CreateAnnotation" entity="ent6">
+      <OKLink id="mov1#opm6#cru3#oln31" name="OKFlow31" to="mov1#opm6#cnu5">
+        <LinkParameter id="mov1#opm6#cru3#oln31#par117" name="aid_KeyCondition20 [aid] [Annotation] [Source]" source="ent6#att10Array" target="mov1#opm6#cnu5#su28#kcond20.ent6#att10"/>
+        <LinkParameter id="mov1#opm6#cru3#oln31#par118" name="iid_PASSING_KeyCondition21 [iid] [Item] [Target]" sourceLinkParameter="mov1#opm6#icu6#ln59#par116" target="mov1#opm6#cnu5#su29#kcond21.ent5#att8"/>
+      </OKLink>
+      <KOLink id="mov1#opm6#cru3#kln16" name="KOFlow16" to="mov1#opm6#kocu5" gr:bendpoints="13,338,-702,-32">
+        <LinkParameter id="mov1#opm6#cru3#kln16#par122" name="Error: no Annotation created._outMessage" sourceValue="Error: no Annotation created." target="mov1#opm6#kocu5#ocp3"/>
+      </KOLink>
+    </CreateUnit>
+    <DeleteUnit gr:x="590" gr:y="360" id="mov1#opm6#dlu1" name="DeleteAnnotation" entity="ent6">
+      <Selector id="mov1#opm6#dlu1#su38" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#dlu1#su38#kcond26" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm6#dlu1#oln33" name="OKFlow33" to="mov1#opm6#kocu5">
+        <LinkParameter id="mov1#opm6#dlu1#oln33#par121" name="Error: No Annotation created._outMessage" sourceValue="Error: No Annotation created." target="mov1#opm6#kocu5#ocp3"/>
+      </OKLink>
+      <KOLink id="mov1#opm6#dlu1#kln15" name="KOFlow15" to="mov1#opm6#kocu5" gr:bendpoints="69,118,-576,-52">
+        <LinkParameter id="mov1#opm6#dlu1#kln15#par120" name="Error: Annotation was created, but no connections made._outMessage" sourceValue="Error: Annotation was created, but no connections made." target="mov1#opm6#kocu5#ocp3"/>
+      </KOLink>
+    </DeleteUnit>
+    <DisconnectUnit gr:x="795" gr:y="295" id="mov1#opm6#dcnu3" name="DisconnectAnnotationFromItem" relationship="rel2#role3">
+      <SourceSelector id="mov1#opm6#dcnu3#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#dcnu3#su39#kcond27" name="KeyCondition27" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov1#opm6#dcnu3#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#dcnu3#su40#kcond28" name="KeyCondition28" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov1#opm6#dcnu3#oln34" name="OKFlow34" to="mov1#opm6#dlu1" automaticCoupling="true"/>
+      <KOLink id="mov1#opm6#dcnu3#kln18" name="KOFlow18" to="mov1#opm6#kocu5">
+        <LinkParameter id="mov1#opm6#dcnu3#kln18#par123" name="Error: Annotation was created with Item connection._outMessage" sourceValue="Error: Annotation was created with Item connection." target="mov1#opm6#kocu5#ocp3"/>
+      </KOLink>
+    </DisconnectUnit>
+    <IsNotNullUnit gr:x="290" gr:y="210" id="mov1#opm6#inn9" name="IsTaskOK?" emptyStringAsNull="true">
+      <OKLink id="mov1#opm6#inn9#oln35" name="OKFlow35" to="mov1#opm6#inn10">
+        <LinkParameter id="mov1#opm6#inn9#oln35#par129" name="item_PASSING_Input" sourceLinkParameter="mov1#opm6#icu6#oln27#par127" target="mov1#opm6#inn10.isnotnull"/>
+        <LinkParameter id="mov1#opm6#inn9#oln35#par130" name="confidence_PASSING" sourceLinkParameter="mov1#opm6#icu6#oln27#par110" passing="true"/>
+        <LinkParameter id="mov1#opm6#inn9#oln35#par131" name="label_PASSING" sourceLinkParameter="mov1#opm6#icu6#oln27#par128" passing="true"/>
+      </OKLink>
+      <KOLink id="mov1#opm6#inn9#kln20" name="KOFlow20" to="mov1#opm6#kocu5" gr:bendpoints="-107,58,-1047,-287;-103,391,-1043,46">
+        <LinkParameter id="mov1#opm6#inn9#kln20#par135" name="Please select an item._outMessage" sourceValue="Please select an item." target="mov1#opm6#kocu5#ocp3"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit gr:x="295" gr:y="290" id="mov1#opm6#inn10" name="IsItemOK?" emptyStringAsNull="true">
+      <OKLink id="mov1#opm6#inn10#oln36" name="OKFlow36" to="mov1#opm6#inn6">
+        <LinkParameter id="mov1#opm6#inn10#oln36#par132" name="label_PASSING_Input" sourceLinkParameter="mov1#opm6#inn9#oln35#par131" target="mov1#opm6#inn6.isnotnull"/>
+        <LinkParameter id="mov1#opm6#inn10#oln36#par133" name="confidence_PASSING" sourceLinkParameter="mov1#opm6#inn9#oln35#par130" passing="true"/>
+      </OKLink>
+      <KOLink id="mov1#opm6#inn10#kln21" name="KOFlow21" to="mov1#opm6#kocu5" gr:bendpoints="-101,24,-1036,-241;-99,302,-1034,37">
+        <LinkParameter id="mov1#opm6#inn10#kln21#par136" name="Please select an item._outMessage" sourceValue="Please select an item." target="mov1#opm6#kocu5#ocp3"/>
+      </KOLink>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

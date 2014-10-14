@@ -1,19 +1,105 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area5#page6" name="Personal information" gr:x="0" gr:y="5">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area5#page6" name="Personal information" gr:x="5" gr:y="0" landmark="false">
   <ContentUnits>
-    <DataUnit id="sv2#area5#page6#dau3" name="PersInfo" gr:x="180" gr:y="0" entity="User">
-      <Selector id="sv2#area5#page6#dau3#su3" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv2#area5#page6#dau3#su3#kcond3" name="KeyCondition1" predicate="in" implied="false"/>
+    <SelectorUnit id="sv2#area5#page6#seu2" name="Selector5" gr:x="165" gr:y="0" entity="ent1" distinctAttributes="userOID userName password email User#att25 User#att26">
+      <Selector id="sv2#area5#page6#seu2#su1" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#area5#page6#seu2#su1#acond1" name="userid" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
       </Selector>
-    </DataUnit>
-    <GetUnit id="sv2#area5#page6#gtu2" name="getSessionOID" gr:x="0" gr:y="10" contextParameters="UserCtxParam">
-      <Link id="sv2#area5#page6#gtu2#ln4" name="Flow1" to="sv2#area5#page6#dau3" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#area5#page6#seu2#ln1" name="Flow25" to="sv2#area5#page6#enu1" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page6#seu2#ln1#par1" name="birthDate_birthDate" source="User#att26Array" target="sv2#area5#page6#enu1#fld5_slot"/>
+        <LinkParameter id="sv2#area5#page6#seu2#ln1#par2" name="email_email" source="emailArray" target="sv2#area5#page6#enu1#fld3_slot"/>
+        <LinkParameter id="sv2#area5#page6#seu2#ln1#par3" name="oid_Key Condition [oid]" source="userOIDArray" target="sv2#area5#page6#enu1.userOID"/>
+        <LinkParameter id="sv2#area5#page6#seu2#ln1#par6" name="name_name" source="User#att25Array" target="sv2#area5#page6#enu1#fld4_slot"/>
+        <LinkParameter id="sv2#area5#page6#seu2#ln1#par7" name="password_password" source="passwordArray" target="sv2#area5#page6#enu1#fld2_slot"/>
+        <LinkParameter id="sv2#area5#page6#seu2#ln1#par8" name="userName_userName" source="userNameArray" target="sv2#area5#page6#enu1#fld1_slot"/>
+      </Link>
+      <Link id="sv2#area5#page6#seu2#ln23" name="oidToSaveSkills" to="sv2#miu2" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page6#seu2#ln23#par42" name="oid_oid" source="userOIDArray" target="sv2#miu2.mov1#opm5#icu5#icp9"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv2#area5#page6#enu1" name="Edit information" gr:x="300" gr:y="10" entity="ent1" linkOrder="sv2#area5#page6#enu1#ln9">
+      <Field id="sv2#area5#page6#enu1#fld1" name="userName" type="string" modifiable="true" preloaded="true" attribute="userName"/>
+      <Field id="sv2#area5#page6#enu1#fld2" name="password" type="password" modifiable="true" preloaded="true" attribute="password"/>
+      <Field id="sv2#area5#page6#enu1#fld3" name="email" type="string" modifiable="true" preloaded="true" attribute="email"/>
+      <Field id="sv2#area5#page6#enu1#fld4" name="name" type="string" modifiable="true" preloaded="true" attribute="User#att25"/>
+      <Field id="sv2#area5#page6#enu1#fld5" name="birthDate" type="timestamp" modifiable="true" preloaded="true" attribute="User#att26"/>
+      <Link id="sv2#area5#page6#enu1#ln9" name="Refresh Skills" to="sv2#area5#page6#seu5" type="automatic" automaticCoupling="true" validate="true" gr:bendpoints="-87,61,208,-64;-218,65,77,-60" ajaxEnabled="true"/>
+    </EntryUnit>
+    <GetUnit id="sv2#area5#page6#gtu1" name="getSessionOID" gr:x="0" gr:y="10" contextParameters="UserCtxParam">
+      <Link id="sv2#area5#page6#gtu1#ln2" name="Flow21" to="sv2#area5#page6#seu2" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page6#gtu1#ln2#par9" name="UserCtxParam.oid_userid" source="sv2#area5#page6#gtu1.UserCtxParam" target="sv2#area5#page6#seu2#su1#acond1"/>
+      </Link>
     </GetUnit>
+    <SelectorUnit gr:x="5" gr:y="125" id="sv2#area5#page6#seu5" name="Skills" entity="ent7" distinctAttributes="ent7#att27">
+      <Link id="sv2#area5#page6#seu5#ln10" name="WorkerToSkillCheckList" to="sv2#area5#page6#mciu1" automaticCoupling="true" type="transport" validate="true"/>
+      <Selector id="sv2#area5#page6#seu5#su3" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area5#page6#seu5#su3#rcond3" name="WorkerInSkill" predicate="in" implied="false" role="rel8#role15"/>
+      </Selector>
+    </SelectorUnit>
+    <MultiChoiceIndexUnit id="sv2#area5#page6#mciu1" entity="ent7" displayAttributes="ent7#att28 ent7#att29" gr:x="0" gr:y="255" name="Skills" gr:showAllParts="false" linkOrder="sv2#area5#page6#mciu1#ln26">
+      <PreSelector id="sv2#area5#page6#mciu1#su5" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area5#page6#mciu1#su5#rcond4" name="WorkerHasSkill" predicate="in" implied="false" role="rel8#role16.rel8#role15"/>
+      </PreSelector>
+      <SortAttribute attribute="ent7#att28" order="descending"/>
+      <Link id="sv2#area5#page6#mciu1#ln26" name="Save Skills" to="sv2#miu2" type="normal" validate="true">
+        <LinkParameter id="sv2#area5#page6#mciu1#ln26#par52" name="Checked sid_selectedIDs" source="ent7#att27Checked" target="sv2#miu2.mov1#opm5#icu5#icp10"/>
+      </Link>
+    </MultiChoiceIndexUnit>
+    <SelectorUnit gr:x="130" gr:y="140" id="sv2#area5#page6#seu7" name="AllSkillSelector" entity="ent7" distinctAttributes="ent7#att27">
+      <Link id="sv2#area5#page6#seu7#ln11" name="AllSkillsToSkillCheckList" to="sv2#area5#page6#mciu1" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#area5#page6#seu7#ln30" name="AllSkillsToSaveSkills" to="sv2#miu2" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page6#seu7#ln30#par57" name="sid_sids" source="ent7#att27Array" target="sv2#miu2.mov1#opm5#icu5#icp8"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="30" gr:y="420" id="sv2#area5#page6#mssu4" name="Result" customDescriptor="false"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#area5#page6#dau3"/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#area5#page6#enu1">
+          <layout:Field field="sv2#area5#page6#enu1#fld1"/>
+          <layout:Field field="sv2#area5#page6#enu1#fld2"/>
+          <layout:Field field="sv2#area5#page6#enu1#fld3"/>
+          <layout:Field field="sv2#area5#page6#enu1#fld4"/>
+          <layout:Field field="sv2#area5#page6#enu1#fld5"/>
+          <layout:Link link="sv2#area5#page6#enu1#ln9"/>
+        </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#area5#page6#mciu1">
+          <layout:Attribute attribute="ent7#att28"/>
+          <layout:Attribute attribute="ent7#att29"/>
+          <layout:Link link="sv2#area5#page6#mciu1#ln26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#area5#page6#mssu4"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

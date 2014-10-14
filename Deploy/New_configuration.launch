@@ -51,7 +51,7 @@
 <stringAttribute key="providers.$db1$.databaseProvider.advanced.tableExportPrefix" value=""/>
 <stringAttribute key="providers.$db1$.databaseProvider.advanced.tableMask" value=""/>
 <stringAttribute key="providers.$db1$.databaseProvider.advanced.viewExportPrefix" value=""/>
-<stringAttribute key="providers.$db1$.databaseProvider.mapping.databaseMappingPassword" value="test"/>
+<stringAttribute key="providers.$db1$.databaseProvider.mapping.databaseMappingPassword" value=""/>
 <stringAttribute key="providers.$db1$.databaseProvider.mapping.databaseMappingType" value="MySQL"/>
 <stringAttribute key="providers.$db1$.databaseProvider.mapping.databaseMappingUrl" value="jdbc:mysql://localhost:3306/crowdtag"/>
 <stringAttribute key="providers.$db1$.databaseProvider.mapping.databaseMappingUsername" value="root"/>

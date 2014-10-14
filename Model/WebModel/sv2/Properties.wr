@@ -1,3 +1,14 @@
-<SiteView xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2" name="Worker" protected="true" customURLName="worker" landmarks="sv2#area5 sv2#area6 sv2#area7" homePage="sv2#area6#page7" layout:style="BootstrapStyle">
-  <OperationUnits/>
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2" name="Worker" protected="true" customURLName="worker" landmarks="sv2#area6 sv2#area5" homePage="sv2#area6#page7" layout:style="BootstrapStyle">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="345" gr:y="635" id="sv2#miu2" action="true" moduleId="mov1#opm5">
+      <OKLink id="sv2#miu2#oln18" name="SaveResult" to="sv2#area5#page6#mssu4">
+        <LinkParameter id="sv2#miu2#oln18#par64" name="Success message_Shown Messages" source="mov1#opm5#okcu4#ocp2" target="sv2#area5#page6#mssu4.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="600" gr:y="665" id="sv2#miu4" action="true" moduleId="mov1#opm6">
+      <KOLink id="sv2#miu4#kln19" name="SaveError" to="sv2#area6#page7#mssu5">
+        <LinkParameter id="sv2#miu4#kln19#par124" name="outMessage_Shown Messages" source="mov1#opm6#kocu5#ocp3" target="sv2#area6#page7#mssu5.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
 </SiteView>
