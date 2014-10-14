@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="390" gr:y="340" id="mov1#opm3" name="AddItemToTask">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="270" gr:y="360" id="mov1#opm3" name="AddItemToTask">
   <OperationUnits>
     <InputCollectorUnit id="mov1#opm3#icu3" gr:x="30" gr:y="60" linkOrder="mov1#opm3#icu3#ln44">
       <InputCollectorParameter id="mov1#opm3#icu3#icp3" name="Task"/>

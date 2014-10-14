@@ -1,10 +1,11 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-45" gr:y="90" id="sv1#page16" name="Campaigns" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-45" gr:y="90" id="sv1#page16" name="Campaigns" landmark="true" linkOrder="sv1#page16#ln21">
   <ContentUnits>
     <PowerIndexUnit gr:x="175" gr:y="145" id="sv1#page16#pwu14" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#page16#pwu14#ln68" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6">
       <Link id="sv1#page16#pwu14#ln68" name="View" to="sv1#page24#enu33" type="normal" validate="true">
         <LinkParameter id="sv1#page16#pwu14#ln68#par142" name="cid_PASSING" source="data[].ent3#att3" passing="true"/>
         <LinkParameter id="sv1#page16#pwu14#ln68#par143" name="cid (block)_PASSING" source="ent3#att3Array" passing="true"/>
-        <LinkParameter id="sv1#page16#pwu14#ln68#par185" name="cid_Key Condition [cid]" source="ent3#att3Array" target="sv1#page24#enu33.ent3#att3"/>
+        <LinkParameter id="sv1#page16#pwu14#ln68#par185" name="cid_Key Condition [cid]" source="data[].ent3#att3" target="sv1#page24#enu33.ent3#att3"/>
+        <LinkParameter id="sv1#page16#pwu14#ln68#par52" name="rid_PASSING" sourceLinkParameter="sv1#page16#seu15#ln75#par51" passing="true"/>
       </Link>
       <Selector id="sv1#page16#pwu14#su34" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page16#pwu14#su34#rcond19" name="RequesterOfCampaigns" predicate="in" implied="false" role="rel1#role1"/>
@@ -22,9 +23,9 @@
       <Selector id="sv1#page16#seu15#su36" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv1#page16#seu15#su36#acond6" name="userid" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
       </Selector>
-      <Link id="sv1#page16#seu15#ln75" name="Flow38" to="sv1#page16#pwu14" automaticCoupling="true" type="transport" validate="true"/>
-      <Link id="sv1#page16#seu15#ln76" name="RequesterPrefill" to="sv1#miu8" type="transport" validate="true" gr:bendpoints="200,190,-370,-46">
-        <LinkParameter id="sv1#page16#seu15#ln76#par115" name="rid_requester key" source="ent2#att22Array" target="sv1#miu8.mov1#opm4#icu4#icp7"/>
+      <Link id="sv1#page16#seu15#ln75" name="Flow38" to="sv1#page16#pwu14" type="transport" validate="true">
+        <LinkParameter id="sv1#page16#seu15#ln75#par50" name="oid_RequesterOfCampaigns [oid]" source="userOIDArray" target="sv1#page16#pwu14#su34#rcond19.userOID"/>
+        <LinkParameter id="sv1#page16#seu15#ln75#par51" name="rid_PASSING" source="ent2#att22Array" passing="true"/>
       </Link>
     </SelectorUnit>
   </ContentUnits>
@@ -162,4 +163,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <Link id="sv1#page16#ln21" name="Add New" to="sv1#page24#enu33" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="334,12,-211,57"/>
 </Page>
