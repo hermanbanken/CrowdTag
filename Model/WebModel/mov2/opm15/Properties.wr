@@ -1,0 +1,24 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="360" gr:y="265" id="mov2#opm15" name="AddItemToTask">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm15#icu15" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm15#icu15#icp28" name="Task"/>
+      <InputCollectorParameter id="mov2#opm15#icu15#icp29" name="Item"/>
+      <Link id="mov2#opm15#icu15#ln83" name="Flow44" to="mov2#opm15#cnu2" type="transport" validate="true">
+        <LinkParameter id="mov2#opm15#icu15#ln83#par177" name="Item_KeyCondition11 [iid] [Item] [Source]" source="mov2#opm15#icu15#icp29" target="mov2#opm15#cnu2#su39#kcond19.ent5#att8"/>
+        <LinkParameter id="mov2#opm15#icu15#ln83#par178" name="Task_KeyCondition12 [tid] [Task] [Target]" source="mov2#opm15#icu15#icp28" target="mov2#opm15#cnu2#su40#kcond20.ent4#att7"/>
+      </Link>
+    </InputCollectorUnit>
+    <ConnectUnit gr:x="280" gr:y="50" id="mov2#opm15#cnu2" name="Connect1" relationship="rel4#role7">
+      <SourceSelector id="mov2#opm15#cnu2#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm15#cnu2#su39#kcond19" name="KeyCondition11" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov2#opm15#cnu2#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm15#cnu2#su40#kcond20" name="KeyCondition12" predicate="in" implied="false"/>
+      </TargetSelector>
+      <KOLink id="mov2#opm15#cnu2#kln19" name="KOFlow4" to="mov2#opm15#kocu8" automaticCoupling="true"/>
+      <OKLink id="mov2#opm15#cnu2#oln45" name="OKFlow7" to="mov2#opm15#okcu14" automaticCoupling="true"/>
+    </ConnectUnit>
+    <KOCollectorUnit gr:x="555" gr:y="120" id="mov2#opm15#kocu8" name="KO Port2"/>
+    <OKCollectorUnit gr:x="555" gr:y="15" id="mov2#opm15#okcu14" name="OK Port2"/>
+  </OperationUnits>
+</OperationModule>

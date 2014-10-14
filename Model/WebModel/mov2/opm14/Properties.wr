@@ -1,0 +1,44 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm14" name="Save Campaign" gr:x="65" gr:y="225">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm14#icu14" gr:x="30" gr:y="85">
+      <InputCollectorParameter id="mov2#opm14#icu14#icp25" name="campaign key"/>
+      <InputCollectorParameter id="mov2#opm14#icu14#icp26" name="campaign object"/>
+      <InputCollectorParameter id="mov2#opm14#icu14#icp27" name="requester key"/>
+      <OKLink id="mov2#opm14#icu14#oln41" name="OKFlow8" to="mov2#opm14#inn5">
+        <LinkParameter id="mov2#opm14#icu14#oln41#par169" name="campaign key_Input" source="mov2#opm14#icu14#icp25" target="mov2#opm14#inn5.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#opm14#icu14#ln81" name="Flow51" to="mov2#opm14#mfu10" type="transport" validate="true" gr:bendpoints="192,-44,-288,-4">
+        <LinkParameter id="mov2#opm14#icu14#ln81#par170" name="campaign object_Campaign Object" source="mov2#opm14#icu14#icp26" target="mov2#opm14#mfu10.entityBeans"/>
+        <LinkParameter id="mov2#opm14#icu14#ln81#par171" name="campaign key_KeyCondition13 [cid]" source="mov2#opm14#icu14#icp25" target="mov2#opm14#mfu10#su38#kcond18.ent3#att3"/>
+        <LinkParameter id="mov2#opm14#icu14#ln81#par172" name="requester key_Requester.oid(Annotation CampaignToRequester)" source="mov2#opm14#icu14#icp27" target="mov2#opm14#mfu10.rel1#role2.userOID"/>
+      </Link>
+      <Link id="mov2#opm14#icu14#ln82" name="Flow52" to="mov2#opm14#cru6" type="transport" validate="true" gr:bendpoints="169,128,-301,-2">
+        <LinkParameter id="mov2#opm14#icu14#ln82#par173" name="campaign object_Campaign Object" source="mov2#opm14#icu14#icp26" target="mov2#opm14#cru6.entityBeans"/>
+        <LinkParameter id="mov2#opm14#icu14#ln82#par174" name="requester key_Requester.oid(Annotation CampaignToRequester)" source="mov2#opm14#icu14#icp27" target="mov2#opm14#cru6.rel1#role2.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="550" gr:y="205" id="mov2#opm14#cru6" name="Create Campaign" entity="ent3" skipBlankRecords="true">
+      <OKLink id="mov2#opm14#cru6#oln42" name="OKFlow9" to="mov2#opm14#okcu13">
+        <LinkParameter id="mov2#opm14#cru6#oln42#par175" name="cid_campaign key" source="ent3#att3Array" target="mov2#opm14#okcu13#ocp15"/>
+      </OKLink>
+      <KOLink id="mov2#opm14#cru6#kln16" name="KOFlow5" to="mov2#opm14#kocu7" automaticCoupling="true"/>
+    </CreateUnit>
+    <IsNotNullUnit gr:x="365" gr:y="115" id="mov2#opm14#inn5" name="Campaign Exists?">
+      <OKLink id="mov2#opm14#inn5#oln43" name="OKFlow11" to="mov2#opm14#mfu10" automaticCoupling="true"/>
+      <KOLink id="mov2#opm14#inn5#kln17" name="KOFlow7" to="mov2#opm14#cru6" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <ModifyUnit gr:x="555" gr:y="20" id="mov2#opm14#mfu10" name="Update Campaign" entity="ent3">
+      <Selector id="mov2#opm14#mfu10#su38" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm14#mfu10#su38#kcond18" name="KeyCondition13" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm14#mfu10#oln44" name="OKFlow10" to="mov2#opm14#okcu13">
+        <LinkParameter id="mov2#opm14#mfu10#oln44#par176" name="cid_campaign key" source="ent3#att3Array" target="mov2#opm14#okcu13#ocp15"/>
+      </OKLink>
+      <KOLink id="mov2#opm14#mfu10#kln18" name="KOFlow6" to="mov2#opm14#kocu7" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="900" gr:y="20" id="mov2#opm14#okcu13" name="Success">
+      <OutputCollectorParameter id="mov2#opm14#okcu13#ocp15" name="campaign key"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="900" gr:y="205" id="mov2#opm14#kocu7" name="Failure"/>
+  </OperationUnits>
+</OperationModule>

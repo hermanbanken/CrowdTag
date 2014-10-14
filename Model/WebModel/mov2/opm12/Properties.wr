@@ -1,0 +1,28 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm12" name="Save Item" gr:x="325" gr:y="165">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm12#icu12" gr:x="130" gr:y="130">
+      <InputCollectorParameter id="mov2#opm12#icu12#icp16" name="item key"/>
+      <InputCollectorParameter id="mov2#opm12#icu12#icp17" name="item object"/>
+      <InputCollectorParameter id="mov2#opm12#icu12#icp18" name="campaign key"/>
+      <OKLink id="mov2#opm12#icu12#oln33" name="OKFlow8" to="mov2#opm12#opg2#inn3">
+        <LinkParameter id="mov2#opm12#icu12#oln33#par153" name="campaign key_Input" source="mov2#opm12#icu12#icp16" target="mov2#opm12#opg2#inn3.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#opm12#icu12#ln77" name="Flow51" to="mov2#opm12#opg2#mfu8" type="transport" validate="true" gr:bendpoints="192,-44,-288,-4">
+        <LinkParameter id="mov2#opm12#icu12#ln77#par154" name="campaign object_Campaign Object" source="mov2#opm12#icu12#icp17" target="mov2#opm12#opg2#mfu8.entityBeans"/>
+        <LinkParameter id="mov2#opm12#icu12#ln77#par155" name="campaign key_Campaign.cid(ItemToAnnotation Campaign)" source="mov2#opm12#icu12#icp18" target="mov2#opm12#opg2#mfu8.rel5#role9.ent3#att3"/>
+        <LinkParameter id="mov2#opm12#icu12#ln77#par156" name="item key_KeyCondition13 [iid]" source="mov2#opm12#icu12#icp16" target="mov2#opm12#opg2#mfu8#su35#kcond16.ent5#att8"/>
+      </Link>
+      <Link id="mov2#opm12#icu12#ln78" name="Flow52" to="mov2#opm12#opg2#cru4" type="transport" validate="true" gr:bendpoints="169,128,-301,-2">
+        <LinkParameter id="mov2#opm12#icu12#ln78#par157" name="campaign object_Campaign Object" source="mov2#opm12#icu12#icp17" target="mov2#opm12#opg2#cru4.entityBeans"/>
+        <LinkParameter id="mov2#opm12#icu12#ln78#par158" name="campaign key_Campaign.cid(ItemToAnnotation Campaign)" source="mov2#opm12#icu12#icp18" target="mov2#opm12#opg2#cru4.rel5#role9.ent3#att3"/>
+      </Link>
+    </InputCollectorUnit>
+    <KOCollectorUnit id="mov2#opm12#kocu5" name="Failure" gr:x="865" gr:y="255"/>
+    <OKCollectorUnit id="mov2#opm12#okcu10" name="Ok Collector" gr:x="865" gr:y="90">
+      <OutputCollectorParameter id="mov2#opm12#okcu10#ocp6" name="isOwner"/>
+      <OutputCollectorParameter id="mov2#opm12#okcu10#ocp11" name="CanEdit"/>
+      <OutputCollectorParameter id="mov2#opm12#okcu10#ocp12" name="documentoid"/>
+      <OutputCollectorParameter id="mov2#opm12#okcu10#ocp13" name="item key"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

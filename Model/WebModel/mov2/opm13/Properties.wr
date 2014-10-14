@@ -1,0 +1,44 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm13" name="Save Task" gr:x="325" gr:y="105">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm13#icu13" gr:x="30" gr:y="85">
+      <InputCollectorParameter id="mov2#opm13#icu13#icp19" name="task key"/>
+      <InputCollectorParameter id="mov2#opm13#icu13#icp23" name="task object"/>
+      <InputCollectorParameter id="mov2#opm13#icu13#icp24" name="campaign key"/>
+      <OKLink id="mov2#opm13#icu13#oln37" name="OKFlow8" to="mov2#opm13#inn4">
+        <LinkParameter id="mov2#opm13#icu13#oln37#par161" name="campaign key_Input" source="mov2#opm13#icu13#icp19" target="mov2#opm13#inn4.isnotnull"/>
+      </OKLink>
+      <Link id="mov2#opm13#icu13#ln79" name="Flow51" to="mov2#opm13#mfu9" type="transport" validate="true" gr:bendpoints="192,-44,-288,-4">
+        <LinkParameter id="mov2#opm13#icu13#ln79#par162" name="campaign object_Campaign Object" source="mov2#opm13#icu13#icp23" target="mov2#opm13#mfu9.entityBeans"/>
+        <LinkParameter id="mov2#opm13#icu13#ln79#par163" name="campaign key_Campaign.cid(TaskToAnnotation Campaign)" source="mov2#opm13#icu13#icp24" target="mov2#opm13#mfu9.rel6#role11.ent3#att3"/>
+        <LinkParameter id="mov2#opm13#icu13#ln79#par164" name="task key_KeyCondition13 [tid]" source="mov2#opm13#icu13#icp19" target="mov2#opm13#mfu9#su37#kcond17.ent4#att7"/>
+      </Link>
+      <Link id="mov2#opm13#icu13#ln80" name="Flow52" to="mov2#opm13#cru5" type="transport" validate="true" gr:bendpoints="169,128,-301,-2">
+        <LinkParameter id="mov2#opm13#icu13#ln80#par165" name="campaign object_Campaign Object" source="mov2#opm13#icu13#icp23" target="mov2#opm13#cru5.entityBeans"/>
+        <LinkParameter id="mov2#opm13#icu13#ln80#par166" name="campaign key_Campaign.cid(TaskToAnnotation Campaign)" source="mov2#opm13#icu13#icp24" target="mov2#opm13#cru5.rel6#role11.ent3#att3"/>
+      </Link>
+    </InputCollectorUnit>
+    <CreateUnit id="mov2#opm13#cru5" name="Create" gr:x="550" gr:y="205" entity="ent4" skipBlankRecords="true">
+      <OKLink id="mov2#opm13#cru5#oln38" name="OKFlow9" to="mov2#opm13#okcu12">
+        <LinkParameter id="mov2#opm13#cru5#oln38#par167" name="cid_campaign key" source="ent4#att7Array" target="mov2#opm13#okcu12#ocp14"/>
+      </OKLink>
+      <KOLink id="mov2#opm13#cru5#kln13" name="KOFlow5" to="mov2#opm13#kocu6" automaticCoupling="true"/>
+    </CreateUnit>
+    <IsNotNullUnit id="mov2#opm13#inn4" name="Exists?" gr:x="365" gr:y="115" emptyStringAsNull="true">
+      <OKLink id="mov2#opm13#inn4#oln39" name="OKFlow11" to="mov2#opm13#mfu9" automaticCoupling="true"/>
+      <KOLink id="mov2#opm13#inn4#kln14" name="KOFlow7" to="mov2#opm13#cru5" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <ModifyUnit id="mov2#opm13#mfu9" name="Update" gr:x="555" gr:y="20" entity="ent4">
+      <Selector id="mov2#opm13#mfu9#su37" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm13#mfu9#su37#kcond17" name="KeyCondition13" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm13#mfu9#oln40" name="OKFlow10" to="mov2#opm13#okcu12">
+        <LinkParameter id="mov2#opm13#mfu9#oln40#par168" name="cid_campaign key" source="ent4#att7Array" target="mov2#opm13#okcu12#ocp14"/>
+      </OKLink>
+      <KOLink id="mov2#opm13#mfu9#kln15" name="KOFlow6" to="mov2#opm13#kocu6" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit id="mov2#opm13#okcu12" name="Success" gr:x="900" gr:y="20">
+      <OutputCollectorParameter id="mov2#opm13#okcu12#ocp14" name="task key"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#opm13#kocu6" name="Failure" gr:x="900" gr:y="205"/>
+  </OperationUnits>
+</OperationModule>
