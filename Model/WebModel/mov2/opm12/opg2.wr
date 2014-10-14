@@ -9,7 +9,7 @@
       </OKLink>
       <KOLink id="mov2#opm12#opg2#mfu8#kln10" name="KOFlow6" to="mov2#opm12#kocu5" automaticCoupling="true"/>
     </ModifyUnit>
-    <IsNotNullUnit id="mov2#opm12#opg2#inn3" name="Item Exists?" gr:x="335" gr:y="95">
+    <IsNotNullUnit id="mov2#opm12#opg2#inn3" name="Item Exists?" gr:x="335" gr:y="95" emptyStringAsNull="true">
       <OKLink id="mov2#opm12#opg2#inn3#oln35" name="OKFlow11" to="mov2#opm12#opg2#mfu8" automaticCoupling="true"/>
       <KOLink id="mov2#opm12#opg2#inn3#kln11" name="KOFlow7" to="mov2#opm12#opg2#cru4" automaticCoupling="true"/>
     </IsNotNullUnit>

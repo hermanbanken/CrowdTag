@@ -23,7 +23,7 @@
       </OKLink>
       <KOLink id="mov2#opm14#cru6#kln16" name="KOFlow5" to="mov2#opm14#kocu7" automaticCoupling="true"/>
     </CreateUnit>
-    <IsNotNullUnit gr:x="365" gr:y="115" id="mov2#opm14#inn5" name="Campaign Exists?">
+    <IsNotNullUnit gr:x="365" gr:y="115" id="mov2#opm14#inn5" name="Campaign Exists?" emptyStringAsNull="true">
       <OKLink id="mov2#opm14#inn5#oln43" name="OKFlow11" to="mov2#opm14#mfu10" automaticCoupling="true"/>
       <KOLink id="mov2#opm14#inn5#kln17" name="KOFlow7" to="mov2#opm14#cru6" automaticCoupling="true"/>
     </IsNotNullUnit>

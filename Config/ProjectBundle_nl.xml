@@ -15,6 +15,7 @@
   <Entry key="confidence">zekerheid</Entry>
   <Entry key="Create Annotation">Maak annotatie</Entry>
   <Entry key="Current Tasks">Huidige taken</Entry>
+  <Entry key="Delete">Verwijder</Entry>
   <Entry key="description">omschrijving</Entry>
   <Entry key="Details">Details</Entry>
   <Entry key="Edit">Bewerk</Entry>
@@ -23,11 +24,13 @@
   <Entry key="Edit Item">Bewerk item</Entry>
   <Entry key="Edit Task">Bewerk taak</Entry>
   <Entry key="email">e-mail</Entry>
+  <Entry key="Error Message">Foutmelding</Entry>
   <Entry key="expTime">verwachte tijd</Entry>
+  <Entry key="Form10">Persoonlijke informatie</Entry>
   <Entry key="Inbox">Inbox</Entry>
   <Entry key="isOpen">geopend</Entry>
   <Entry key="Item">item</Entry>
-  <Entry key="Items">items</Entry>
+  <Entry key="Items">Items</Entry>
   <Entry key="label">label</Entry>
   <Entry key="maxExecTime">maximale tijd</Entry>
   <Entry key="name">naam</Entry>
