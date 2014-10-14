@@ -1,0 +1,18 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="590" gr:y="330" id="mov1#opm9" name="Reject Annotation">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm9#icu8" gr:x="0" gr:y="25">
+      <InputCollectorParameter id="mov1#opm9#icu8#icp13" name="annotation key"/>
+      <Link id="mov1#opm9#icu8#ln29" name="Flow29" to="mov1#opm9#mfu4" type="transport" validate="true">
+        <LinkParameter id="mov1#opm9#icu8#ln29#par54" name="annotation keys_KeyCondition7 [aid]" source="mov1#opm9#icu8#icp13" target="mov1#opm9#mfu4#su8#kcond10.ent6#att10"/>
+        <LinkParameter id="mov1#opm9#icu8#ln29#par57" name="rejected_status" sourceValue="rejected" target="mov1#opm9#mfu4.ent6#att1"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#opm9#okcu7" name="Success" gr:x="460" gr:y="25"/>
+    <ModifyUnit id="mov1#opm9#mfu4" name="Update3" gr:x="290" gr:y="20" entity="ent6" bulk="false">
+      <Selector id="mov1#opm9#mfu4#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm9#mfu4#su8#kcond10" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm9#mfu4#oln30" name="OKFlow30" to="mov1#opm9#okcu7" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

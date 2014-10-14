@@ -1,9 +1,15 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="420" gr:y="-95" id="sv1#page17" name="Inbox" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="420" gr:y="-95" id="sv1#page17" name="Inbox" landmark="true" customURLName="inbox">
   <ContentUnits>
-    <HierarchicalIndexUnit gr:x="0" gr:y="0" id="sv1#page17#hinu3" name="AnnotationsForItemForTask" sortable="false" entity="ent4" displayAttributes="ent4#att13">
+    <HierarchicalIndexUnit gr:x="0" gr:y="0" id="sv1#page17#hinu3" name="AnnotationsForItemForTask" sortable="false" entity="ent4" displayAttributes="ent4#att13" linkOrder="sv1#page17#hinu3#ln24 sv1#page17#hinu3#ln25">
       <HierarchicalIndexLevel id="sv1#page17#hinu3#hiulvl5" name="Item" entity="ent5" role="rel4#role8" displayAttributes="ent5#att23 ent5#att24 ent5#att9">
         <HierarchicalIndexLevel id="sv1#page17#hinu3#hiulvl5#hiulvl6" name="Annotation" entity="ent6" role="rel2#role4" displayAttributes="ent6#att11 ent6#att12"/>
       </HierarchicalIndexLevel>
+      <Link id="sv1#page17#hinu3#ln24" name="Accept" to="sv1#miu7" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv1#page17#hinu3#ln24#par58" name="aid(Annotation)_annotation keys" source="data[].sv1#page17#hinu3#hiulvl5data[].sv1#page17#hinu3#hiulvl5#hiulvl6data[].ent6#att10" target="sv1#miu7.mov1#opm8#icu7#icp12"/>
+      </Link>
+      <Link id="sv1#page17#hinu3#ln25" name="Reject" to="sv1#miu8" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv1#page17#hinu3#ln25#par59" name="aid(Annotation)_annotation keys" source="data[].sv1#page17#hinu3#hiulvl5data[].sv1#page17#hinu3#hiulvl5#hiulvl6data[].ent6#att10" target="sv1#miu8.mov1#opm9#icu8#icp13"/>
+      </Link>
     </HierarchicalIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -16,6 +22,8 @@
           <layout:Attribute attribute="ent5#att9"/>
           <layout:Attribute attribute="ent6#att11"/>
           <layout:Attribute attribute="ent6#att12"/>
+          <layout:Link link="sv1#page17#hinu3#ln24"/>
+          <layout:Link link="sv1#page17#hinu3#ln25"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

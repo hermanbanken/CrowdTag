@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="590" gr:y="100" id="sv1#page24" name="Campaign">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="590" gr:y="100" id="sv1#page24" name="Campaign" customURLName="campaign">
   <ContentUnits>
     <SelectorUnit gr:x="445" gr:y="0" id="sv1#page24#seu31" name="ItemsOfCampaign" entity="ent5">
       <Selector id="sv1#page24#seu31#su61" defaultPolicy="fill" booleanOperator="and">
@@ -132,7 +132,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="6">
+      <layout:Cell colspan="7">
         <layout:Unit unitId="sv1#page24#pwu26">
           <layout:Attribute attribute="ent5#att23"/>
           <layout:Attribute attribute="ent5#att24"/>
@@ -145,7 +145,8 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6">
+      <layout:Cell/>
+      <layout:Cell colspan="5">
         <layout:Unit unitId="sv1#page24#enu32">
           <layout:Field field="sv1#page24#enu32#fld121"/>
           <layout:Field field="sv1#page24#enu32#fld122"/>
@@ -157,10 +158,9 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="6">
+      <layout:Cell colspan="7">
         <layout:Unit unitId="sv1#page24#pwu25">
           <layout:Attribute attribute="ent4#att13"/>
           <layout:Attribute attribute="ent4#att17"/>
@@ -175,7 +175,8 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6">
+      <layout:Cell/>
+      <layout:Cell colspan="5">
         <layout:Unit unitId="sv1#page24#enu34">
           <layout:Field field="sv1#page24#enu34#fld128"/>
           <layout:Field field="sv1#page24#enu34#fld129"/>
@@ -187,7 +188,6 @@
           <layout:Link link="sv1#page24#enu34#ln8"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
