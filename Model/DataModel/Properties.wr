@@ -94,10 +94,11 @@
     <Attribute id="ent5#att23" name="title" type="string" db:column="title"/>
     <Attribute id="ent5#att24" name="caption" type="string" db:column="caption"/>
   </Entity>
-  <Entity gr:x="885" gr:y="200" id="ent6" name="Annotation" duration="persistent" attributeOrder="ent6#att10 ent6#att11 ent6#att12" db:database="db1" db:table="annotation">
+  <Entity gr:x="885" gr:y="200" id="ent6" name="Annotation" duration="persistent" attributeOrder="ent6#att10 ent6#att11 ent6#att12 ent6#att1" db:database="db1" db:table="annotation">
     <Attribute id="ent6#att10" key="true" name="aid" type="integer" db:column="aid"/>
     <Attribute id="ent6#att11" name="label" type="string" db:column="label"/>
     <Attribute id="ent6#att12" name="confidence" type="integer" db:column="confidence"/>
+    <Attribute id="ent6#att1" name="status" type="string" key="false" db:column="status"/>
   </Entity>
   <Relationship id="rel2" name="Annotation_Item" sourceEntity="ent6" targetEntity="ent5" db:database="db1" db:table="annotation">
     <RelationshipRole1 id="rel2#role3" name="AnnotationToItem" maxCard="1">

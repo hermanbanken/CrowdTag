@@ -1,0 +1,23 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="180" gr:y="30" id="mov2#opm12#opg2" name="Save" transaction="true">
+  <OperationUnits>
+    <ModifyUnit id="mov2#opm12#opg2#mfu8" name="Update" gr:x="525" gr:y="0" entity="ent5">
+      <Selector id="mov2#opm12#opg2#mfu8#su35" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm12#opg2#mfu8#su35#kcond16" name="KeyCondition13" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm12#opg2#mfu8#oln34" name="OKFlow10" to="mov2#opm12#okcu10">
+        <LinkParameter id="mov2#opm12#opg2#mfu8#oln34#par159" name="iid_item key" source="ent5#att8Array" target="mov2#opm12#okcu10#ocp13"/>
+      </OKLink>
+      <KOLink id="mov2#opm12#opg2#mfu8#kln10" name="KOFlow6" to="mov2#opm12#kocu5" automaticCoupling="true"/>
+    </ModifyUnit>
+    <IsNotNullUnit id="mov2#opm12#opg2#inn3" name="Item Exists?" gr:x="335" gr:y="95" emptyStringAsNull="true">
+      <OKLink id="mov2#opm12#opg2#inn3#oln35" name="OKFlow11" to="mov2#opm12#opg2#mfu8" automaticCoupling="true"/>
+      <KOLink id="mov2#opm12#opg2#inn3#kln11" name="KOFlow7" to="mov2#opm12#opg2#cru4" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit id="mov2#opm12#opg2#cru4" name="Create" gr:x="520" gr:y="185" entity="ent5" skipBlankRecords="true">
+      <OKLink id="mov2#opm12#opg2#cru4#oln36" name="OKFlow9" to="mov2#opm12#okcu10">
+        <LinkParameter id="mov2#opm12#opg2#cru4#oln36#par160" name="iid_item key" source="ent5#att8Array" target="mov2#opm12#okcu10#ocp13"/>
+      </OKLink>
+      <KOLink id="mov2#opm12#opg2#cru4#kln12" name="KOFlow5" to="mov2#opm12#kocu5" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</OperationGroup>

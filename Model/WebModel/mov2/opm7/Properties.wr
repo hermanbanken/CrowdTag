@@ -1,0 +1,26 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm7" name="Delete Item" gr:x="595" gr:y="160">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm7#icu7" gr:x="30" gr:y="70" linkOrder="mov2#opm7#icu7#ln39">
+      <InputCollectorParameter id="mov2#opm7#icu7#icp4" name="item key"/>
+      <Link id="mov2#opm7#icu7#ln22" name="Flow20" to="mov2#opm7#dlu3" type="transport" validate="true">
+        <LinkParameter id="mov2#opm7#icu7#ln22#par67" name="item key_KeyCondition1 [iid]" source="mov2#opm7#icu7#icp4" target="mov2#opm7#dlu3#su7#kcond2.ent5#att8"/>
+      </Link>
+      <Link id="mov2#opm7#icu7#ln39" name="Flow39" to="mov2#opm7#okcu3" type="transport" validate="true" gr:bendpoints="167,-71,-253,-26">
+        <LinkParameter id="mov2#opm7#icu7#ln39#par85" name="item key_item" source="mov2#opm7#icu7#icp4" target="mov2#opm7#okcu3#ocp4"/>
+      </Link>
+    </InputCollectorUnit>
+    <DeleteUnit id="mov2#opm7#dlu3" name="Delete" gr:x="300" gr:y="65" entity="ent5">
+      <Selector id="mov2#opm7#dlu3#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm7#dlu3#su7#kcond2" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm7#dlu3#oln8" name="OKFlow7" to="mov2#opm7#okcu3" automaticCoupling="true"/>
+      <KOLink id="mov2#opm7#dlu3#kln6" name="KOFlow5" to="mov2#opm7#kocu3" automaticCoupling="true"/>
+      <CascadeDeleteRole id="mov2#opm7#dlu3#cdr8" name="Task" role="rel4#role7"/>
+      <CascadeDeleteRole id="mov2#opm7#dlu3#cdr9" name="Annotations" role="rel2#role4"/>
+    </DeleteUnit>
+    <OKCollectorUnit id="mov2#opm7#okcu3" name="OK Port2" gr:x="450" gr:y="25">
+      <OutputCollectorParameter id="mov2#opm7#okcu3#ocp4" name="item"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov2#opm7#kocu3" name="KO Port2" gr:x="450" gr:y="105"/>
+  </OperationUnits>
+</OperationModule>

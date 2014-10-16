@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle>
+  <Entry key="Accept">Accept</Entry>
+  <Entry key="Add New">Add New</Entry>
+  <Entry key="Annotation">Annotation</Entry>
+  <Entry key="AnnotationsForItemForTask">Tasks &gt; Items &gt; Annotations</Entry>
+  <Entry key="birthDate">birth date</Entry>
+  <Entry key="budget">budget</Entry>
+  <Entry key="Campaign">Campaign</Entry>
+  <Entry key="Campaigns">Campaigns</Entry>
+  <Entry key="caption">caption</Entry>
+  <Entry key="description">description</Entry>
+  <Entry key="Edit">Edit</Entry>
+  <Entry key="Edit Campaign">Edit Campaign</Entry>
+  <Entry key="Edit Item">Edit Item</Entry>
+  <Entry key="Edit Task">Edit Task</Entry>
+  <Entry key="email">email</Entry>
+  <Entry key="expTime">expected time</Entry>
+  <Entry key="Inbox">Inbox</Entry>
+  <Entry key="isOpen">opened</Entry>
+  <Entry key="Item">Item</Entry>
+  <Entry key="Items">items</Entry>
+  <Entry key="maxExecTime">maximum time</Entry>
+  <Entry key="name">name</Entry>
+  <Entry key="password">password</Entry>
+  <Entry key="Personal information">Personal information</Entry>
+  <Entry key="Reject">Reject</Entry>
+  <Entry key="Requester">Requester</Entry>
+  <Entry key="reward">reward</Entry>
+  <Entry key="Save">Save</Entry>
+  <Entry key="Tasks">Tasks</Entry>
+  <Entry key="TaskToSkill">skills needed</Entry>
+  <Entry key="title">title</Entry>
+  <Entry key="Title">title</Entry>
+  <Entry key="url">url</Entry>
+  <Entry key="userName">user name</Entry>
+  <Entry key="View">View</Entry>
+  <Entry key="WorkersForTask">Workers for Task</Entry>
+</Bundle>

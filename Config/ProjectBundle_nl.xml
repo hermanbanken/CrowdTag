@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle>
+  <Entry key="Accept">Accepteer</Entry>
+  <Entry key="Add as new">Sla op als nieuw</Entry>
+  <Entry key="Add New">Voeg nieuwe toe</Entry>
+  <Entry key="AddAnnotation">Voeg annotatie toe</Entry>
+  <Entry key="Annotation">Annotatie</Entry>
+  <Entry key="AnnotationsForItemForTask">Taken &gt; Items &gt; Annotaties</Entry>
+  <Entry key="birthDate">geboortedatum</Entry>
+  <Entry key="budget">budget</Entry>
+  <Entry key="Campaign">Campagne</Entry>
+  <Entry key="Campaigns">Campagnes</Entry>
+  <Entry key="caption">omschrijving</Entry>
+  <Entry key="confidence">zekerheid</Entry>
+  <Entry key="Create Annotation">Maak annotatie</Entry>
+  <Entry key="Current Tasks">Huidige taken</Entry>
+  <Entry key="Delete">Verwijder</Entry>
+  <Entry key="description">omschrijving</Entry>
+  <Entry key="Details">Details</Entry>
+  <Entry key="Edit">Bewerk</Entry>
+  <Entry key="Edit Campaign">Bewerk campagne</Entry>
+  <Entry key="Edit information">Bewerk informatie</Entry>
+  <Entry key="Edit Item">Bewerk item</Entry>
+  <Entry key="Edit Task">Bewerk taak</Entry>
+  <Entry key="email">e-mail</Entry>
+  <Entry key="Error Message">Foutmelding</Entry>
+  <Entry key="expTime">verwachte tijd</Entry>
+  <Entry key="Form10">Persoonlijke informatie</Entry>
+  <Entry key="Inbox">Inbox</Entry>
+  <Entry key="isOpen">geopend</Entry>
+  <Entry key="Item">item</Entry>
+  <Entry key="Items">Items</Entry>
+  <Entry key="label">label</Entry>
+  <Entry key="maxExecTime">maximale tijd</Entry>
+  <Entry key="name">naam</Entry>
+  <Entry key="password">wachtwoord</Entry>
+  <Entry key="Personal information">Persoonlijke informatie</Entry>
+  <Entry key="Reject">Afwijzen</Entry>
+  <Entry key="Requester">Vrager</Entry>
+  <Entry key="reward">beloning</Entry>
+  <Entry key="Save">Opslaan</Entry>
+  <Entry key="Tasks">Taken</Entry>
+  <Entry key="TaskToSkill">skills</Entry>
+  <Entry key="title">titel</Entry>
+  <Entry key="Title">titel</Entry>
+  <Entry key="url">url</Entry>
+  <Entry key="userName">gebruikersnaam</Entry>
+  <Entry key="View">Toon</Entry>
+  <Entry key="WorkersForTask">Werkers voor taak</Entry>
+</Bundle>
