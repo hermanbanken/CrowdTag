@@ -7,21 +7,21 @@
       <InputCollectorParameter id="mov1#opm6#icu6#icp11" name="label"/>
       <OKLink id="mov1#opm6#icu6#oln27" name="OKFlow27" to="mov1#opm6#inn9">
         <LinkParameter id="mov1#opm6#icu6#oln27#par110" name="confidence_PASSING" source="mov1#opm6#icu6#icp12" passing="true"/>
-        <LinkParameter id="mov1#opm6#icu6#oln27#par127" name="item_PASSING" source="mov1#opm6#icu6#icp17" passing="true"/>
         <LinkParameter id="mov1#opm6#icu6#oln27#par128" name="label_PASSING" source="mov1#opm6#icu6#icp11" passing="true"/>
-        <LinkParameter id="mov1#opm6#icu6#oln27#par141" name="task_Input" source="mov1#opm6#icu6#icp16" target="mov1#opm6#inn9.isnotnull"/>
+        <LinkParameter id="mov1#opm6#icu6#oln27#par141" name="task_Input" source="mov1#opm6#icu6#icp15" target="mov1#opm6#inn9.isnotnull"/>
+        <LinkParameter id="mov1#opm6#icu6#oln27#par87" name="iid_PASSING" source="mov1#opm6#icu6#icp13" passing="true"/>
       </OKLink>
       <InputCollectorParameter id="mov1#opm6#icu6#icp15" name="tid"/>
       <Link id="mov1#opm6#icu6#ln59" name="Flow59" to="mov1#opm6#cru3" type="transport" validate="true" gr:bendpoints="209,-65,-206,-55;343,-66,-72,-56">
         <LinkParameter id="mov1#opm6#icu6#ln59#par112" name="confidence_confidence" source="mov1#opm6#icu6#icp12" target="mov1#opm6#cru3.ent6#att12"/>
         <LinkParameter id="mov1#opm6#icu6#ln59#par113" name="label_label" source="mov1#opm6#icu6#icp11" target="mov1#opm6#cru3.ent6#att11"/>
         <LinkParameter id="mov1#opm6#icu6#ln59#par116" name="iid_PASSING" source="mov1#opm6#icu6#icp13" passing="true"/>
+        <LinkParameter id="mov1#opm6#icu6#ln59#par86" name="oid_Worker.oid(AnnotationToWorker)" source="mov1#opm6#icu6#icp14" target="mov1#opm6#cru3.rel3#role5.userOID"/>
+        <LinkParameter id="mov1#opm6#icu6#ln59#par92" name="iid_Item.iid(AnnotationToItem)" source="mov1#opm6#icu6#icp13" target="mov1#opm6#cru3.rel2#role3.ent5#att8"/>
       </Link>
       <Link id="mov1#opm6#icu6#ln60" name="Flow60" to="mov1#opm6#cnu6" type="transport" validate="true" gr:bendpoints="143,-84,-597,-69;578,-84,-162,-69">
         <LinkParameter id="mov1#opm6#icu6#ln60#par119" name="oid_KeyCondition25 [oid] [Worker] [Target]" source="mov1#opm6#icu6#icp14" target="mov1#opm6#cnu6#su37#kcond25.userOID"/>
       </Link>
-      <InputCollectorParameter id="mov1#opm6#icu6#icp17" name="item"/>
-      <InputCollectorParameter id="mov1#opm6#icu6#icp16" name="task"/>
     </InputCollectorUnit>
     <IsNotNullUnit gr:x="290" gr:y="370" id="mov1#opm6#inn6" name="IsLabelOK?" emptyStringAsNull="true">
       <OKLink id="mov1#opm6#inn6#oln28" name="OKFlow28" to="mov1#opm6#inn8">
@@ -96,9 +96,9 @@
     </DisconnectUnit>
     <IsNotNullUnit gr:x="290" gr:y="210" id="mov1#opm6#inn9" name="IsTaskOK?" emptyStringAsNull="true">
       <OKLink id="mov1#opm6#inn9#oln35" name="OKFlow35" to="mov1#opm6#inn10">
-        <LinkParameter id="mov1#opm6#inn9#oln35#par129" name="item_PASSING_Input" sourceLinkParameter="mov1#opm6#icu6#oln27#par127" target="mov1#opm6#inn10.isnotnull"/>
         <LinkParameter id="mov1#opm6#inn9#oln35#par130" name="confidence_PASSING" sourceLinkParameter="mov1#opm6#icu6#oln27#par110" passing="true"/>
         <LinkParameter id="mov1#opm6#inn9#oln35#par131" name="label_PASSING" sourceLinkParameter="mov1#opm6#icu6#oln27#par128" passing="true"/>
+        <LinkParameter id="mov1#opm6#inn9#oln35#par91" name="iid_PASSING_Input" sourceLinkParameter="mov1#opm6#icu6#oln27#par87" target="mov1#opm6#inn10.isnotnull"/>
       </OKLink>
       <KOLink id="mov1#opm6#inn9#kln20" name="KOFlow20" to="mov1#opm6#kocu5" gr:bendpoints="-107,58,-1047,-287;-103,391,-1043,46">
         <LinkParameter id="mov1#opm6#inn9#kln20#par135" name="Please select an item._outMessage" sourceValue="Please select an item." target="mov1#opm6#kocu5#ocp3"/>

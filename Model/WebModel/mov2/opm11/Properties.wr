@@ -2,10 +2,10 @@
   <OperationUnits>
     <InputCollectorUnit id="mov2#opm11#icu11" gr:x="0" gr:y="25">
       <InputCollectorParameter id="mov2#opm11#icu11#icp15" name="annotation key"/>
-      <Link id="mov2#opm11#icu11#ln76" name="Flow29" to="mov2#opm11#mfu7" type="transport" validate="true">
-        <LinkParameter id="mov2#opm11#icu11#ln76#par151" name="annotation keys_KeyCondition7 [aid]" source="mov2#opm11#icu11#icp15" target="mov2#opm11#mfu7#su32#kcond15.ent6#att10"/>
-        <LinkParameter id="mov2#opm11#icu11#ln76#par152" name="rejected_status" sourceValue="rejected" target="mov2#opm11#mfu7.ent6#att1"/>
-      </Link>
+      <OKLink id="mov2#opm11#icu11#oln47" name="Flow29" to="mov2#opm11#mfu7">
+        <LinkParameter id="mov2#opm11#icu11#oln47#par103" name="rejected_status" target="mov2#opm11#mfu7.ent6#att1" sourceValue="rejected"/>
+        <LinkParameter id="mov2#opm11#icu11#oln47#par104" name="annotation keys_KeyCondition7 [aid]" source="mov2#opm11#icu11#icp15" target="mov2#opm11#mfu7#su32#kcond15.ent6#att10"/>
+      </OKLink>
     </InputCollectorUnit>
     <OKCollectorUnit id="mov2#opm11#okcu9" name="Success" gr:x="460" gr:y="25"/>
     <ModifyUnit id="mov2#opm11#mfu7" name="Update3" gr:x="290" gr:y="20" entity="ent6" bulk="false">

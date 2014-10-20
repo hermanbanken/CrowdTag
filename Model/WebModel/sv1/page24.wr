@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="605" gr:y="100" id="sv1#page24" name="Campaign" customURLName="campaign">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="605" gr:y="80" id="sv1#page24" name="Campaign Details" customURLName="campaign" landmark="true">
   <ContentUnits>
-    <SelectorUnit gr:x="430" gr:y="0" id="sv1#page24#seu31" name="ItemsOfCampaign" entity="ent5">
+    <SelectorUnit gr:x="355" gr:y="10" id="sv1#page24#seu31" name="ItemsOfCampaign" entity="ent5">
       <Selector id="sv1#page24#seu31#su61" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page24#seu31#su61#rcond45" name="Campaign" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
@@ -9,13 +9,13 @@
         <LinkParameter id="sv1#page24#seu31#ln132#par206" name="iid_Items [output]" source="ent5#att8Array" target="sv1#page24#enu34#msfld20_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="690" gr:y="100" id="sv1#page24#seu32" name="Skills" entity="ent7">
+    <SelectorUnit gr:x="700" gr:y="95" id="sv1#page24#seu32" name="Skills" entity="ent7">
       <Link id="sv1#page24#seu32#ln133" name="Flow48" to="sv1#page24#enu34" type="transport" validate="true">
         <LinkParameter id="sv1#page24#seu32#ln133#par208" name="name_TaskToSkill [label]" source="ent7#att28Array" target="sv1#page24#enu34#msfld19_label"/>
         <LinkParameter id="sv1#page24#seu32#ln133#par209" name="sid_TaskToSkill [output]" source="ent7#att27Array" target="sv1#page24#enu34#msfld19_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="460" gr:y="260" id="sv1#page24#seu33" name="ItemsOfTask" entity="ent5">
+    <SelectorUnit gr:x="460" gr:y="270" id="sv1#page24#seu33" name="ItemsOfTask" entity="ent5">
       <Selector id="sv1#page24#seu33#su62" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page24#seu33#su62#rcond46" name="RoleCondition16" predicate="in" implied="false" role="rel4#role8"/>
       </Selector>
@@ -23,7 +23,7 @@
         <LinkParameter id="sv1#page24#seu33#ln134#par210" name="iid_Items - Preselection" source="ent5#att8Array" target="sv1#page24#enu34#msfld20_presel"/>
       </Link>
     </SelectorUnit>
-    <PowerIndexUnit gr:x="245" gr:y="145" id="sv1#page24#pwu25" name="Tasks" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21" linkOrder="sv1#page24#pwu25#ln135" blockFactor="10">
+    <PowerIndexUnit gr:x="230" gr:y="170" id="sv1#page24#pwu25" name="Tasks" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21" linkOrder="sv1#page24#pwu25#ln135" blockFactor="10">
       <Selector id="sv1#page24#pwu25#su63" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page24#pwu25#su63#rcond47" name="RoleCondition11" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
@@ -36,9 +36,9 @@
         <LinkParameter id="sv1#page24#pwu25#ln135#par216" name="Title_Title" source="data[].ent4#att13" target="sv1#page24#enu34#fld128_slot"/>
       </Link>
       <Link id="sv1#page24#pwu25#ln136" name="Flow62" to="sv1#page24#seu33" automaticCoupling="true" type="transport" validate="true"/>
-      <Link id="sv1#page24#pwu25#ln4" name="Flow4" to="sv1#page24#seu3" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="272,-79,-103,66"/>
+      <Link id="sv1#page24#pwu25#ln4" name="Flow4" to="sv1#page24#seu3" automaticCoupling="true" type="transport" validate="true"/>
     </PowerIndexUnit>
-    <EntryUnit gr:x="460" gr:y="375" id="sv1#page24#enu32" name="Edit Item" entity="ent5" linkOrder="sv1#page24#enu32#ln23 sv1#page24#enu32#ln13 sv1#page24#enu32#ln32">
+    <EntryUnit gr:x="460" gr:y="395" id="sv1#page24#enu32" name="Edit Item" entity="ent5" linkOrder="sv1#page24#enu32#ln23 sv1#page24#enu32#ln13 sv1#page24#enu32#ln32">
       <Field id="sv1#page24#enu32#fld121" name="title" type="string" modifiable="true" preloaded="true" attribute="ent5#att23"/>
       <Field id="sv1#page24#enu32#fld122" name="caption" type="string" modifiable="true" preloaded="true" attribute="ent5#att24"/>
       <Field id="sv1#page24#enu32#fld123" name="url" type="url" modifiable="true" preloaded="true" attribute="ent5#att9"/>
@@ -48,7 +48,6 @@
       <Link id="sv1#page24#enu32#ln23" name="Save" to="sv1#miu3" type="normal" validate="true" ajaxEnabled="true">
         <LinkParameter id="sv1#page24#enu32#ln23#par30" name="Key [iid]_item key" source="key.ent5#att8" target="sv1#miu3.mov2#opm12#icu12#icp16"/>
         <LinkParameter id="sv1#page24#enu32#ln23#par31" name="Item Object_item object" source="entityBean" target="sv1#miu3.mov2#opm12#icu12#icp17"/>
-        <LinkParameter id="sv1#page24#enu32#ln23#par46" name="cid_PASSING" sourceLinkParameter="sv1#page24#enu33#ln11#par42" passing="true"/>
       </Link>
       <Link id="sv1#page24#enu32#ln13" name="Add as new" to="sv1#miu3" type="normal" validate="true" gr:bendpoints="58,86,138,-39" ajaxEnabled="true" customDescriptor="false">
         <LinkParameter id="sv1#page24#enu32#ln13#par27" name="Item Object_item object" source="entityBean" target="sv1#miu3.mov2#opm12#icu12#icp17"/>
@@ -58,7 +57,7 @@
         <LinkParameter id="sv1#page24#enu32#ln32#par77" name="iid_item key" source="key.ent5#att8" target="sv1#miu9.mov2#opm7#icu7#icp4"/>
       </Link>
     </EntryUnit>
-    <PowerIndexUnit id="sv1#page24#pwu26" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9" sortable="true" checkable="false" useCountQuery="false" gr:x="240" gr:y="360" name="Items" linkOrder="sv1#page24#pwu26#ln138" blockFactor="10">
+    <PowerIndexUnit id="sv1#page24#pwu26" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9" sortable="true" checkable="false" useCountQuery="false" gr:x="150" gr:y="370" name="Items" linkOrder="sv1#page24#pwu26#ln138" blockFactor="10">
       <Selector id="sv1#page24#pwu26#su64" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv1#page24#pwu26#su64#rcond48" role="rel5#role10" predicate="in" implied="false" name="CampaignItems"/>
       </Selector>
@@ -67,7 +66,7 @@
       </PreSelector>
       <Link id="sv1#page24#pwu26#ln138" name="Edit" to="sv1#page24#enu32" type="automatic" automaticCoupling="true" validate="true" ajaxEnabled="true"/>
     </PowerIndexUnit>
-    <EntryUnit gr:x="0" gr:y="150" id="sv1#page24#enu33" name="Edit Campaign" entity="ent3" linkOrder="sv1#page24#enu33#ln15" customDescriptor="false">
+    <EntryUnit gr:x="0" gr:y="170" id="sv1#page24#enu33" name="Edit Campaign" entity="ent3" linkOrder="sv1#page24#enu33#ln15" customDescriptor="false">
       <Field id="sv1#page24#enu33#fld124" name="name" type="string" modifiable="true" preloaded="true" attribute="ent3#att4"/>
       <Field id="sv1#page24#enu33#fld125" name="budget" type="integer" modifiable="true" preloaded="true" attribute="ent3#att5"/>
       <Field id="sv1#page24#enu33#fld126" name="isOpen" type="boolean" modifiable="true" preloaded="true" attribute="ent3#att6"/>
@@ -78,31 +77,29 @@
       <Link id="sv1#page24#enu33#ln141" name="Flow56" to="sv1#page24#pwu25" type="transport" validate="true">
         <LinkParameter id="sv1#page24#enu33#ln141#par221" name="Key [cid]_RoleCondition11 [cid]" source="key.ent3#att3" target="sv1#page24#pwu25#su63#rcond47.ent3#att3"/>
       </Link>
-      <Link id="sv1#page24#enu33#ln142" name="Flow60" to="sv1#page24#seu31" type="transport" validate="true" gr:bendpoints="168,-90,-252,20">
+      <Link id="sv1#page24#enu33#ln142" name="Flow60" to="sv1#page24#seu31" type="transport" validate="true">
         <LinkParameter id="sv1#page24#enu33#ln142#par222" name="Collector Parameter1_Campaign [cid]" source="key.ent3#att3" target="sv1#page24#seu31#su61#rcond45.ent3#att3"/>
       </Link>
-      <Link id="sv1#page24#enu33#ln11" name="Flow11" to="sv1#page24#enu32" type="transport" validate="true">
-        <LinkParameter id="sv1#page24#enu33#ln11#par42" name="cid_PASSING" sourceLinkParameter="sv1#page16#pwu14#ln68#par142" passing="true"/>
-      </Link>
-      <Link id="sv1#page24#enu33#ln12" name="Flow12" to="sv1#page24#enu34" type="transport" validate="true" gr:bendpoints="283,73,-172,73">
-        <LinkParameter id="sv1#page24#enu33#ln12#par44" name="cid_PASSING" sourceLinkParameter="sv1#page16#pwu14#ln68#par142" passing="true"/>
+      <Link id="sv1#page24#enu33#ln11" name="Flow11" to="sv1#page24#enu32" type="transport" validate="true"/>
+      <Link id="sv1#page24#enu33#ln12" name="Flow12" to="sv1#page24#enu34" type="transport" validate="true" gr:bendpoints="269,-68,-206,-48">
+        <LinkParameter id="sv1#page24#enu33#ln12#par44" name="cid_PASSING" sourceLinkParameter="sv1#page16#hinu1#ln52#par78" passing="true"/>
       </Link>
       <Link id="sv1#page24#enu33#ln15" name="Save" to="sv1#miu6" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true">
         <LinkParameter id="sv1#page24#enu33#ln15#par38" name="cid_campaign key" source="sv1#page24#enu33#fld127" target="sv1#miu6.mov2#opm14#icu14#icp25"/>
         <LinkParameter id="sv1#page24#enu33#ln15#par39" name="Campaign Object_campaign object" source="entityBean" target="sv1#miu6.mov2#opm14#icu14#icp26"/>
-        <LinkParameter id="sv1#page24#enu33#ln15#par40" name="rid_PASSING_requester key" sourceLinkParameter="sv1#page16#pwu14#ln68#par52" target="sv1#miu6.mov2#opm14#icu14#icp27"/>
+        <LinkParameter id="sv1#page24#enu33#ln15#par28" name="rid_PASSING_requester key" sourceLinkParameter="sv1#page24#seu4#ln33#par26" target="sv1#miu6.mov2#opm14#icu14#icp27"/>
       </Link>
       <VRules>
         <FormNotEmptyValidationRule id="sv1#page24#enu33#fnevr3" name="Form Not Empty3"/>
       </VRules>
-      <Link id="sv1#page24#enu33#ln14" name="Flow14" to="sv1#miu3" type="transport" validate="true" gr:bendpoints="131,291,-234,-59">
+      <Link id="sv1#page24#enu33#ln14" name="Flow14" to="sv1#miu3" type="transport" validate="true" gr:bendpoints="84,332,-281,-18">
         <LinkParameter id="sv1#page24#enu33#ln14#par56" name="cid_campaign key" source="sv1#page24#enu33#fld127" target="sv1#miu3.mov2#opm12#icu12#icp18"/>
       </Link>
-      <Link id="sv1#page24#enu33#ln19" name="Flow19" to="sv1#miu5" type="transport" validate="true" gr:bendpoints="395,-79,-430,-64">
+      <Link id="sv1#page24#enu33#ln19" name="Flow19" to="sv1#miu5" type="transport" validate="true" gr:bendpoints="-109,-108,-999,-8;-107,-228,-997,-128;794,-228,-96,-128">
         <LinkParameter id="sv1#page24#enu33#ln19#par63" name="cid_campaign key" source="sv1#page24#enu33#fld127" target="sv1#miu5.mov2#opm13#icu13#icp24"/>
       </Link>
     </EntryUnit>
-    <EntryUnit gr:x="475" gr:y="150" id="sv1#page24#enu34" name="Edit Task" entity="ent4" linkOrder="sv1#page24#enu34#ln8 sv1#page24#enu34#ln7 sv1#page24#enu34#ln35" customDescriptor="false">
+    <EntryUnit gr:x="490" gr:y="150" id="sv1#page24#enu34" name="Edit Task" entity="ent4" linkOrder="sv1#page24#enu34#ln8 sv1#page24#enu34#ln7 sv1#page24#enu34#ln35 sv1#page24#enu34#ln40" customDescriptor="false">
       <Field id="sv1#page24#enu34#fld128" name="Title" type="string" modifiable="true" preloaded="true" attribute="ent4#att13"/>
       <Field id="sv1#page24#enu34#fld129" name="description" type="string" modifiable="true" preloaded="true" attribute="ent4#att17"/>
       <Field id="sv1#page24#enu34#fld130" name="reward" type="float" modifiable="true" preloaded="true" attribute="ent4#att19"/>
@@ -118,15 +115,19 @@
       <VRules>
         <FormNotEmptyValidationRule id="sv1#page24#enu34#fnevr2" name="Form Not Empty2"/>
       </VRules>
-      <Link id="sv1#page24#enu34#ln7" name="Add as new" to="sv1#miu5" type="normal" validate="true" gr:bendpoints="183,87,-182,102" ajaxEnabled="true">
+      <Link id="sv1#page24#enu34#ln7" name="Add as new" to="sv1#miu5" type="normal" validate="true" gr:bendpoints="182,27,-248,127;425,24,-5,124" ajaxEnabled="true">
         <LinkParameter id="sv1#page24#enu34#ln7#par25" name="Task Object_task object" source="entityBean" target="sv1#miu5.mov2#opm13#icu13#icp23"/>
         <LinkParameter id="sv1#page24#enu34#ln7#par54" name="_task key" blank="true" target="sv1#miu5.mov2#opm13#icu13#icp19"/>
       </Link>
-      <Link id="sv1#page24#enu34#ln35" name="Delete" to="sv1#miu10" type="normal" validate="true" ajaxEnabled="true">
+      <Link id="sv1#page24#enu34#ln35" name="Delete" to="sv1#miu10" type="normal" validate="true" ajaxEnabled="true" gr:bendpoints="148,79,-292,-1">
         <LinkParameter id="sv1#page24#enu34#ln35#par82" name="Key [tid]_task key" source="key.ent4#att7" target="sv1#miu10.mov2#opm3#icu3#icp3"/>
       </Link>
+      <Link id="sv1#page24#enu34#ln40" name="Add Worker" to="sv1#page1#mciu2" type="normal" validate="true">
+        <LinkParameter id="sv1#page24#enu34#ln40#par105" name="Key [tid]_WorkerToTask [tid]" source="key.ent4#att7" target="sv1#page1#mciu2#su17#rcond6.ent4#att7"/>
+        <LinkParameter id="sv1#page24#enu34#ln40#par106" name="Key [tid]_PASSING" source="key.ent4#att7" passing="true"/>
+      </Link>
     </EntryUnit>
-    <SelectorUnit id="sv1#page24#seu3" name="SkillsOfTask" gr:x="640" gr:y="0" entity="ent7">
+    <SelectorUnit id="sv1#page24#seu3" name="SkillsOfTask" gr:x="595" gr:y="10" entity="ent7">
       <Link id="sv1#page24#seu3#ln3" name="Flow48" to="sv1#page24#enu34" type="transport" validate="true">
         <LinkParameter id="sv1#page24#seu3#ln3#par12" name="sid_TaskToSkill - Preselection" source="ent7#att27Array" target="sv1#page24#enu34#msfld19_presel"/>
       </Link>
@@ -134,7 +135,20 @@
         <RelationshipRoleCondition id="sv1#page24#seu3#su2#rcond2" name="Task" predicate="in" implied="false" role="rel10#role19"/>
       </Selector>
     </SelectorUnit>
-    <MultiMessageUnit gr:x="645" gr:y="375" id="sv1#page24#mssu1" name="Error Message"/>
+    <MultiMessageUnit gr:x="615" gr:y="340" id="sv1#page24#mssu1" name="Error Message"/>
+    <GetUnit id="sv1#page24#gtu2" name="User" gr:x="170" gr:y="10" contextParameters="UserCtxParam">
+      <Link id="sv1#page24#gtu2#ln29" name="Flow35" to="sv1#page24#seu4" type="transport" validate="true">
+        <LinkParameter id="sv1#page24#gtu2#ln29#par10" name="UserCtxParam.oid_userid" source="sv1#page24#gtu2.UserCtxParam" target="sv1#page24#seu4#su8#acond3"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit id="sv1#page24#seu4" name="UserToRequester" gr:x="20" gr:y="0" entity="ent2" distinctAttributes="ent2#att22">
+      <Selector id="sv1#page24#seu4#su8" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#page24#seu4#su8#acond3" name="userid" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
+      </Selector>
+      <Link id="sv1#page24#seu4#ln33" name="Flow33" to="sv1#page24#enu33" type="transport" validate="true">
+        <LinkParameter id="sv1#page24#seu4#ln33#par26" name="rid_PASSING" source="ent2#att22Array" passing="true"/>
+      </Link>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -243,6 +257,7 @@
           <layout:Link link="sv1#page24#enu34#ln8"/>
           <layout:Link link="sv1#page24#enu34#ln7"/>
           <layout:Link link="sv1#page24#enu34#ln35"/>
+          <layout:Link link="sv1#page24#enu34#ln40"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

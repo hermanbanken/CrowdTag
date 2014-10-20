@@ -1,0 +1,77 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="985" gr:y="-165" id="sv1#page1" name="Add Worker">
+  <ContentUnits>
+    <MultiChoiceIndexUnit gr:x="0" gr:y="90" id="sv1#page1#mciu2" name="WorkersForTask" entity="ent1" displayAttributes="userName password email User#att25 User#att26 ent1#att14 ent1#att15 ent1#att16 ent1#att18 ent1#att30" linkOrder="sv1#page1#mciu2#ln44">
+      <SortAttribute attribute="userOID" order="ascending"/>
+      <Link id="sv1#page1#mciu2#ln44" name="Save" to="sv1#miu11" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#mciu2#ln44#par53" name="Checked oid_selectedWorkers" source="userOIDChecked" target="sv1#miu11.mov2#opm4#icu4#icp6"/>
+        <LinkParameter id="sv1#page1#mciu2#ln44#par107" name="Key [tid]_PASSING_tid" sourceLinkParameter="sv1#page24#enu34#ln40#par106" target="sv1#miu11.mov2#opm4#icu4#icp5"/>
+      </Link>
+      <PreSelector id="sv1#page1#mciu2#su17" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page1#mciu2#su17#rcond6" name="WorkerToTask" predicate="in" implied="false" role="rel7#role13"/>
+      </PreSelector>
+    </MultiChoiceIndexUnit>
+    <SelectorUnit gr:x="25" gr:y="0" id="sv1#page1#seu10" name="All Workers" entity="ent1" distinctAttributes="userOID">
+      <Link id="sv1#page1#seu10#ln56" name="Flow56" to="sv1#miu11" type="transport" validate="true" gr:bendpoints="134,-32,-181,-67">
+        <LinkParameter id="sv1#page1#seu10#ln56#par138" name="oid_workers" source="userOIDArray" target="sv1#miu11.mov2#opm4#icu4#icp7"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#mciu2">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att25"/>
+          <layout:Attribute attribute="User#att26"/>
+          <layout:Attribute attribute="ent1#att14"/>
+          <layout:Attribute attribute="ent1#att15"/>
+          <layout:Attribute attribute="ent1#att16"/>
+          <layout:Attribute attribute="ent1#att18"/>
+          <layout:Attribute attribute="ent1#att30"/>
+          <layout:Link link="sv1#page1#mciu2#ln44"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

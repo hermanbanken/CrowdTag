@@ -1,0 +1,66 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="100" gr:y="370" id="mov2#opm4" name="SaveWorkerToTask">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm4#icu4" gr:x="25" gr:y="120" linkOrder="mov2#opm4#icu4#ln41 mov2#opm4#icu4#ln42 mov2#opm4#icu4#ln43 mov2#opm4#icu4#ln54">
+      <InputCollectorParameter id="mov2#opm4#icu4#icp7" name="workers"/>
+      <InputCollectorParameter id="mov2#opm4#icu4#icp6" name="selectedWorkers"/>
+      <InputCollectorParameter id="mov2#opm4#icu4#icp5" name="tid"/>
+      <OKLink id="mov2#opm4#icu4#oln2" name="OKFlow2" to="mov2#opm4#lpu1">
+        <LinkParameter id="mov2#opm4#icu4#oln2#par33" name="workers_Input Array" source="mov2#opm4#icu4#icp7" target="mov2#opm4#lpu1.array"/>
+      </OKLink>
+      <Link id="mov2#opm4#icu4#ln41" name="Flow41" to="mov2#opm4#dcnu1" type="transport" validate="true">
+        <LinkParameter id="mov2#opm4#icu4#ln41#par126" name="tid_KeyCondition3 [tid] [Task] [Source]" source="mov2#opm4#icu4#icp5" target="mov2#opm4#dcnu1#su11#kcond3.ent4#att7"/>
+      </Link>
+      <Link id="mov2#opm4#icu4#ln42" name="Flow42" to="mov2#opm4#lpu2" type="transport" validate="true" gr:bendpoints="216,-56,-229,-56">
+        <LinkParameter id="mov2#opm4#icu4#ln42#par40" name="selectedWorkers_Input Array" source="mov2#opm4#icu4#icp6" target="mov2#opm4#lpu2.array"/>
+      </Link>
+      <Link id="mov2#opm4#icu4#ln43" name="Flow43" to="mov2#opm4#cnu1" type="transport" validate="true" gr:bendpoints="106,263,-344,113;371,265,-79,115">
+        <LinkParameter id="mov2#opm4#icu4#ln43#par127" name="tid_KeyCondition6 [tid] [Task] [Source]" source="mov2#opm4#icu4#icp5" target="mov2#opm4#cnu1#su14#kcond6.ent4#att7"/>
+      </Link>
+      <Link id="mov2#opm4#icu4#ln54" name="Flow54" to="mov2#opm4#okcu6" type="transport" validate="true" gr:bendpoints="181,-90,-524,-90;543,-88,-162,-88">
+        <LinkParameter id="mov2#opm4#icu4#ln54#par108" name="tid_tid" source="mov2#opm4#icu4#icp5" target="mov2#opm4#okcu6#ocp5"/>
+      </Link>
+    </InputCollectorUnit>
+    <LoopUnit gr:x="310" gr:y="145" id="mov2#opm4#lpu1" name="ForEachWorker">
+      <OKLink id="mov2#opm4#lpu1#oln1" name="OKFlow1" to="mov2#opm4#dcnu1" code="next" gr:bendpoints="32,52,22,-73">
+        <LinkParameter id="mov2#opm4#lpu1#oln1#par125" name="Next Element_KeyCondition5 [oid] [Worker] [Target]" source="next" target="mov2#opm4#dcnu1#su12#kcond5.userOID"/>
+      </OKLink>
+      <OKLink id="mov2#opm4#lpu1#oln12" name="OKFlow12" to="mov2#opm4#lpu2" automaticCoupling="true" code="end"/>
+    </LoopUnit>
+    <LoopUnit gr:x="505" gr:y="145" id="mov2#opm4#lpu2" name="ForEachSelectedWorker">
+      <OKLink id="mov2#opm4#lpu2#oln13" name="OKFlow13" to="mov2#opm4#cnu1" gr:bendpoints="27,66,17,-84" code="next">
+        <LinkParameter id="mov2#opm4#lpu2#oln13#par129" name="Next Element_KeyCondition7 [oid] [Worker] [Target]" source="next" target="mov2#opm4#cnu1#su15#kcond7.userOID"/>
+      </OKLink>
+      <OKLink id="mov2#opm4#lpu2#oln15" name="OKFlow15" to="mov2#opm4#okcu6" automaticCoupling="true" code="end"/>
+    </LoopUnit>
+    <DisconnectUnit gr:x="285" gr:y="275" id="mov2#opm4#dcnu1" name="DisconnectWorkerAndTask" relationship="rel7#role13">
+      <SourceSelector id="mov2#opm4#dcnu1#su11" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm4#dcnu1#su11#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov2#opm4#dcnu1#su12" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm4#dcnu1#su12#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov2#opm4#dcnu1#oln11" name="OKFlow11" to="mov2#opm4#lpu1" automaticCoupling="true" gr:bendpoints="-38,-89,-28,66"/>
+      <KOLink id="mov2#opm4#dcnu1#kln8" name="KOFlow8" to="mov2#opm4#kocu9" gr:bendpoints="251,135,-219,135">
+        <LinkParameter id="mov2#opm4#dcnu1#kln8#par109" name="Disc went wrong_msg" sourceValue="Disc went wrong" target="mov2#opm4#kocu9#ocp7"/>
+      </KOLink>
+    </DisconnectUnit>
+    <ConnectUnit gr:x="510" gr:y="270" id="mov2#opm4#cnu1" name="ConnectWorkerAndTask" relationship="rel7#role13">
+      <SourceSelector id="mov2#opm4#cnu1#su14" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm4#cnu1#su14#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="mov2#opm4#cnu1#su15" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm4#cnu1#su15#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="mov2#opm4#cnu1#oln14" name="OKFlow14" to="mov2#opm4#lpu2" automaticCoupling="true" gr:bendpoints="-40,-89,-30,61"/>
+      <KOLink id="mov2#opm4#cnu1#kln9" name="KOFlow9" to="mov2#opm4#kocu9">
+        <LinkParameter id="mov2#opm4#cnu1#kln9#par111" name="Conn went wrong_msg" sourceValue="Conn went wrong" target="mov2#opm4#kocu9#ocp7"/>
+      </KOLink>
+    </ConnectUnit>
+    <OKCollectorUnit gr:x="730" gr:y="135" id="mov2#opm4#okcu6" name="Success">
+      <OutputCollectorParameter id="mov2#opm4#okcu6#ocp5" name="tid"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="730" gr:y="290" id="mov2#opm4#kocu9" name="KO Port9">
+      <OutputCollectorParameter id="mov2#opm4#kocu9#ocp7" name="msg"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

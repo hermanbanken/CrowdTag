@@ -1,19 +1,5 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-45" gr:y="90" id="sv1#page16" name="Campaigns" landmark="true" linkOrder="sv1#page16#ln21" customURLName="campaigns" layout:layoutManager="grid">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-45" gr:y="90" id="sv1#page16" name="Campaigns Overview" landmark="true" linkOrder="sv1#page16#ln21" customURLName="campaigns" layout:layoutManager="grid">
   <ContentUnits>
-    <PowerIndexUnit gr:x="175" gr:y="145" id="sv1#page16#pwu14" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#page16#pwu14#ln68" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6" blockFactor="10">
-      <Link id="sv1#page16#pwu14#ln68" name="View" to="sv1#page24#enu33" type="normal" validate="true">
-        <LinkParameter id="sv1#page16#pwu14#ln68#par142" name="cid_PASSING" source="data[].ent3#att3" passing="true"/>
-        <LinkParameter id="sv1#page16#pwu14#ln68#par143" name="cid (block)_PASSING" source="ent3#att3Array" passing="true"/>
-        <LinkParameter id="sv1#page16#pwu14#ln68#par185" name="cid_Key Condition [cid]" source="data[].ent3#att3" target="sv1#page24#enu33.ent3#att3"/>
-        <LinkParameter id="sv1#page16#pwu14#ln68#par52" name="rid_PASSING" sourceLinkParameter="sv1#page16#seu15#ln75#par51" passing="true"/>
-      </Link>
-      <Selector id="sv1#page16#pwu14#su34" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv1#page16#pwu14#su34#rcond19" name="RequesterOfCampaigns" predicate="in" implied="false" role="rel1#role1"/>
-      </Selector>
-    </PowerIndexUnit>
-    <MultiChoiceIndexUnit gr:x="60" gr:y="425" id="sv1#page16#mciu5" name="WorkersForTask" entity="ent1" displayAttributes="userName password email User#att25 User#att26 ent1#att14 ent1#att15 ent1#att16 ent1#att18 ent1#att30">
-      <SortAttribute attribute="userOID" order="ascending"/>
-    </MultiChoiceIndexUnit>
     <GetUnit gr:x="10" gr:y="0" id="sv1#page16#gtu8" name="User" contextParameters="UserCtxParam">
       <Link id="sv1#page16#gtu8#ln74" name="Flow35" to="sv1#page16#seu15" type="transport" validate="true">
         <LinkParameter id="sv1#page16#gtu8#ln74#par114" name="UserCtxParam.oid_userid" source="sv1#page16#gtu8.UserCtxParam" target="sv1#page16#seu15#su36#acond6"/>
@@ -23,25 +9,42 @@
       <Selector id="sv1#page16#seu15#su36" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv1#page16#seu15#su36#acond6" name="userid" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
       </Selector>
-      <Link id="sv1#page16#seu15#ln75" name="Flow38" to="sv1#page16#pwu14" type="transport" validate="true">
-        <LinkParameter id="sv1#page16#seu15#ln75#par50" name="oid_RequesterOfCampaigns [oid]" source="userOIDArray" target="sv1#page16#pwu14#su34#rcond19.userOID"/>
+      <Link id="sv1#page16#seu15#ln75" name="Flow38" to="sv1#page16#hinu1" type="transport" validate="true">
+        <LinkParameter id="sv1#page16#seu15#ln75#par50" name="oid_RequesterOfCampaigns [oid]" source="userOIDArray" target="sv1#page16#hinu1#su16#rcond5.userOID"/>
         <LinkParameter id="sv1#page16#seu15#ln75#par51" name="rid_PASSING" source="ent2#att22Array" passing="true"/>
       </Link>
     </SelectorUnit>
+    <HierarchicalIndexUnit id="sv1#page16#hinu1" entity="ent3" displayAttributes="ent3#att4 ent3#att5 ent3#att6" sortable="true" blockFactor="10" gr:x="175" gr:y="125" name="Campaigns" linkOrder="sv1#page16#hinu1#ln52">
+      <Selector id="sv1#page16#hinu1#su16" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page16#hinu1#su16#rcond5" role="rel1#role1" predicate="in" implied="false" name="RequesterOfCampaigns"/>
+      </Selector>
+      <Link id="sv1#page16#hinu1#ln52" name="View" to="sv1#page24#enu33" type="normal" validate="true">
+        <LinkParameter id="sv1#page16#hinu1#ln52#par78" name="cid_PASSING" source="data[].ent3#att3" passing="true"/>
+        <LinkParameter id="sv1#page16#hinu1#ln52#par81" name="cid_Key Condition [cid]" source="data[].ent3#att3" target="sv1#page24#enu33.ent3#att3"/>
+      </Link>
+      <HierarchicalIndexLevel id="sv1#page16#hinu1#hiulvl1" name="Tasks" entity="ent4" role="rel6#role12" displayAttributes="ent4#att13 ent4#att21">
+        <HierarchicalIndexLevel id="sv1#page16#hinu1#hiulvl1#hiulvl3" name="Workers" entity="ent1" role="rel7#role13" displayAttributes="userName email User#att25"/>
+      </HierarchicalIndexLevel>
+    </HierarchicalIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv1#page16#pwu14">
+        <layout:Unit unitId="sv1#page16#hinu1">
+          <layout:Link link="sv1#page16#hinu1#ln52"/>
+          <layout:Link link="sv1#page16#hinu1First"/>
+          <layout:Link link="sv1#page16#hinu1Previous"/>
+          <layout:Link link="sv1#page16#hinu1Block"/>
+          <layout:Link link="sv1#page16#hinu1Next"/>
+          <layout:Link link="sv1#page16#hinu1Last"/>
           <layout:Attribute attribute="ent3#att4"/>
           <layout:Attribute attribute="ent3#att5"/>
           <layout:Attribute attribute="ent3#att6"/>
-          <layout:Link link="sv1#page16#pwu14#ln68"/>
-          <layout:Link link="sv1#page16#pwu14First"/>
-          <layout:Link link="sv1#page16#pwu14Previous"/>
-          <layout:Link link="sv1#page16#pwu14Block"/>
-          <layout:Link link="sv1#page16#pwu14Next"/>
-          <layout:Link link="sv1#page16#pwu14Last"/>
+          <layout:Attribute attribute="ent4#att13"/>
+          <layout:Attribute attribute="ent4#att21"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att25"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -57,20 +60,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv1#page16#mciu5">
-          <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="password"/>
-          <layout:Attribute attribute="email"/>
-          <layout:Attribute attribute="User#att25"/>
-          <layout:Attribute attribute="User#att26"/>
-          <layout:Attribute attribute="ent1#att14"/>
-          <layout:Attribute attribute="ent1#att15"/>
-          <layout:Attribute attribute="ent1#att16"/>
-          <layout:Attribute attribute="ent1#att18"/>
-          <layout:Attribute attribute="ent1#att30"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

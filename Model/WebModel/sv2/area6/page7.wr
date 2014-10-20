@@ -35,8 +35,8 @@
       </HierarchicalIndexLevel>
       <Link id="sv2#area6#page7#hinu2#ln49" name="Details" to="sv2#area6#page7#dau2" automaticCoupling="true" type="normal" validate="true" ajaxEnabled="true"/>
       <Link id="sv2#area6#page7#hinu2#ln63" name="Create Annotation" to="sv2#area6#page7#enu4" type="normal" validate="true" ajaxEnabled="true">
-        <LinkParameter id="sv2#area6#page7#hinu2#ln63#par144" name="title(Items)_Item" source="data[].sv2#area6#page7#hinu2#hiulvl2data[].ent5#att23" target="sv2#area6#page7#enu4#fld14_slot"/>
-        <LinkParameter id="sv2#area6#page7#hinu2#ln63#par145" name="Title(Tasks)_Task" source="data[].ent4#att13" target="sv2#area6#page7#enu4#fld13_slot"/>
+        <LinkParameter id="sv2#area6#page7#hinu2#ln63#par144" name="title(Items)_Item" source="data[].sv2#area6#page7#hinu2#hiulvl2data[].ent5#att8" target="sv2#area6#page7#enu4#fld14_slot"/>
+        <LinkParameter id="sv2#area6#page7#hinu2#ln63#par145" name="Title(Tasks)_Task" source="data[].ent4#att7" target="sv2#area6#page7#enu4#fld13_slot"/>
         <LinkParameter id="sv2#area6#page7#hinu2#ln63#par148" name="iid(Items)_PASSING" source="data[].sv2#area6#page7#hinu2#hiulvl2data[].ent5#att8" passing="true"/>
         <LinkParameter id="sv2#area6#page7#hinu2#ln63#par149" name="tid(Tasks)_PASSING" source="data[].ent4#att7" passing="true"/>
       </Link>
@@ -50,9 +50,7 @@
     <EntryUnit gr:x="5" gr:y="400" id="sv2#area6#page7#enu4" name="AddAnnotation" linkOrder="sv2#area6#page7#enu4#ln62" entity="ent6">
       <Field id="sv2#area6#page7#enu4#fld13" name="Task" type="integer" modifiable="false" contentType="text/plain" preloaded="true"/>
       <Field id="sv2#area6#page7#enu4#fld14" name="Item" type="string" modifiable="false" contentType="text/plain" preloaded="true"/>
-      <Link id="sv2#area6#page7#enu4#ln62" name="StartSave" to="sv2#miu4" type="normal" validate="true" ajaxEnabled="true">
-        <LinkParameter id="sv2#area6#page7#enu4#ln62#par139" name="Item_item" source="sv2#area6#page7#enu4#fld14" target="sv2#miu4.mov1#opm6#icu6#icp17"/>
-        <LinkParameter id="sv2#area6#page7#enu4#ln62#par140" name="Task_task" source="sv2#area6#page7#enu4#fld13" target="sv2#miu4.mov1#opm6#icu6#icp16"/>
+      <Link id="sv2#area6#page7#enu4#ln62" name="Save" to="sv2#miu4" type="normal" validate="true" ajaxEnabled="true">
         <LinkParameter id="sv2#area6#page7#enu4#ln62#par146" name="confidence_confidence" source="sv2#area6#page7#enu4#fld17" target="sv2#miu4.mov1#opm6#icu6#icp12"/>
         <LinkParameter id="sv2#area6#page7#enu4#ln62#par147" name="label_label" source="sv2#area6#page7#enu4#fld16" target="sv2#miu4.mov1#opm6#icu6#icp11"/>
         <LinkParameter id="sv2#area6#page7#enu4#ln62#par150" name="iid(Items)_PASSING_iid" sourceLinkParameter="sv2#area6#page7#hinu2#ln63#par148" target="sv2#miu4.mov1#opm6#icu6#icp13"/>
