@@ -1,0 +1,8 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="335" gr:y="295" id="mov1#opm16" name="Nothing">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm16#icu16" gr:x="30" gr:y="60" name="Input Collector">
+      <OKLink id="mov1#opm16#icu16#oln48" name="OKFlow48" to="mov1#opm16#okcu15" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="305" gr:y="85" id="mov1#opm16#okcu15" name="OK Port15"/>
+  </OperationUnits>
+</OperationModule>

@@ -18,12 +18,16 @@
         <LinkParameter id="sv1#page15#seu14#ln67#par100" name="userName_userName" source="userNameArray" target="sv1#page15#enu16#fld57_slot"/>
       </Link>
     </SelectorUnit>
-    <EntryUnit gr:x="320" gr:y="5" id="sv1#page15#enu16" name="Form10" entity="ent2">
+    <EntryUnit gr:x="320" gr:y="5" id="sv1#page15#enu16" name="Personal information" entity="ent2" linkOrder="sv1#page15#enu16#ln31">
       <Field id="sv1#page15#enu16#fld57" name="userName" type="string" modifiable="true" preloaded="true" attribute="userName"/>
       <Field id="sv1#page15#enu16#fld58" name="password" type="password" modifiable="true" preloaded="true" attribute="password"/>
       <Field id="sv1#page15#enu16#fld59" name="email" type="string" modifiable="true" preloaded="true" attribute="email"/>
       <Field id="sv1#page15#enu16#fld60" name="name" type="string" modifiable="true" preloaded="true" attribute="User#att25"/>
       <Field id="sv1#page15#enu16#fld61" name="birthDate" type="timestamp" modifiable="true" preloaded="true" attribute="User#att26"/>
+      <Link id="sv1#page15#enu16#ln31" name="Flow31" to="sv1#miu4" type="normal" validate="true">
+        <LinkParameter id="sv1#page15#enu16#ln31#par11" name="Key [oid]_Id" source="key.userOID" target="sv1#miu4.mov1#opm17#icu17#icp33"/>
+        <LinkParameter id="sv1#page15#enu16#ln31#par24" name="Requester Object_Profile" source="entityBean" target="sv1#miu4.mov1#opm17#icu17#icp32"/>
+      </Link>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -35,6 +39,7 @@
           <layout:Field field="sv1#page15#enu16#fld59"/>
           <layout:Field field="sv1#page15#enu16#fld60"/>
           <layout:Field field="sv1#page15#enu16#fld61"/>
+          <layout:Link link="sv1#page15#enu16#ln31"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

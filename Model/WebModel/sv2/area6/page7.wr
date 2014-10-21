@@ -19,7 +19,7 @@
       </Selector>
       <Link id="sv2#area6#page7#seu6#ln28" name="WSelToTaskSel" to="sv2#area6#page7#seu1" automaticCoupling="true" type="transport" validate="true"/>
     </SelectorUnit>
-    <PowerIndexUnit gr:x="155" gr:y="230" id="sv2#area6#page7#pwu1" name="Tasks" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21 countDistinct(rel4#role8.ent5#att8)" linkOrder="sv2#area6#page7#pwu1#ln148">
+    <PowerIndexUnit gr:x="155" gr:y="230" id="sv2#area6#page7#pwu1" name="Tasks" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att13 ent4#att17 ent4#att19 ent4#att20 ent4#att21" linkOrder="sv2#area6#page7#pwu1#ln148">
       <Link id="sv2#area6#page7#pwu1#ln148" name="Start Task" to="sv2#area6#page10#dau2" automaticCoupling="true" type="normal" validate="true"/>
     </PowerIndexUnit>
   </ContentUnits>
@@ -27,13 +27,12 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv2#area6#page7#pwu1">
+          <layout:Link link="sv2#area6#page7#pwu1#ln148"/>
           <layout:Attribute attribute="ent4#att13"/>
           <layout:Attribute attribute="ent4#att17"/>
           <layout:Attribute attribute="ent4#att19"/>
           <layout:Attribute attribute="ent4#att20"/>
           <layout:Attribute attribute="ent4#att21"/>
-          <layout:Attribute attribute="countDistinct(rel4#role8.ent5#att8)"/>
-          <layout:Link link="sv2#area6#page7#pwu1#ln148"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

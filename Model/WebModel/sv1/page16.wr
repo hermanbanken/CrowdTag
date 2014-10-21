@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-35" gr:y="310" id="sv1#page16" name="Campaigns Overview" landmark="true" linkOrder="sv1#page16#ln21" customURLName="campaigns" layout:layoutManager="grid">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-35" gr:y="310" id="sv1#page16" name="Campaigns Overview" landmark="true" linkOrder="sv1#page16#ln21 sv1#page16#ln51" customURLName="campaigns" layout:layoutManager="grid">
   <ContentUnits>
     <GetUnit gr:x="10" gr:y="0" id="sv1#page16#gtu8" name="User" contextParameters="UserCtxParam">
       <Link id="sv1#page16#gtu8#ln74" name="Flow35" to="sv1#page16#seu15" type="transport" validate="true">
@@ -168,4 +168,5 @@
     </layout:Row>
   </layout:Grid>
   <Link id="sv1#page16#ln21" name="Add New" to="sv1#page24#enu33" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv1#page16#ln51" name="Edit Campaign" to="sv1#page24" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="606,-118,-484,-198"/>
 </Page>
