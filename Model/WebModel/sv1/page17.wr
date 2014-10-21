@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="420" gr:y="-95" id="sv1#page17" name="Inbox" landmark="true" customURLName="inbox">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-55" gr:y="-30" id="sv1#page17" name="Inbox" landmark="true" customURLName="inbox">
   <ContentUnits>
-    <HierarchicalIndexUnit gr:x="0" gr:y="0" id="sv1#page17#hinu3" name="AnnotationsForItemForTask" sortable="false" entity="ent4" displayAttributes="ent4#att13" linkOrder="sv1#page17#hinu3#ln24 sv1#page17#hinu3#ln25">
+    <HierarchicalIndexUnit gr:x="305" gr:y="90" id="sv1#page17#hinu3" name="AnnotationsForItemForTask" sortable="false" entity="ent4" displayAttributes="ent4#att13" linkOrder="sv1#page17#hinu3#ln24 sv1#page17#hinu3#ln25">
       <HierarchicalIndexLevel id="sv1#page17#hinu3#hiulvl5" name="Item" entity="ent5" role="rel4#role8" displayAttributes="ent5#att23 ent5#att24 ent5#att9">
         <HierarchicalIndexLevel id="sv1#page17#hinu3#hiulvl5#hiulvl6" name="Annotation" entity="ent6" role="rel2#role4" displayAttributes="ent6#att11 ent6#att12">
           <Selector id="sv1#page17#hinu3#hiulvl5#hiulvl6#su10" defaultPolicy="fill" booleanOperator="and">
@@ -8,13 +8,34 @@
           </Selector>
         </HierarchicalIndexLevel>
       </HierarchicalIndexLevel>
-      <Link id="sv1#page17#hinu3#ln24" name="Accept" to="sv1#miu7" type="normal" validate="true" ajaxEnabled="true">
+      <Link id="sv1#page17#hinu3#ln24" name="Accept" to="sv1#miu7" type="normal" validate="true" ajaxEnabled="false">
         <LinkParameter id="sv1#page17#hinu3#ln24#par58" name="aid(Annotation)_annotation keys" source="data[].sv1#page17#hinu3#hiulvl5data[].sv1#page17#hinu3#hiulvl5#hiulvl6data[].ent6#att10" target="sv1#miu7.mov2#opm10#icu10#icp14"/>
       </Link>
-      <Link id="sv1#page17#hinu3#ln25" name="Reject" to="sv1#miu8" type="normal" validate="true" ajaxEnabled="true">
+      <Link id="sv1#page17#hinu3#ln25" name="Reject" to="sv1#miu8" type="normal" validate="true" ajaxEnabled="false">
         <LinkParameter id="sv1#page17#hinu3#ln25#par59" name="aid(Annotation)_annotation keys" source="data[].sv1#page17#hinu3#hiulvl5data[].sv1#page17#hinu3#hiulvl5#hiulvl6data[].ent6#att10" target="sv1#miu8.mov2#opm11#icu11#icp15"/>
       </Link>
+      <Selector id="sv1#page17#hinu3#su77" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page17#hinu3#su77#rcond33" name="RoleCondition33" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
     </HierarchicalIndexUnit>
+    <SelectorUnit id="sv1#page17#seu38" name="UserToRequester" gr:x="125" gr:y="0" entity="ent2" distinctAttributes="ent2#att22">
+      <Selector id="sv1#page17#seu38#su75" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#page17#seu38#su75#acond21" name="userid" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
+      </Selector>
+      <Link id="sv1#page17#seu38#ln128" name="Flow128" to="sv1#page17#seu39" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <GetUnit id="sv1#page17#gtu9" name="User" gr:x="0" gr:y="20" contextParameters="UserCtxParam">
+      <Link id="sv1#page17#gtu9#ln127" name="Flow35" to="sv1#page17#seu38" type="transport" validate="true">
+        <LinkParameter id="sv1#page17#gtu9#ln127#par253" name="UserCtxParam.oid_userid" source="sv1#page17#gtu9.UserCtxParam" target="sv1#page17#seu38#su75#acond21"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="30" gr:y="125" id="sv1#page17#seu39" name="CampaignsOfRequester" entity="ent3">
+      <Selector id="sv1#page17#seu39#su76" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv1#page17#seu39#su76#rcond32" name="RoleCondition32" predicate="in" implied="false" role="rel1#role1"/>
+        <AttributesCondition id="sv1#page17#seu39#su76#acond23" name="IsOpen" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att6" value="1"/>
+      </Selector>
+      <Link id="sv1#page17#seu39#ln130" name="Flow130" to="sv1#page17#hinu3" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -30,6 +51,48 @@
           <layout:Link link="sv1#page17#hinu3#ln25"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

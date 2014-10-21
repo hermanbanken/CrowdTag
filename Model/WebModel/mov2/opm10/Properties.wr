@@ -1,13 +1,18 @@
 <OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="60" gr:y="61" id="mov2#opm10" name="Accept Annotation">
   <OperationUnits>
-    <InputCollectorUnit id="mov2#opm10#icu10" gr:x="5" gr:y="50">
+    <InputCollectorUnit id="mov2#opm10#icu10" gr:x="5" gr:y="50" linkOrder="mov2#opm10#icu10#ln85">
       <InputCollectorParameter id="mov2#opm10#icu10#icp14" name="annotation key"/>
       <OKLink id="mov2#opm10#icu10#oln46" name="OKFlow46" to="mov2#opm10#mfu6">
         <LinkParameter id="mov2#opm10#icu10#oln46#par93" name="annotation key_KeyCondition7 [aid]" source="mov2#opm10#icu10#icp14" target="mov2#opm10#mfu6#su31#kcond14.ent6#att10"/>
         <LinkParameter id="mov2#opm10#icu10#oln46#par101" name="Accepted_status" sourceValue="Accepted" target="mov2#opm10#mfu6.ent6#att1"/>
       </OKLink>
+      <Link id="mov2#opm10#icu10#ln85" name="Flow85" to="mov2#opm10#okcu8" type="transport" validate="true" gr:bendpoints="133,71,-312,61;305,67,-140,57">
+        <LinkParameter id="mov2#opm10#icu10#ln85#par47" name="annotation key_aid" source="mov2#opm10#icu10#icp14" target="mov2#opm10#okcu8#ocp8"/>
+      </Link>
     </InputCollectorUnit>
-    <OKCollectorUnit gr:x="450" gr:y="60" id="mov2#opm10#okcu8" name="Success"/>
+    <OKCollectorUnit gr:x="450" gr:y="60" id="mov2#opm10#okcu8" name="Success">
+      <OutputCollectorParameter id="mov2#opm10#okcu8#ocp8" name="aid"/>
+    </OKCollectorUnit>
     <ModifyUnit gr:x="310" gr:y="50" id="mov2#opm10#mfu6" name="Update3" entity="ent6" bulk="false">
       <Selector id="mov2#opm10#mfu6#su31" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="mov2#opm10#mfu6#su31#kcond14" name="KeyCondition7" predicate="in" implied="false"/>

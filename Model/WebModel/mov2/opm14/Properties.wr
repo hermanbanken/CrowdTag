@@ -15,6 +15,7 @@
       <Link id="mov2#opm14#icu14#ln82" name="Flow52" to="mov2#opm14#cru6" type="transport" validate="true" gr:bendpoints="169,128,-301,-2">
         <LinkParameter id="mov2#opm14#icu14#ln82#par173" name="campaign object_Campaign Object" source="mov2#opm14#icu14#icp26" target="mov2#opm14#cru6.entityBeans"/>
         <LinkParameter id="mov2#opm14#icu14#ln82#par174" name="requester key_Requester.oid(Annotation CampaignToRequester)" source="mov2#opm14#icu14#icp27" target="mov2#opm14#cru6.rel1#role2.userOID"/>
+        <LinkParameter id="mov2#opm14#icu14#ln82#par238" name="1_isOpen" sourceValue="1" target="mov2#opm14#cru6.ent3#att6"/>
       </Link>
     </InputCollectorUnit>
     <CreateUnit gr:x="550" gr:y="205" id="mov2#opm14#cru6" name="Create Campaign" entity="ent3" skipBlankRecords="true">

@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="100" gr:y="370" id="mov2#opm4" name="SaveWorkerToTask">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="55" gr:y="295" id="mov2#opm4" name="SaveWorkerToTask">
   <OperationUnits>
     <InputCollectorUnit id="mov2#opm4#icu4" gr:x="25" gr:y="120" linkOrder="mov2#opm4#icu4#ln41 mov2#opm4#icu4#ln42 mov2#opm4#icu4#ln43 mov2#opm4#icu4#ln54">
       <InputCollectorParameter id="mov2#opm4#icu4#icp7" name="workers"/>

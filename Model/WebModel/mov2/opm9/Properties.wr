@@ -1,0 +1,45 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm9" name="CheckTaskCompleted" gr:x="50" gr:y="475">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm9#icu9" gr:x="50" gr:y="125" linkOrder="mov2#opm9#icu9#ln107">
+      <InputCollectorParameter id="mov2#opm9#icu9#icp21" name="tid"/>
+      <OKLink id="mov2#opm9#icu9#oln57" name="OKFlow57" to="mov2#opm9#seu28" automaticCoupling="true" gr:bendpoints="129,15,-71,50"/>
+      <Link id="mov2#opm9#icu9#ln107" name="Flow107" to="mov2#opm9#seu28" type="transport" validate="true">
+        <LinkParameter id="mov2#opm9#icu9#ln107#par184" name="tid_RoleCondition10 [tid]" source="mov2#opm9#icu9#icp21" target="mov2#opm9#seu28#su60#rcond26.ent4#att7"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="660" gr:y="115" id="mov2#opm9#okcu7" name="Completed">
+      <OutputCollectorParameter id="mov2#opm9#okcu7#ocp9" name="output"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="660" gr:y="255" id="mov2#opm9#kocu4" name="Not Completed">
+      <OutputCollectorParameter id="mov2#opm9#kocu4#ocp10" name="output"/>
+    </KOCollectorUnit>
+    <SelectorUnit id="mov2#opm9#seu28" name="ItemsInTask" gr:x="310" gr:y="80" entity="ent5" distinctAttributes="ent5#att8">
+      <Selector id="mov2#opm9#seu28#su60" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm9#seu28#su60#rcond26" name="RoleCondition10" predicate="in" implied="false" role="rel4#role8"/>
+      </Selector>
+      <OKLink id="mov2#opm9#seu28#oln63" name="Flow104" to="mov2#opm9#seu29">
+        <LinkParameter id="mov2#opm9#seu28#oln63#par200" name="iid_RoleCondition25 [iid]" source="ent5#att8Array" target="mov2#opm9#seu29#su66#rcond27.ent5#att8"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm9#seu29" name="AcceptedAnnsOfItem" gr:x="445" gr:y="85" entity="ent6" distinctAttributes="ent6#att10 ent6#att1">
+      <Selector id="mov2#opm9#seu29#su66" defaultPolicy="fill" booleanOperator="and" expression="mov2#opm9#seu29#su66#rcond27 AND ( mov2#opm9#seu29#su66#acond16 OR mov2#opm9#seu29#su66#acond18 )">
+        <RelationshipRoleCondition id="mov2#opm9#seu29#su66#rcond27" name="IsInItem" predicate="in" implied="false" role="rel2#role4"/>
+        <AttributesCondition id="mov2#opm9#seu29#su66#acond16" name="IsNotAccepted" predicate="neq" booleanOperator="or" implied="false" attributes="ent6#att1" value="Accepted" ignoreCase="true"/>
+        <AttributesCondition id="mov2#opm9#seu29#su66#acond18" name="IsNull" predicate="null" booleanOperator="or" implied="false" attributes="ent6#att1"/>
+      </Selector>
+      <OKLink id="mov2#opm9#seu29#oln62" name="OKFlow62" to="mov2#opm9#switch5">
+        <LinkParameter id="mov2#opm9#seu29#oln62#par217" name="Data Size_Switch" source="dataSize" target="mov2#opm9#switch5.switch"/>
+      </OKLink>
+    </SelectorUnit>
+    <SwitchUnit gr:x="495" gr:y="260" id="mov2#opm9#switch5" name="Switch5" gr:showAllParts="false">
+      <OKLink id="mov2#opm9#switch5#oln60" name="OKFlow60" to="mov2#opm9#okcu7" code="0">
+        <LinkParameter id="mov2#opm9#switch5#oln60#par194" name="Completed_output" sourceValue="Task Completed" target="mov2#opm9#okcu7#ocp9"/>
+      </OKLink>
+      <OKLink id="mov2#opm9#switch5#oln61" name="OKFlow61" to="mov2#opm9#kocu4">
+        <LinkParameter id="mov2#opm9#switch5#oln61#par195" name="Not completed_output" sourceValue="Task Not completed" target="mov2#opm9#kocu4#ocp10"/>
+      </OKLink>
+      <Case value="0"/>
+      <Case value="1"/>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>

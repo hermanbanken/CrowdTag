@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-45" gr:y="90" id="sv1#page16" name="Campaigns Overview" landmark="true" linkOrder="sv1#page16#ln21" customURLName="campaigns" layout:layoutManager="grid">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-35" gr:y="310" id="sv1#page16" name="Campaigns Overview" landmark="true" linkOrder="sv1#page16#ln21" customURLName="campaigns" layout:layoutManager="grid">
   <ContentUnits>
     <GetUnit gr:x="10" gr:y="0" id="sv1#page16#gtu8" name="User" contextParameters="UserCtxParam">
       <Link id="sv1#page16#gtu8#ln74" name="Flow35" to="sv1#page16#seu15" type="transport" validate="true">
@@ -22,9 +22,7 @@
         <LinkParameter id="sv1#page16#hinu1#ln52#par78" name="cid_PASSING" source="data[].ent3#att3" passing="true"/>
         <LinkParameter id="sv1#page16#hinu1#ln52#par81" name="cid_Key Condition [cid]" source="data[].ent3#att3" target="sv1#page24#enu33.ent3#att3"/>
       </Link>
-      <HierarchicalIndexLevel id="sv1#page16#hinu1#hiulvl1" name="Tasks" entity="ent4" role="rel6#role12" displayAttributes="ent4#att13 ent4#att21">
-        <HierarchicalIndexLevel id="sv1#page16#hinu1#hiulvl1#hiulvl3" name="Workers" entity="ent1" role="rel7#role13" displayAttributes="userName email User#att25"/>
-      </HierarchicalIndexLevel>
+      <HierarchicalIndexLevel id="sv1#page16#hinu1#hiulvl1" name="Tasks" entity="ent4" role="rel6#role12" displayAttributes="ent4#att13 ent4#att21"/>
     </HierarchicalIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -42,9 +40,6 @@
           <layout:Attribute attribute="ent3#att6"/>
           <layout:Attribute attribute="ent4#att13"/>
           <layout:Attribute attribute="ent4#att21"/>
-          <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="email"/>
-          <layout:Attribute attribute="User#att25"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -172,5 +167,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv1#page16#ln21" name="Add New" to="sv1#page24#enu33" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="334,12,-211,57"/>
+  <Link id="sv1#page16#ln21" name="Add New" to="sv1#page24#enu33" automaticCoupling="true" type="normal" validate="true"/>
 </Page>
