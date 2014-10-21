@@ -15,6 +15,7 @@
       <Link id="sv2#area5#page6#seu2#ln23" name="oidToSaveSkills" to="sv2#miu2" type="transport" validate="true">
         <LinkParameter id="sv2#area5#page6#seu2#ln23#par42" name="oid_oid" source="userOIDArray" target="sv2#miu2.mov1#opm5#icu5#icp9"/>
       </Link>
+      <Link id="sv2#area5#page6#seu2#ln31" name="Flow31" to="sv2#area5#page6#seu5" automaticCoupling="true" type="transport" validate="true"/>
     </SelectorUnit>
     <EntryUnit id="sv2#area5#page6#enu1" name="Edit information" gr:x="300" gr:y="10" entity="ent1" linkOrder="sv2#area5#page6#enu1#ln9">
       <Field id="sv2#area5#page6#enu1#fld1" name="userName" type="string" modifiable="true" preloaded="true" attribute="userName"/>
