@@ -1,15 +1,24 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2" name="Worker" protected="true" customURLName="worker" landmarks="sv2#area6 sv2#area5" homePage="sv2#area6#page7" layout:style="BootstrapStyle">
   <OperationUnits>
-    <ModuleInstanceUnit gr:x="345" gr:y="635" id="sv2#miu2" action="true" moduleId="mov1#opm5">
+    <ModuleInstanceUnit gr:x="180" gr:y="640" id="sv2#miu2" action="true" moduleId="mov1#opm5">
       <OKLink id="sv2#miu2#oln18" name="SaveResult" to="sv2#area5#page6#mssu4">
         <LinkParameter id="sv2#miu2#oln18#par64" name="Success message_Shown Messages" source="mov1#opm5#okcu4#ocp2" target="sv2#area5#page6#mssu4.shownMessages"/>
       </OKLink>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="600" gr:y="665" id="sv2#miu4" action="true" moduleId="mov1#opm6">
-      <KOLink id="sv2#miu4#kln19" name="SaveError" to="sv2#area6#page7#mssu5">
-        <LinkParameter id="sv2#miu4#kln19#par124" name="outMessage_Shown Messages" source="mov1#opm6#kocu5#ocp3" target="sv2#area6#page7#mssu5.shownMessages"/>
+    <ModuleInstanceUnit gr:x="1155" gr:y="805" id="sv2#miu12" action="true" moduleId="mov1#opm9" name="Save Annotation">
+      <OKLink id="sv2#miu12#oln56" name="OKFlow56" to="sv2#area6#page10" automaticCoupling="true" gr:bendpoints="-652,21,-32,246"/>
+      <KOLink id="sv2#miu12#kln27" name="KOFlow27" to="sv2#area6#page10#mssu10" gr:bendpoints="-213,-110,-23,195">
+        <LinkParameter id="sv2#miu12#kln27#par347" name="Something went wrong saving the annotation._Shown Messages" target="sv2#area6#page10#mssu10.shownMessages" source="mov1#opm9#kocu4#ocp8"/>
       </KOLink>
-      <OKLink id="sv2#miu4#oln26" name="OKFlow26" to="sv2#area6#page7#hinu2" gr:bendpoints="-157,-221,-92,124"/>
     </ModuleInstanceUnit>
+    <IsNotNullUnit gr:x="1175" gr:y="495" id="sv2#inn11" name="Is Not Null State" emptyStringAsNull="true">
+      <KOLink id="sv2#inn11#kln29" name="KOFlow29" to="sv2#area6#page10#dau3">
+        <LinkParameter id="sv2#inn11#kln29#par357" name="AnnotationToItem.iid_PASSING_iid [iid]" sourceLinkParameter="sv2#area6#page10#pwu4#ln164#par356" target="sv2#area6#page10#dau3#su55#kcond34.ent5#att8"/>
+      </KOLink>
+      <OKLink id="sv2#inn11#oln60" name="OKFlow60" to="sv2#area6#page10#mssu10">
+        <LinkParameter id="sv2#inn11#oln60#par358" name="You can only edit unrated Annotations._Shown Messages" sourceValue="You can only edit unrated Annotations." target="sv2#area6#page10#mssu10.shownMessages"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <ModuleInstanceUnit gr:x="370" gr:y="600" id="sv2#miu14" action="true" moduleId="mov1#opm17"/>
   </OperationUnits>
 </SiteView>

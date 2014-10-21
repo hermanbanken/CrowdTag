@@ -1,0 +1,69 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="490" gr:y="200" id="mov1#opm9" name="SaveAnnotation by Herman">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm9#icu9" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov1#opm9#icu9#icp20" name="Label"/>
+      <InputCollectorParameter id="mov1#opm9#icu9#icp21" name="Confidence"/>
+      <InputCollectorParameter id="mov1#opm9#icu9#icp22" name="aid"/>
+      <InputCollectorParameter id="mov1#opm9#icu9#icp30" name="iid"/>
+      <InputCollectorParameter id="mov1#opm9#icu9#icp31" name="userOid"/>
+      <OKLink id="mov1#opm9#icu9#oln57" name="OKFlow57" to="mov1#opm9#inn2">
+        <LinkParameter id="mov1#opm9#icu9#oln57#par232" name="aid_Input" source="mov1#opm9#icu9#icp22" target="mov1#opm9#inn2.isnotnull"/>
+        <LinkParameter id="mov1#opm9#icu9#oln57#par233" name="aid_PASSING" source="mov1#opm9#icu9#icp22" passing="true"/>
+        <LinkParameter id="mov1#opm9#icu9#oln57#par234" name="Confidence_PASSING" source="mov1#opm9#icu9#icp21" passing="true"/>
+        <LinkParameter id="mov1#opm9#icu9#oln57#par235" name="iid_PASSING" source="mov1#opm9#icu9#icp30" passing="true"/>
+        <LinkParameter id="mov1#opm9#icu9#oln57#par236" name="Label_PASSING" source="mov1#opm9#icu9#icp20" passing="true"/>
+        <LinkParameter id="mov1#opm9#icu9#oln57#par237" name="userOid_PASSING" source="mov1#opm9#icu9#icp31" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="790" gr:y="135" id="mov1#opm9#okcu7" name="Success">
+      <OutputCollectorParameter id="mov1#opm9#okcu7#ocp9" name="Annotation"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="790" gr:y="20" id="mov1#opm9#kocu4" name="Failure">
+      <OutputCollectorParameter id="mov1#opm9#kocu4#ocp8" name="Message"/>
+    </KOCollectorUnit>
+    <IsNotNullUnit gr:x="285" gr:y="105" id="mov1#opm9#inn2" name="Exists?" emptyStringAsNull="true">
+      <OKLink id="mov1#opm9#inn2#oln52" name="OKFlow52" to="mov1#opm9#mfu1">
+        <LinkParameter id="mov1#opm9#inn2#oln52#par243" name="Confidence_PASSING_confidence" sourceLinkParameter="mov1#opm9#icu9#oln57#par234" target="mov1#opm9#mfu1.ent6#att12"/>
+        <LinkParameter id="mov1#opm9#inn2#oln52#par244" name="iid_PASSING_Item.iid(AnnotationToItem)" sourceLinkParameter="mov1#opm9#icu9#oln57#par235" target="mov1#opm9#mfu1.rel2#role3.ent5#att8"/>
+        <LinkParameter id="mov1#opm9#inn2#oln52#par245" name="aid_PASSING_KeyCondition9 [aid]" sourceLinkParameter="mov1#opm9#icu9#oln57#par233" target="mov1#opm9#mfu1#su34#kcond9.ent6#att10"/>
+        <LinkParameter id="mov1#opm9#inn2#oln52#par246" name="Label_PASSING_label" sourceLinkParameter="mov1#opm9#icu9#oln57#par236" target="mov1#opm9#mfu1.ent6#att11"/>
+        <LinkParameter id="mov1#opm9#inn2#oln52#par247" name="userOid_PASSING_Worker.oid(AnnotationToWorker)" sourceLinkParameter="mov1#opm9#icu9#oln57#par237" target="mov1#opm9#mfu1.rel3#role5.userOID"/>
+      </OKLink>
+      <KOLink id="mov1#opm9#inn2#kln23" name="KOFlow23" to="mov1#opm9#cru2">
+        <LinkParameter id="mov1#opm9#inn2#kln23#par238" name="aid_PASSING_aid" sourceLinkParameter="mov1#opm9#icu9#oln57#par233" target="mov1#opm9#cru2.ent6#att10"/>
+        <LinkParameter id="mov1#opm9#inn2#kln23#par239" name="Confidence_PASSING_confidence" sourceLinkParameter="mov1#opm9#icu9#oln57#par234" target="mov1#opm9#cru2.ent6#att12"/>
+        <LinkParameter id="mov1#opm9#inn2#kln23#par240" name="iid_PASSING_Item.iid(AnnotationToItem)" sourceLinkParameter="mov1#opm9#icu9#oln57#par235" target="mov1#opm9#cru2.rel2#role3.ent5#att8"/>
+        <LinkParameter id="mov1#opm9#inn2#kln23#par241" name="Label_PASSING_label" sourceLinkParameter="mov1#opm9#icu9#oln57#par236" target="mov1#opm9#cru2.ent6#att11"/>
+        <LinkParameter id="mov1#opm9#inn2#kln23#par242" name="userOid_PASSING_Worker.oid(AnnotationToWorker)" sourceLinkParameter="mov1#opm9#icu9#oln57#par237" target="mov1#opm9#cru2.rel3#role5.userOID"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="410" gr:y="185" id="mov1#opm9#cru2" name="Create" entity="ent6">
+      <OKLink id="mov1#opm9#cru2#oln54" name="OKFlow54" to="mov1#opm9#okcu7">
+        <LinkParameter id="mov1#opm9#cru2#oln54#par188" name="aid_Annotation" source="ent6#att10Array" target="mov1#opm9#okcu7#ocp9"/>
+      </OKLink>
+      <KOLink id="mov1#opm9#cru2#kln24" name="KOFlow24" to="mov1#opm9#kocu4">
+        <LinkParameter id="mov1#opm9#cru2#kln24#par191" name="Failed to create annotation_Output Port Parameter8" sourceValue="Failed to create annotation" target="mov1#opm9#kocu4#ocp8"/>
+      </KOLink>
+    </CreateUnit>
+    <ModifyUnit gr:x="405" gr:y="-25" id="mov1#opm9#mfu1" name="Modify" entity="ent6">
+      <Selector id="mov1#opm9#mfu1#su34" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm9#mfu1#su34#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+        <AttributesCondition id="mov1#opm9#mfu1#su34#acond8" name="not yet rated" predicate="empty" booleanOperator="or" implied="false" attributes="ent6#att1"/>
+      </Selector>
+      <OKLink id="mov1#opm9#mfu1#oln53" name="OKFlow53" to="mov1#opm9#inn7">
+        <LinkParameter id="mov1#opm9#mfu1#oln53#par352" name="aid_Input" source="ent6#att10Array" target="mov1#opm9#inn7.isnotnull"/>
+      </OKLink>
+      <KOLink id="mov1#opm9#mfu1#kln25" name="KOFlow25" to="mov1#opm9#kocu4">
+        <LinkParameter id="mov1#opm9#mfu1#kln25#par190" name="Failed to modify Annotation_Output Port Parameter8" sourceValue="Failed to modify Annotation." target="mov1#opm9#kocu4#ocp8"/>
+      </KOLink>
+    </ModifyUnit>
+    <IsNotNullUnit gr:x="550" gr:y="65" id="mov1#opm9#inn7" name="Not null aid">
+      <KOLink id="mov1#opm9#inn7#kln28" name="KOFlow28" to="mov1#opm9#kocu4">
+        <LinkParameter id="mov1#opm9#inn7#kln28#par354" name="Failed to modify Annotation. It might be the case that the annotation is already graded. You cant edit graded annotations._Message" sourceValue="Failed to modify Annotation. It might be the case that the annotation is already graded. You cant edit graded annotations." target="mov1#opm9#kocu4#ocp8"/>
+      </KOLink>
+      <OKLink id="mov1#opm9#inn7#oln59" name="OKFlow59" to="mov1#opm9#okcu7">
+        <LinkParameter id="mov1#opm9#inn7#oln59#par353" name="Input Value_Annotation" source="inputValue" target="mov1#opm9#okcu7#ocp9"/>
+      </OKLink>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,19 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="375" gr:y="415" id="mov1#opm17" name="Save Profile">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm17#icu17" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov1#opm17#icu17#icp32" name="Profile"/>
+      <OKLink id="mov1#opm17#icu17#oln61" name="OKFlow61" to="mov1#opm17#mfu2">
+        <LinkParameter id="mov1#opm17#icu17#oln61#par360" name="Profile_User Object" source="mov1#opm17#icu17#icp32" target="mov1#opm17#mfu2.entityBeans"/>
+        <LinkParameter id="mov1#opm17#icu17#oln61#par363" name="Id_KeyCondition36 [oid]" source="mov1#opm17#icu17#icp33" target="mov1#opm17#mfu2#su57#kcond36.userOID"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm17#icu17#icp33" name="Id"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="410" gr:y="70" id="mov1#opm17#okcu11" name="Ok"/>
+    <ModifyUnit gr:x="285" gr:y="65" id="mov1#opm17#mfu2" name="User" entity="User">
+      <Selector id="mov1#opm17#mfu2#su57" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm17#mfu2#su57#kcond36" name="KeyCondition36" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm17#mfu2#oln62" name="OKFlow62" to="mov1#opm17#okcu11" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationModule>

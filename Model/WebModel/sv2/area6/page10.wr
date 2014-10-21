@@ -1,0 +1,284 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="430" gr:y="100" id="sv2#area6#page10" name="Annotation Task">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="70" gr:y="215" id="sv2#area6#page10#pwu3" name="Items to do" sortable="true" checkable="false" useCountQuery="false" entity="ent5" displayAttributes="ent5#att8 ent5#att23" linkOrder="sv2#area6#page10#pwu3#ln139">
+      <Selector id="sv2#area6#page10#pwu3#su49" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area6#page10#pwu3#su49#rcond24" name="Task" predicate="in" implied="false" role="rel4#role8"/>
+        <KeyCondition id="sv2#area6#page10#pwu3#su49#kcond33" name="without-iid" predicate="notIn" implied="true"/>
+      </Selector>
+      <Link id="sv2#area6#page10#pwu3#ln139" name="Annotate" to="sv2#area6#page10#dau3" type="automatic" validate="true" automaticCoupling="true"/>
+    </PowerIndexUnit>
+    <PowerIndexUnit gr:x="230" gr:y="225" id="sv2#area6#page10#pwu4" name="Existing Annotations" sortable="true" checkable="false" useCountQuery="false" entity="ent6" displayAttributes="rel2#role3.ent5#att23 ent6#att11 ent6#att12 ent6#att1" linkOrder="sv2#area6#page10#pwu4#ln164">
+      <Selector id="sv2#area6#page10#pwu4#su50" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area6#page10#pwu4#su50#kcond32" name="withKey" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area6#page10#pwu4#ln164" name="Edit" to="sv2#inn11" type="automatic" validate="true">
+        <LinkParameter id="sv2#area6#page10#pwu4#ln164#par355" name="AnnotationToItem.iid_Input" source="data[].ent6#att1" target="sv2#inn11.isnotnull"/>
+        <LinkParameter id="sv2#area6#page10#pwu4#ln164#par356" name="AnnotationToItem.iid_PASSING" source="data[].rel2#role3_ent5#att8" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+    <MultiMessageUnit gr:x="0" gr:y="350" id="sv2#area6#page10#mssu10" name="Message"/>
+    <DataUnit gr:x="85" gr:y="80" id="sv2#area6#page10#dau2" name="Task" entity="ent4">
+      <Selector id="sv2#area6#page10#dau2#su51" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area6#page10#dau2#su51#kcond30" name="KeyCondition30" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area6#page10#dau2#ln151" name="Flow151" to="sv2#area6#page10#seu18" type="transport" validate="true">
+        <LinkParameter id="sv2#area6#page10#dau2#ln151#par307" name="tid_Task [tid]" source="data.ent4#att7" target="sv2#area6#page10#seu18#su52#rcond27.ent4#att7"/>
+        <LinkParameter id="sv2#area6#page10#dau2#ln151#par308" name="tid_PASSING" source="data.ent4#att7" passing="true"/>
+      </Link>
+    </DataUnit>
+    <SelectorUnit gr:x="195" gr:y="80" id="sv2#area6#page10#seu18" name="ItemsInTask" entity="ent5">
+      <Selector id="sv2#area6#page10#seu18#su52" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area6#page10#seu18#su52#rcond27" name="Task" predicate="in" implied="false" role="rel4#role8"/>
+      </Selector>
+      <Link id="sv2#area6#page10#seu18#ln154" name="Flow154" to="sv2#area6#page10#seu19" type="transport" validate="true">
+        <LinkParameter id="sv2#area6#page10#seu18#ln154#par309" name="iid_OfItem [iid]" source="ent5#att8Array" target="sv2#area6#page10#seu19#su53#rcond28.ent5#att8"/>
+        <LinkParameter id="sv2#area6#page10#seu18#ln154#par310" name="tid_PASSING" sourceLinkParameter="sv2#area6#page10#dau2#ln151#par308" passing="true"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="345" gr:y="80" id="sv2#area6#page10#seu19" name="AnnotationsInTask" entity="ent6">
+      <Selector id="sv2#area6#page10#seu19#su53" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area6#page10#seu19#su53#rcond28" name="OfItem" predicate="in" implied="false" role="rel2#role4"/>
+        <RelationshipRoleCondition id="sv2#area6#page10#seu19#su53#rcond29" name="OfWorker" predicate="in" implied="false" role="rel3#role6"/>
+      </Selector>
+      <Link id="sv2#area6#page10#seu19#ln162" name="Flow162" to="sv2#area6#page10#pwu3" type="transport" validate="true">
+        <LinkParameter id="sv2#area6#page10#seu19#ln162#par306" name="iid_PASSING_without-iid [iid (not in)]" target="sv2#area6#page10#pwu3#su49#kcond33.ent5#att8" source="rel2#role3_ent5#att8Array"/>
+        <LinkParameter id="sv2#area6#page10#seu19#ln162#par311" name="tid_PASSING_Task [tid]" sourceLinkParameter="sv2#area6#page10#seu18#ln154#par310" target="sv2#area6#page10#pwu3#su49#rcond24.ent4#att7"/>
+      </Link>
+      <Link id="sv2#area6#page10#seu19#ln163" name="Flow163" to="sv2#area6#page10#pwu4" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <GetUnit id="sv2#area6#page10#gtu9" name="User" gr:x="380" gr:y="320" contextParameters="UserCtxParam">
+      <Link id="sv2#area6#page10#gtu9#ln161" name="Flow155" to="sv2#area6#page10#seu19" type="transport" validate="true">
+        <LinkParameter id="sv2#area6#page10#gtu9#ln161#par301" name="UserCtxParam.oid_RoleCondition29 [oid]" target="sv2#area6#page10#seu19#su53#rcond29.userOID" source="sv2#area6#page10#gtu9.UserCtxParam"/>
+      </Link>
+      <Link id="sv2#area6#page10#gtu9#ln167" name="Flow167" to="sv2#area6#page10#seu21" type="transport" validate="true">
+        <LinkParameter id="sv2#area6#page10#gtu9#ln167#par314" name="UserCtxParam.oid_OfWorker [oid]" source="sv2#area6#page10#gtu9.UserCtxParam" target="sv2#area6#page10#seu21#su56#rcond33.userOID"/>
+        <LinkParameter id="sv2#area6#page10#gtu9#ln167#par333" name="UserCtxParam.oid_PASSING" source="sv2#area6#page10#gtu9.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+    <DataUnit gr:x="80" gr:y="430" id="sv2#area6#page10#dau3" name="Item" entity="ent5" displayAttributes="ent5#att23 ent5#att24 ent5#att9">
+      <Selector id="sv2#area6#page10#dau3#su55" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area6#page10#dau3#su55#kcond34" name="iid" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area6#page10#dau3#ln165" name="Flow165" to="sv2#area6#page10#seu21" type="transport" validate="true">
+        <LinkParameter id="sv2#area6#page10#dau3#ln165#par330" name="iid_OfItem [iid]" source="data.ent5#att8" target="sv2#area6#page10#seu21#su56#rcond32.ent5#att8"/>
+        <LinkParameter id="sv2#area6#page10#dau3#ln165#par331" name="iid_PASSING" source="data.ent5#att8" passing="true"/>
+      </Link>
+      <Link id="sv2#area6#page10#dau3#ln173" name="Clear message" to="sv2#area6#page10#mssu10" type="transport" validate="true">
+        <LinkParameter id="sv2#area6#page10#dau3#ln173#par359" name="_Shown Messages" blank="true" target="sv2#area6#page10#mssu10.shownMessages"/>
+      </Link>
+    </DataUnit>
+    <SelectorUnit gr:x="190" gr:y="420" id="sv2#area6#page10#seu21" name="ItemsAnnotation" entity="ent6">
+      <Selector id="sv2#area6#page10#seu21#su56" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area6#page10#seu21#su56#rcond32" name="OfItem" predicate="in" implied="false" role="rel2#role4"/>
+        <RelationshipRoleCondition id="sv2#area6#page10#seu21#su56#rcond33" name="OfWorker" predicate="in" implied="false" role="rel3#role6"/>
+      </Selector>
+      <Link id="sv2#area6#page10#seu21#ln166" name="Flow166" to="sv2#area6#page10#enu11" type="transport" validate="true">
+        <LinkParameter id="sv2#area6#page10#seu21#ln166#par321" name="aid_Key Condition [aid]" source="ent6#att10Array" target="sv2#area6#page10#enu11.ent6#att10"/>
+        <LinkParameter id="sv2#area6#page10#seu21#ln166#par332" name="iid_PASSING" sourceLinkParameter="sv2#area6#page10#dau3#ln165#par331" passing="true"/>
+        <LinkParameter id="sv2#area6#page10#seu21#ln166#par334" name="UserCtxParam.oid_PASSING" sourceLinkParameter="sv2#area6#page10#gtu9#ln167#par333" passing="true"/>
+        <LinkParameter id="sv2#area6#page10#seu21#ln166#par350" name="confidence_Confidence" source="ent6#att12Array" target="sv2#area6#page10#enu11#fld17_slot"/>
+        <LinkParameter id="sv2#area6#page10#seu21#ln166#par351" name="label_Label" source="ent6#att11Array" target="sv2#area6#page10#enu11#fld16_slot"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv2#area6#page10#enu11" name="Annotation" gr:x="370" gr:y="430" entity="ent6" linkOrder="sv2#area6#page10#enu11#ln171">
+      <Field id="sv2#area6#page10#enu11#fld16" name="Label" type="string" modifiable="true" attribute="ent6#att11" preloaded="true">
+        <VRules>
+          <MandatoryValidationRule id="sv2#area6#page10#enu11#fld16#mnd8" name="Mandatory5"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area6#page10#enu11#fld17" name="Confidence" type="integer" modifiable="true" attribute="ent6#att12" preloaded="true">
+        <VRules>
+          <CompareValidationRule id="sv2#area6#page10#enu11#fld17#cmp5" name="At least zero" predicate="gteq" value="0" errorMessage="Can't be smaller than 0"/>
+          <CompareValidationRule id="sv2#area6#page10#enu11#fld17#cmp6" name="Max 10" predicate="lteq" value="10" errorMessage="Can't be more than 10"/>
+          <MandatoryValidationRule id="sv2#area6#page10#enu11#fld17#mnd9" name="Mandatory4"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#area6#page10#enu11#fld18" name="aid" type="string" modifiable="true" hidden="true"/>
+      <Link id="sv2#area6#page10#enu11#ln171" name="Save" to="sv2#miu12" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv2#area6#page10#enu11#ln171#par318" name="aid_aid" source="key.ent6#att10" target="sv2#miu12.mov1#opm9#icu9#icp22"/>
+        <LinkParameter id="sv2#area6#page10#enu11#ln171#par319" name="confidence_Confidence" source="sv2#area6#page10#enu11#fld17" target="sv2#miu12.mov1#opm9#icu9#icp21"/>
+        <LinkParameter id="sv2#area6#page10#enu11#ln171#par320" name="label_Label" source="sv2#area6#page10#enu11#fld16" target="sv2#miu12.mov1#opm9#icu9#icp20"/>
+        <LinkParameter id="sv2#area6#page10#enu11#ln171#par335" name="iid_PASSING_iid" sourceLinkParameter="sv2#area6#page10#seu21#ln166#par332" target="sv2#miu12.mov1#opm9#icu9#icp30"/>
+        <LinkParameter id="sv2#area6#page10#enu11#ln171#par336" name="UserCtxParam.oid_PASSING_userOid" sourceLinkParameter="sv2#area6#page10#seu21#ln166#par334" target="sv2#miu12.mov1#opm9#icu9#icp31"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="55" gr:y="0" id="sv2#area6#page10#mssu11" name="Explaination">
+      <Message xml:space="preserve">Below you can annotate items that are not annotated yet, and edit existing annotations.</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area6#page10#mssu11"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area6#page10#mssu10" styleClass="warning"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="5">
+        <layout:Unit unitId="sv2#area6#page10#pwu3">
+          <layout:Attribute attribute="ent5#att8"/>
+          <layout:Attribute attribute="ent5#att23"/>
+          <layout:Link link="sv2#area6#page10#pwu3#ln139"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="7">
+        <layout:Unit unitId="sv2#area6#page10#pwu4">
+          <layout:Attribute attribute="rel2#role3.ent5#att23"/>
+          <layout:Attribute attribute="ent6#att11"/>
+          <layout:Attribute attribute="ent6#att12"/>
+          <layout:Attribute attribute="ent6#att1"/>
+          <layout:Link link="sv2#area6#page10#pwu4#ln164"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#area6#page10#dau3">
+          <layout:Attribute attribute="ent5#att23"/>
+          <layout:Attribute attribute="ent5#att24"/>
+          <layout:Attribute attribute="ent5#att9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv2#area6#page10#enu11">
+          <layout:Link link="sv2#area6#page10#enu11#ln171"/>
+          <layout:Field field="sv2#area6#page10#enu11#fld16"/>
+          <layout:Field field="sv2#area6#page10#enu11#fld17">
+            <layout:LayoutParameter name="placeholder" value="0 to 10" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv2#area6#page10#var1" name="Task"/>
+</Page>

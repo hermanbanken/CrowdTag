@@ -22,7 +22,10 @@
       <Field id="sv2#area5#page6#enu1#fld3" name="email" type="string" modifiable="true" preloaded="true" attribute="email"/>
       <Field id="sv2#area5#page6#enu1#fld4" name="name" type="string" modifiable="true" preloaded="true" attribute="User#att25"/>
       <Field id="sv2#area5#page6#enu1#fld5" name="birthDate" type="timestamp" modifiable="true" preloaded="true" attribute="User#att26"/>
-      <Link id="sv2#area5#page6#enu1#ln9" name="Refresh Skills" to="sv2#area5#page6#seu5" type="automatic" automaticCoupling="true" validate="true" gr:bendpoints="-87,61,208,-64;-218,65,77,-60" ajaxEnabled="true"/>
+      <Link id="sv2#area5#page6#enu1#ln9" name="Save" to="sv2#miu14" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="sv2#area5#page6#enu1#ln9#par361" name="Worker Object_Profile" source="entityBean" target="sv2#miu14.mov1#opm17#icu17#icp32"/>
+        <LinkParameter id="sv2#area5#page6#enu1#ln9#par362" name="Key [oid]_Id" source="key.userOID" target="sv2#miu14.mov1#opm17#icu17#icp33"/>
+      </Link>
     </EntryUnit>
     <GetUnit id="sv2#area5#page6#gtu1" name="getSessionOID" gr:x="0" gr:y="10" contextParameters="UserCtxParam">
       <Link id="sv2#area5#page6#gtu1#ln2" name="Flow21" to="sv2#area5#page6#seu2" type="transport" validate="true">
