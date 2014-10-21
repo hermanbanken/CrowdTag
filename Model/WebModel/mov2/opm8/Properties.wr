@@ -1,0 +1,57 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="55" gr:y="405" id="mov2#opm8" name="CheckCampaignStatus">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm8#icu8" gr:x="10" gr:y="215">
+      <InputCollectorParameter id="mov2#opm8#icu8#icp20" name="aid"/>
+      <OKLink id="mov2#opm8#icu8#oln64" name="Flow31" to="mov2#opm8#seu9">
+        <LinkParameter id="mov2#opm8#icu8#oln64#par226" name="aid_RoleCondition7 [aid]" source="mov2#opm8#icu8#icp20" target="mov2#opm8#seu9#su20#rcond7.ent6#att10"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="350" gr:y="30" id="mov2#opm8#seu9" name="ItemsWithAnn" entity="ent5" distinctAttributes="ent5#att8">
+      <Selector id="mov2#opm8#seu9#su20" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm8#seu9#su20#rcond7" name="RoleCondition7" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+      <OKLink id="mov2#opm8#seu9#oln65" name="Flow71" to="mov2#opm8#seu21" automaticCoupling="true"/>
+    </SelectorUnit>
+    <ModuleInstanceUnit gr:x="385" gr:y="185" id="mov2#opm8#miu14" action="true" moduleId="mov2#opm9">
+      <OKLink id="mov2#opm8#miu14#oln52" name="OKFlow52" to="mov2#opm8#lpu5" automaticCoupling="true" gr:bendpoints="-67,136,-57,-134"/>
+      <KOLink id="mov2#opm8#miu14#kln23" name="KOFlow23" to="mov2#opm8#kocu10">
+        <LinkParameter id="mov2#opm8#miu14#kln23#par223" name="Not Completed_msg" sourceValue="Campaign Not Completed" target="mov2#opm8#kocu10#ocp17"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <SelectorUnit gr:x="530" gr:y="35" id="mov2#opm8#seu21" name="TaskWithItem" entity="ent4">
+      <Selector id="mov2#opm8#seu21#su43" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm8#seu21#su43#rcond17" name="RoleCondition17" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+      <OKLink id="mov2#opm8#seu21#oln66" name="Flow76" to="mov2#opm8#seu23" gr:bendpoints="-218,112,72,-158" automaticCoupling="true"/>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm8#seu22" name="TasksInCampaign" gr:x="205" gr:y="440" entity="ent4">
+      <Selector id="mov2#opm8#seu22#su44" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm8#seu22#su44#rcond18" name="RoleCondition13" predicate="in" implied="false" role="rel6#role12"/>
+      </Selector>
+      <OKLink id="mov2#opm8#seu22#oln68" name="Flow84" to="mov2#opm8#lpu5">
+        <LinkParameter id="mov2#opm8#seu22#oln68#par227" name="tid_Input Array" source="ent4#att7Array" target="mov2#opm8#lpu5.array"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm8#seu23" name="CampaignWithTask" gr:x="205" gr:y="305" entity="ent3" linkOrder="mov2#opm8#seu23#ln117">
+      <Selector id="mov2#opm8#seu23#su45" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm8#seu23#su45#rcond19" name="RoleCondition12" predicate="in" implied="false" role="rel6#role11"/>
+      </Selector>
+      <OKLink id="mov2#opm8#seu23#oln67" name="Flow58" to="mov2#opm8#seu22" automaticCoupling="true"/>
+      <Link id="mov2#opm8#seu23#ln117" name="Flow117" to="mov2#opm8#okcu11" type="transport" validate="true">
+        <LinkParameter id="mov2#opm8#seu23#ln117#par235" name="cid_cid" source="ent3#att3Array" target="mov2#opm8#okcu11#ocp16"/>
+      </Link>
+    </SelectorUnit>
+    <LoopUnit gr:x="430" gr:y="460" id="mov2#opm8#lpu5" name="ForEachTaskInC">
+      <OKLink id="mov2#opm8#lpu5#oln51" name="OKFlow51" to="mov2#opm8#miu14" code="next" gr:bendpoints="70,-126,60,144">
+        <LinkParameter id="mov2#opm8#lpu5#oln51#par35" name="Next Element_tid" source="next" target="mov2#opm8#miu14.mov2#opm9#icu9#icp21"/>
+      </OKLink>
+      <OKLink id="mov2#opm8#lpu5#oln53" name="OKFlow53" to="mov2#opm8#okcu11" code="end"/>
+    </LoopUnit>
+    <KOCollectorUnit gr:x="705" gr:y="175" id="mov2#opm8#kocu10" name="Not Completed">
+      <OutputCollectorParameter id="mov2#opm8#kocu10#ocp17" name="msg"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="705" gr:y="375" id="mov2#opm8#okcu11" name="Completed">
+      <OutputCollectorParameter id="mov2#opm8#okcu11#ocp16" name="cid"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

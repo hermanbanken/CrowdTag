@@ -1,11 +1,11 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-45" gr:y="-95" id="sv1#page15" name="Personal information" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-50" gr:y="-240" id="sv1#page15" name="Personal information" landmark="true">
   <ContentUnits>
-    <GetUnit gr:x="0" gr:y="5" id="sv1#page15#gtu7" name="getSessionOID" contextParameters="UserCtxParam">
+    <GetUnit gr:x="0" gr:y="10" id="sv1#page15#gtu7" name="getSessionOID" contextParameters="UserCtxParam">
       <Link id="sv1#page15#gtu7#ln66" name="Flow21" to="sv1#page15#seu14" type="transport" validate="true">
         <LinkParameter id="sv1#page15#gtu7#ln66#par94" name="UserCtxParam.oid_userid" source="sv1#page15#gtu7.UserCtxParam" target="sv1#page15#seu14#su33#acond5"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="185" gr:y="5" id="sv1#page15#seu14" name="Selector5" entity="ent2" distinctAttributes="userOID userName password email User#att25 User#att26 ent2#att22">
+    <SelectorUnit gr:x="165" gr:y="0" id="sv1#page15#seu14" name="Selector5" entity="ent2" distinctAttributes="userOID userName password email User#att25 User#att26 ent2#att22">
       <Selector id="sv1#page15#seu14#su33" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv1#page15#seu14#su33#acond5" name="userid" predicate="eq" booleanOperator="or" implied="false" attributes="userOID"/>
       </Selector>
@@ -18,7 +18,7 @@
         <LinkParameter id="sv1#page15#seu14#ln67#par100" name="userName_userName" source="userNameArray" target="sv1#page15#enu16#fld57_slot"/>
       </Link>
     </SelectorUnit>
-    <EntryUnit gr:x="320" gr:y="0" id="sv1#page15#enu16" name="Form10" entity="ent2">
+    <EntryUnit gr:x="320" gr:y="5" id="sv1#page15#enu16" name="Form10" entity="ent2">
       <Field id="sv1#page15#enu16#fld57" name="userName" type="string" modifiable="true" preloaded="true" attribute="userName"/>
       <Field id="sv1#page15#enu16#fld58" name="password" type="password" modifiable="true" preloaded="true" attribute="password"/>
       <Field id="sv1#page15#enu16#fld59" name="email" type="string" modifiable="true" preloaded="true" attribute="email"/>
